@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} # Usa o token explicitamente
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -32,7 +34,7 @@ jobs:
           git config user.email "action@github.com"
           git add src/mcuData.js
           git commit -m "Monthly MCU data update" || echo "No changes to commit"
-          git push
+          git push origin main # Especifica a branch explicitamente
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
