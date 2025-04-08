@@ -25,11 +25,17 @@ builder.defineCatalogHandler(async ({ type, id }) => {
       const omdbData = omdbRes.data || {};
       const tmdbData = tmdbRes.data || {};
 
+      // Priorizar pôster do OMDB, com fallback para TMDB
+      let poster = omdbData.Poster && omdbData.Poster !== 'N/A' ? omdbData.Poster : null;
+      if (!poster && tmdbData.poster_path) {
+        poster = `https://image.tmdb.org/t/p/w500${tmdbData.poster_path}`;
+      }
+
       return {
-        id: item.imdbId, // Usar o ID do IMDb diretamente
+        id: item.imdbId,
         type: item.type,
         name: item.type === 'series' ? item.title.replace(/ Season \d+/, '') : item.title,
-        poster: omdbData.Poster || (tmdbData.poster_path ? `https://image.tmdb.org/t/p/w500${tmdbData.poster_path}` : null),
+        poster: poster,
         description: tmdbData.overview || omdbData.Plot || 'No description available',
         releaseInfo: item.releaseYear,
         imdbRating: omdbData.imdbRating,
