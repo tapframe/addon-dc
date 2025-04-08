@@ -56,9 +56,9 @@ module.exports = [
   { title: "Deadpool & Wolverine", type: "movie", imdbId: "tt6263850", releaseYear: "2024" },
   { title: "Agatha All Along", type: "series", imdbId: "tt15571732", releaseYear: "2024" },
   { 
-    title: "Captain America Brave New World", 
+    title: "Captain America: Brave New World", 
     type: "movie", 
-    imdbId: "tt14513814", 
+    imdbId: "tt14513804", 
     releaseYear: "2025",
     poster: "https://m.media-amazon.com/images/M/MV5BODFjYWEyZmUtNDZiNC00N2RkLWJhNzEtNDJiN2I2MDZhZGU0XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_SX300.jpg"
   },
