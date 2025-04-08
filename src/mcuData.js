@@ -55,10 +55,34 @@ module.exports = [
   { title: "Echo", type: "series", imdbId: "tt13966962", releaseYear: "2024" },
   { title: "Deadpool & Wolverine", type: "movie", imdbId: "tt6263850", releaseYear: "2024" },
   { title: "Agatha All Along", type: "series", imdbId: "tt15571732", releaseYear: "2024" },
-  { title: "Captain America: Brave New World", type: "movie", imdbId: "tt14513814", releaseYear: "2025" },
-  { title: "Daredevil: Born Again", type: "series", imdbId: "tt14122888", releaseYear: "2025" },
+  { 
+    title: "Captain America: Brave New World", 
+    type: "movie", 
+    imdbId: "tt14513814", 
+    releaseYear: "2025",
+    poster: "https://m.media-amazon.com/images/M/MV5BODFjYWEyZmUtNDZiNC00N2RkLWJhNzEtNDJiN2I2MDZhZGU0XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_SX300.jpg"
+  },
+  { 
+    title: "Daredevil: Born Again", 
+    type: "series", 
+    imdbId: "tt14122888", 
+    releaseYear: "2025",
+    poster: "https://m.media-amazon.com/images/M/MV5BNzY2NzYxY2QtNzVhOC00M2E5LWE5YzgtMWIzM2E0YzYzN2ZmXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_SX300.jpg"
+  },
 
   // Fase 6 (Futuro confirmado até julho de 2025)
-  { title: "Thunderbolts*", type: "movie", imdbId: "tt13311166", releaseYear: "2025" },
-  { title: "The Fantastic Four: First Steps", type: "movie", imdbId: "tt11366836", releaseYear: "2025" }
+  { 
+    title: "Thunderbolts*", 
+    type: "movie", 
+    imdbId: "tt13311166", 
+    releaseYear: "2025",
+    poster: "https://m.media-amazon.com/images/M/MV5BZmI5N2JkYzItNDM1Mi00ZTI0LWFkNzUtNzVhMjk5N2E0M2FlXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_SX300.jpg"
+  },
+  { 
+    title: "The Fantastic Four: First Steps", 
+    type: "movie", 
+    imdbId: "tt11366836", 
+    releaseYear: "2025",
+    poster: "https://m.media-amazon.com/images/M/MV5BNzY5NjY2MjAtNWIyOC00NDhmLWI2YzQtNzEyNjI2N2YxM2YxXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_SX300.jpg"
+  }
 ];
