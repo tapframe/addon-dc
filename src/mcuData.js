@@ -60,3 +60,7 @@ module.exports = [
   { title: "Captain America: Brave New World", type: "movie", imdbId: "tt14513814", releaseYear: "2025" },
   { title: "Daredevil: Born Again", type: "series", imdbId: "tt14122888", releaseYear: "2025" },
   { title: "Thunderbolts*", type: "movie", imdbId: "tt13311166", releaseYear: "2025" },
+  { title: "Ironheart", type: "series", imdbId: "tt14008328", releaseYear: "2025" },
+  { title: "The Fantastic Four: First Steps", type: "movie", imdbId: "tt11366836", releaseYear: "2025" },
+  { title: "Blade", type: "movie", imdbId: "tt10671440", releaseYear: "2025" }
+];
