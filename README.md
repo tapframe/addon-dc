@@ -17,6 +17,7 @@ Hi, I'm **joaogonp**! I'm a newbie developer, and this is my first serious proje
 - 🎬 **Movies & Series**: Includes Disney+ series like *Loki*, *WandaVision*, *Moon Knight*, and more.
 - 🌐 **Automatic Updates**: Updates monthly with new releases using GitHub Actions.
 - 🚀 **Easy to Use**: Just install via URL inside Stremio.
+- 📺 Here’s how it looks in Stremio: https://imgur.com/a/AWX37ak
 
 ---
 
