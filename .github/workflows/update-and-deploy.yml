@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # Mudamos para uma versão mais estável
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
@@ -35,8 +35,6 @@ jobs:
           git add src/mcuData.js
           git commit -m "Monthly MCU data update" || echo "No changes to commit"
           git push origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     needs: update
@@ -48,7 +46,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # Consistência com a versão do update
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
@@ -56,8 +54,5 @@ jobs:
       - name: Test add-on
         run: |
           node src/addon.js & 
-          sleep 10 # Aumentamos o tempo para garantir que o servidor inicie
-          curl -v http://localhost:7000/manifest.json || echo "Curl failed, server may not have started"
-        env:
-          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
-          OMDB_API_KEY: ${{ secrets.OMDB_API_KEY }}
+          sleep 10
+          curl -v http://localhost:7000/manifest.json || echo "Curl failed"
