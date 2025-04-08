@@ -46,7 +46,7 @@ If you want to modify this addon or use the OMDb/TMDb APIs for your own project,
 ## 📜 License
 
 This project is licensed under a modified MIT License with an API Key Restriction. See the [LICENSE](LICENSE) file for details. In summary:
-- You can use, modify, and distribute this addon freely under the MIT License.
+- You can use MIT License.
 - You **cannot** extract or use the included OMDb or TMDb API keys outside of this addon.
 
 ---
