@@ -41,11 +41,20 @@ builder.defineCatalogHandler(async ({ type, id }) => {
 
 console.log('Getting addon interface...');
 const addonInterface = builder.getInterface();
-console.log('addonInterface type:', typeof addonInterface);
-console.log('addonInterface content:', addonInterface);
 
-const server = require('http').createServer((req, res) => {
+const server = require('http').createServer(async (req, res) => {
   console.log('Received request:', req.url);
-  addonInterface(req, res);
+  try {
+    const response = await addonInterface.get(req, res);
+    if (response) {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(response));
+    }
+  } catch (err) {
+    console.error('Error handling request:', err);
+    res.writeHead(500);
+    res.end('Internal Server Error');
+  }
 });
+
 server.listen(port, () => console.log(`Add-on running on port ${port}`));
