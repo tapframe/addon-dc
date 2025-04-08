@@ -1,4 +1,4 @@
-const { addonBuilder } = require('stremio-addon-sdk');
+const { addonBuilder, serveHTTP } = require('stremio-addon-sdk');
 const axios = require('axios');
 const mcuData = require('./mcuData');
 const { tmdbKey, omdbKey, port } = require('./config');
@@ -42,27 +42,6 @@ builder.defineCatalogHandler(async ({ type, id }) => {
 console.log('Getting addon interface...');
 const addonInterface = builder.getInterface();
 
-const server = require('http').createServer(async (req, res) => {
-  console.log('Received request:', req.url);
-  
-  // Handler para a raiz (/)
-  if (req.url === '/' || req.url === '') {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Marvel Addon is running. Use /manifest.json to access the addon.');
-    return;
-  }
-
-  try {
-    const response = await addonInterface.get(req, res);
-    if (response) {
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify(response));
-    }
-  } catch (err) {
-    console.error('Error handling request:', err);
-    res.writeHead(500);
-    res.end('Internal Server Error');
-  }
-});
-
-server.listen(port, () => console.log(`Add-on running on port ${port}`));
+console.log('Starting server...');
+serveHTTP(addonInterface, { port: port });
+console.log(`Add-on running on port ${port}`);
