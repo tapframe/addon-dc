@@ -4,6 +4,7 @@
   "description": "Movies and Series of the MCU ordered correctly. Created by joaogonp",
   "version": "1.0.0",
   "logo": "https://raw.githubusercontent.com/joaogonp/addon-marvel/main/assets/icon.png"
+  "background": "https://raw.githubusercontent.com/joaogonp/addon-marvel/main/assets/background.jpg"
   "catalogs": [
     {
       "type": "mixed",
