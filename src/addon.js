@@ -3,11 +3,13 @@ const axios = require('axios');
 const mcuData = require('./mcuData');
 const { tmdbKey, omdbKey, port } = require('./config');
 
-console.log('Starting addon initialization...');
+// Inicialização do add-on
+console.log('Starting Marvel Addon v1.0.1...');
 const builder = new addonBuilder(require('../manifest.json'));
 
+// Definição do catálogo
 builder.defineCatalogHandler(async ({ type, id }) => {
-  console.log('Catalog handler called with type:', type, 'id:', id);
+  console.log(`Catalog requested - Type: ${type}, ID: ${id}`);
   if (id !== 'marvel-mcu') return { metas: [] };
 
   const metas = await Promise.all(
@@ -29,19 +31,21 @@ builder.defineCatalogHandler(async ({ type, id }) => {
         name: item.type === 'series' ? item.title.replace(/ Season \d+/, '') : item.title,
         poster: tmdbData.poster_path ? `https://image.tmdb.org/t/p/w500${tmdbData.poster_path}` : null,
         description: tmdbData.overview || omdbData.Plot || 'No description available',
-        releaseInfo: item.releaseDate,
+        releaseInfo: item.releaseYear,
         imdbRating: omdbData.imdbRating,
         genres: tmdbData.genres ? tmdbData.genres.map(g => g.name) : ['Action', 'Adventure']
       };
     })
   );
 
-  return { metas: metas.sort((a, b) => a.releaseInfo.localeCompare(b.releaseInfo)) };
+  console.log('Catalog generated successfully');
+  return { metas }; // Ordem já definida no mcuData.js
 });
 
-console.log('Getting addon interface...');
+// Configuração do servidor
+console.log('Initializing addon interface...');
 const addonInterface = builder.getInterface();
 
 console.log('Starting server...');
-serveHTTP(addonInterface, { port: port });
-console.log(`Add-on running on port ${port}`);
+serveHTTP(addonInterface, { port });
+console.log(`Marvel Addon running on port ${port}`);
