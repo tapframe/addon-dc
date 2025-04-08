@@ -1,12 +1,30 @@
-Copyright (c) 2025 João Pereira
+MIT License with API Key Restriction
+
+Copyright (c) 2025 joaogonp
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to use, copy, and distribute the Software, provided that the following conditions are met:
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-1. **No API Key Usage Outside of the Addon**: The API keys for OMDb and TMDb provided in this project **cannot be used** outside of this addon. You are free to use the addon as-is, but if you wish to use the APIs for other projects, please obtain your own API keys from OMDb (http://www.omdbapi.com/apikey.aspx) and TMDb (https://www.themoviedb.org/settings/api).
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-2. **Credit the Original Author**: If you modify, redistribute, or use this addon as a base for your own project, you must give appropriate credit to the original author (João Gonçalves) and include a link to the original repository.
+API Key Restriction:
+This Software includes API keys for OMDb and TMDb, which are provided solely
+for use within this Software. You are not permitted to extract, copy, or use
+these API keys for any other purpose or project outside of this Software. If you
+wish to use the OMDb or TMDb APIs for other projects, you must obtain your own
+API keys from the respective services:
+- OMDb: http://www.omdbapi.com/apikey.aspx
+- TMDb: https://www.themoviedb.org/settings/api
 
-3. **No Derivative Works for Commercial Purposes**: You may not use the Software for commercial purposes without prior authorization from the author.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
