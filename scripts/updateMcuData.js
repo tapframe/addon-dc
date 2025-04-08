@@ -2,56 +2,69 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
-const tmdbKey = process.env.TMDB_API_KEY;
-const mcuTitles = [
-  "Captain America: The First Avenger", "Captain Marvel", "Iron Man", "The Incredible Hulk",
-  "Iron Man 2", "Thor", "The Avengers", "Iron Man 3", "Thor: The Dark World",
-  "Captain America: The Winter Soldier", "Guardians of the Galaxy", "Guardians of the Galaxy Vol. 2",
-  "Avengers: Age of Ultron", "Ant-Man", "Captain America: Civil War", "Black Widow",
-  "Black Panther", "Spider-Man: Homecoming", "Doctor Strange", "Thor: Ragnarok",
-  "Avengers: Infinity War", "Ant-Man and the Wasp", "Avengers: Endgame", "Spider-Man: Far From Home",
-  "WandaVision", "The Falcon and the Winter Soldier", "Loki", "What If...?",
-  "Shang-Chi and the Legend of the Ten Rings", "Eternals", "Hawkeye", "Spider-Man: No Way Home",
-  "Moon Knight", "Doctor Strange in the Multiverse of Madness", "Ms. Marvel", "Thor: Love and Thunder",
-  "She-Hulk: Attorney at Law", "Werewolf by Night", "Black Panther: Wakanda Forever",
-  "The Guardians of the Galaxy Holiday Special", "Ant-Man and the Wasp: Quantumania",
-  "Guardians of the Galaxy Vol. 3", "Secret Invasion", "The Marvels", "Echo", "Deadpool & Wolverine",
-  "Agatha All Along", "Captain America: Brave New World", "Thunderbolts*", "The Fantastic Four: First Steps",
-  "Blade", "Ironheart", "Daredevil: Born Again"
-];
+const TMDB_API_KEY = process.env.TMDB_API_KEY;
+const OMDB_API_KEY = process.env.OMDB_API_KEY;
 
+// Lista fixa atual do mcuData.js
+const currentMcuData = require('../src/mcuData');
+
+// Função para buscar novos lançamentos da MCU no TMDB
+async function fetchNewMcuReleases() {
+  const upcomingMoviesUrl = `https://api.themoviedb.org/3/movie/upcoming?api_key=${TMDB_API_KEY}&language=en-US&page=1`;
+  const upcomingSeriesUrl = `https://api.themoviedb.org/3/tv/upcoming?api_key=${TMDB_API_KEY}&language=en-US&page=1`;
+
+  const [moviesRes, seriesRes] = await Promise.all([
+    axios.get(upcomingMoviesUrl).catch(() => ({ data: { results: [] } })),
+    axios.get(upcomingSeriesUrl).catch(() => ({ data: { results: [] } }))
+  ]);
+
+  const upcomingMovies = moviesRes.data.results.filter(item => item.title.includes('Marvel'));
+  const upcomingSeries = seriesRes.data.results.filter(item => item.name.includes('Marvel'));
+
+  return [...upcomingMovies.map(item => ({ ...item, type: 'movie' })), ...upcomingSeries.map(item => ({ ...item, type: 'series' }))];
+}
+
+// Função para obter o IMDb ID a partir do TMDB ID
+async function getImdbId(tmdbId, type) {
+  const url = `https://api.themoviedb.org/3/${type}/${tmdbId}/external_ids?api_key=${TMDB_API_KEY}`;
+  const res = await axios.get(url).catch(() => ({}));
+  return res.data?.imdb_id || null;
+}
+
+// Atualizar o mcuData.js
 async function updateMcuData() {
-  const mcuData = [];
+  console.log('Fetching new MCU releases...');
+  const newReleases = await fetchNewMcuReleases();
 
-  for (const title of mcuTitles) {
-    const isSeries = title.includes("Vision") || title.includes("Soldier") || title.includes("Loki") ||
-                    title === "What If...?" || title.includes("Hawkeye") || title.includes("Moon Knight") ||
-                    title.includes("Ms. Marvel") || title.includes("She-Hulk") || title.includes("Invasion") ||
-                    title.includes("Echo") || title.includes("Agatha") || title.includes("Ironheart") ||
-                    title.includes("Daredevil");
+  const updatedMcuData = [...currentMcuData];
 
-    const searchUrl = `https://api.themoviedb.org/3/search/${isSeries ? 'tv' : 'movie'}?api_key=${tmdbKey}&query=${encodeURIComponent(title)}`;
-    const res = await axios.get(searchUrl).catch(err => {
-      console.error(`Error fetching ${title}:`, err.message);
-      return { data: { results: [] } };
-    });
+  for (const release of newReleases) {
+    const existing = updatedMcuData.find(item => item.imdbId === release.imdb_id);
+    if (!existing) {
+      const imdbId = await getImdbId(release.id, release.type);
+      if (imdbId) {
+        const omdbUrl = `http://www.omdbapi.com/?i=${imdbId}&apikey=${OMDB_API_KEY}`;
+        const omdbRes = await axios.get(omdbUrl).catch(() => ({}));
+        const releaseYear = omdbRes.data?.Year || release.release_date?.split('-')[0] || 'TBD';
 
-    const item = res.data.results[0];
-    if (item) {
-      mcuData.push({
-        title,
-        type: isSeries ? 'series' : 'movie',
-        tmdbId: item.id,
-        releaseDate: item.release_date || item.first_air_date || 'TBA'
-      });
+        updatedMcuData.push({
+          title: release.title || release.name,
+          type: release.type,
+          imdbId: imdbId,
+          releaseYear: releaseYear
+        });
+        console.log(`Added new release: ${release.title || release.name} (${imdbId})`);
+      }
     }
   }
 
-  mcuData.sort((a, b) => (a.releaseDate === 'TBA' ? 1 : b.releaseDate === 'TBA' ? -1 : a.releaseDate.localeCompare(b.releaseDate)));
-
-  const fileContent = `module.exports = ${JSON.stringify(mcuData, null, 2)};`;
-  fs.writeFileSync(path.join(__dirname, '../src/mcuData.js'), fileContent);
-  console.log('Updated mcuData.js');
+  // Escrever o arquivo atualizado
+  const fileContent = `module.exports = ${JSON.stringify(updatedMcuData, null, 2)};\n`;
+  fs.writeFileSync(path.join(__dirname, '../src/mcuData.js'), fileContent, 'utf8');
+  console.log('mcuData.js updated successfully');
 }
 
-updateMcuData().catch(console.error);
+updateMcuData().catch(err => {
+  console.error('Error updating MCU data:', err);
+  process.exit(1);
+});
