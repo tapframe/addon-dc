@@ -2,10 +2,10 @@
   "id": "com.joaogonp.marveladdon",
   "name": "Marvel Addon",
   "description": "Movies and Series of the MCU ordered correctly. Created by joaogonp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "catalogs": [
     {
-      "type": "series",
+      "type": "mixed",
       "id": "marvel-mcu",
       "name": "Marvel Cinematic Universe"
     }
