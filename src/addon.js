@@ -25,10 +25,13 @@ builder.defineCatalogHandler(async ({ type, id }) => {
       const omdbData = omdbRes.data || {};
       const tmdbData = tmdbRes.data || {};
 
-      // Priorizar pôster do OMDB, com fallback para TMDB
+      // Priorizar pôster do OMDB, com fallback para TMDB e depois IMDb
       let poster = omdbData.Poster && omdbData.Poster !== 'N/A' ? omdbData.Poster : null;
       if (!poster && tmdbData.poster_path) {
         poster = `https://image.tmdb.org/t/p/w500${tmdbData.poster_path}`;
+      }
+      if (!poster) {
+        poster = `https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg`; // Fallback genérico
       }
 
       return {
@@ -45,7 +48,7 @@ builder.defineCatalogHandler(async ({ type, id }) => {
   );
 
   console.log('Catalog generated successfully');
-  return { metas };
+  return { metas }; // Ordem preservada do mcuData.js
 });
 
 // Configuração do servidor
