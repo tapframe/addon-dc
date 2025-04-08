@@ -55,12 +55,10 @@ module.exports = [
   { title: "Echo", type: "series", imdbId: "tt13966962", releaseYear: "2024" },
   { title: "Deadpool & Wolverine", type: "movie", imdbId: "tt6263850", releaseYear: "2024" },
   { title: "Agatha All Along", type: "series", imdbId: "tt15571732", releaseYear: "2024" },
-
-  // Fase 6 (Futuro até 2025)
   { title: "Captain America: Brave New World", type: "movie", imdbId: "tt14513814", releaseYear: "2025" },
+
+  // Fase 6 (Futuro confirmado até julho de 2025)
   { title: "Daredevil: Born Again", type: "series", imdbId: "tt14122888", releaseYear: "2025" },
   { title: "Thunderbolts*", type: "movie", imdbId: "tt13311166", releaseYear: "2025" },
-  { title: "Ironheart", type: "series", imdbId: "tt14008328", releaseYear: "2025" },
-  { title: "The Fantastic Four: First Steps", type: "movie", imdbId: "tt11366836", releaseYear: "2025" },
-  { title: "Blade", type: "movie", imdbId: "tt10671440", releaseYear: "2025" }
+  { title: "The Fantastic Four: First Steps", type: "movie", imdbId: "tt11366836", releaseYear: "2025" }
 ];
