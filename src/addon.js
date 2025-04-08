@@ -4,7 +4,7 @@ const mcuData = require('./mcuData');
 const { tmdbKey, omdbKey, port } = require('./config');
 
 // Inicialização do add-on
-console.log('Starting Marvel Addon v1.0.2...');
+console.log('Starting Marvel Addon v1.0.3...');
 const builder = new addonBuilder(require('../manifest.json'));
 
 // Definição do catálogo
@@ -16,7 +16,8 @@ builder.defineCatalogHandler(async ({ type, id }) => {
     mcuData.map(async (item) => {
       try {
         const omdbUrl = `http://www.omdbapi.com/?i=${item.imdbId}&apikey=${omdbKey}`;
-        const tmdbUrl = `https://api.themoviedb.org/3/${item.type === 'movie' ? 'movie' : 'tv'}/${item.imdbId}?api_key=${tmdbKey}&external_source=imdb_id`;
+        // Buscar no TMDB por título e ano, em vez de imdb_id
+        const tmdbSearchUrl = `https://api.themoviedb.org/3/search/${item.type === 'movie' ? 'movie' : 'tv'}?api_key=${tmdbKey}&query=${encodeURIComponent(item.title)}&year=${item.releaseYear}`;
 
         console.log(`Fetching data for ${item.title} (${item.imdbId})...`);
         const [omdbRes, tmdbRes] = await Promise.all([
@@ -24,22 +25,24 @@ builder.defineCatalogHandler(async ({ type, id }) => {
             console.error(`OMDB error for ${item.imdbId}: ${err.message}`);
             return {};
           }),
-          axios.get(tmdbUrl).catch((err) => {
-            console.error(`TMDB error for ${item.imdbId}: ${err.message}`);
+          axios.get(tmdbSearchUrl).catch((err) => {
+            console.error(`TMDB error for ${item.title}: ${err.message}`);
             return {};
           })
         ]);
 
         const omdbData = omdbRes.data || {};
-        const tmdbData = tmdbRes.data || {};
+        const tmdbData = tmdbRes.data?.results?.[0] || {};
 
-        // Priorizar pôster do OMDB, com fallback para TMDB e depois IMDb
-        let poster = omdbData.Poster && omdbData.Poster !== 'N/A' ? omdbData.Poster : null;
+        // Priorizar pôster do mcuData.js (se disponível), depois OMDB, TMDB, e fallback
+        let poster = item.poster || null;
+        if (!poster && omdbData.Poster && omdbData.Poster !== 'N/A') {
+          poster = omdbData.Poster;
+        }
         if (!poster && tmdbData.poster_path) {
           poster = `https://image.tmdb.org/t/p/w500${tmdbData.poster_path}`;
         }
         if (!poster) {
-          // Fallback para uma URL direta do IMDb (exemplo genérico, ajustar conforme necessário)
           poster = `https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg`;
           console.warn(`No poster found for ${item.title} (${item.imdbId}), using fallback.`);
         }
