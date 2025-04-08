@@ -44,6 +44,14 @@ const addonInterface = builder.getInterface();
 
 const server = require('http').createServer(async (req, res) => {
   console.log('Received request:', req.url);
+  
+  // Handler para a raiz (/)
+  if (req.url === '/' || req.url === '') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Marvel Addon is running. Use /manifest.json to access the addon.');
+    return;
+  }
+
   try {
     const response = await addonInterface.get(req, res);
     if (response) {
