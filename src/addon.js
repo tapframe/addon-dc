@@ -4,7 +4,7 @@ const mcuData = require('./mcuData');
 const { tmdbKey, omdbKey, port } = require('./config');
 
 // Inicialização do add-on
-console.log('Starting Marvel Addon v1.0.3...');
+console.log('Starting Marvel Addon v1.0.0...');
 const builder = new addonBuilder(require('../manifest.json'));
 
 // Definição do catálogo
