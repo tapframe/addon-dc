@@ -14,22 +14,22 @@ builder.defineCatalogHandler(async ({ type, id }) => {
 
   const metas = await Promise.all(
     mcuData.map(async (item) => {
-      const tmdbUrl = `https://api.themoviedb.org/3/${item.type}/${item.tmdbId}?api_key=${tmdbKey}`;
-      const omdbUrl = `http://www.omdbapi.com/?i=tt${item.tmdbId}&apikey=${omdbKey}`;
+      const omdbUrl = `http://www.omdbapi.com/?i=${item.imdbId}&apikey=${omdbKey}`;
+      const tmdbUrl = `https://api.themoviedb.org/3/${item.type === 'movie' ? 'movie' : 'tv'}/${item.imdbId}?api_key=${tmdbKey}&external_source=imdb_id`;
 
-      const [tmdbRes, omdbRes] = await Promise.all([
-        axios.get(tmdbUrl).catch(() => ({})),
-        axios.get(omdbUrl).catch(() => ({}))
+      const [omdbRes, tmdbRes] = await Promise.all([
+        axios.get(omdbUrl).catch(() => ({})),
+        axios.get(tmdbUrl).catch(() => ({}))
       ]);
 
-      const tmdbData = tmdbRes.data || {};
       const omdbData = omdbRes.data || {};
+      const tmdbData = tmdbRes.data || {};
 
       return {
-        id: `tt${item.tmdbId}`,
+        id: item.imdbId, // Usar o ID do IMDb diretamente
         type: item.type,
         name: item.type === 'series' ? item.title.replace(/ Season \d+/, '') : item.title,
-        poster: tmdbData.poster_path ? `https://image.tmdb.org/t/p/w500${tmdbData.poster_path}` : null,
+        poster: omdbData.Poster || (tmdbData.poster_path ? `https://image.tmdb.org/t/p/w500${tmdbData.poster_path}` : null),
         description: tmdbData.overview || omdbData.Plot || 'No description available',
         releaseInfo: item.releaseYear,
         imdbRating: omdbData.imdbRating,
@@ -39,7 +39,7 @@ builder.defineCatalogHandler(async ({ type, id }) => {
   );
 
   console.log('Catalog generated successfully');
-  return { metas }; // Ordem já definida no mcuData.js
+  return { metas };
 });
 
 // Configuração do servidor
