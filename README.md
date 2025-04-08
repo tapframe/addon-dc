@@ -26,7 +26,7 @@ Hi, I'm **joaogonp**! I'm a newbie developer, and this is my first serious proje
 2. Go to **Add-ons** → **Community Add-ons**.
 3. Click **Install via URL**.
 4. Paste the following URL: **https://addon-marvel.onrender.com/manifest.json**
-5. 5. Click **Install** and enjoy!
+5. Click **Install** and enjoy!
 
 ---
 
@@ -56,4 +56,4 @@ Since this is my first project, I'd love to hear your feedback! If you run into 
 
 ## 📧 Contact
 
-For issues, suggestions, or questions, contact me at: jpnapsp@gmail.com.
+For issues, suggestions, or questions, contact me at: [jpnapsp@gmail.com](mailto:jpnapsp@gmail.com).
