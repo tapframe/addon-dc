@@ -3,9 +3,11 @@ const axios = require('axios');
 const mcuData = require('./mcuData');
 const { tmdbKey, omdbKey, port } = require('./config');
 
+console.log('Starting addon initialization...');
 const builder = new addonBuilder(require('../manifest.json'));
 
 builder.defineCatalogHandler(async ({ type, id }) => {
+  console.log('Catalog handler called with type:', type, 'id:', id);
   if (id !== 'marvel-mcu') return { metas: [] };
 
   const metas = await Promise.all(
@@ -37,6 +39,13 @@ builder.defineCatalogHandler(async ({ type, id }) => {
   return { metas: metas.sort((a, b) => a.releaseInfo.localeCompare(b.releaseInfo)) };
 });
 
+console.log('Getting addon interface...');
 const addonInterface = builder.getInterface();
-const server = require('http').createServer((req, res) => addonInterface(req, res));
+console.log('addonInterface type:', typeof addonInterface);
+console.log('addonInterface content:', addonInterface);
+
+const server = require('http').createServer((req, res) => {
+  console.log('Received request:', req.url);
+  addonInterface(req, res);
+});
 server.listen(port, () => console.log(`Add-on running on port ${port}`));
