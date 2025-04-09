@@ -1,8 +1,8 @@
 {
   "id": "com.joaogonp.marveladdon",
   "name": "Marvel Cinematic Universe",
-  "description": "Movies and Series of the MCU ordered chronologically. Created by joaogonp",
-  "version": "1.0.0",
+  "description": "Movies and Series of the MCU ordered chronologically.",
+  "version": "1.0.1",
   "logo": "https://raw.githubusercontent.com/joaogonp/addon-marvel/main/assets/icon.png",
   "background": "https://raw.githubusercontent.com/joaogonp/addon-marvel/main/assets/background.jpg",
   "catalogs": [
