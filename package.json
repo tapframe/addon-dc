@@ -1,6 +1,6 @@
 {
   "name": "marvel-addon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/addon.js",
   "scripts": {
     "start": "node src/addon.js"
