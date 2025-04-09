@@ -1,85 +1,76 @@
-const axios = require('axios');
-const fs = require('fs');
-const path = require('path');
+import requests
+import json
+import os
 
-const TMDB_API_KEY = process.env.TMDB_API_KEY;
-const OMDB_API_KEY = process.env.OMDB_API_KEY;
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
+OMDB_API_KEY = os.getenv("OMDB_API_KEY")
+TMDB_BASE_URL = "https://api.themoviedb.org/3"
+OMDB_BASE_URL = "http://www.omdbapi.com/"
 
-// Lista fixa atual do mcuData.js
-const currentMcuData = require('../src/mcuData');
+def fetch_mcu_collection():
+    response = requests.get(f"{TMDB_BASE_URL}/collection/535313?api_key={TMDB_API_KEY}")
+    return response.json()["parts"] if response.status_code == 200 else []
 
-// Palavras-chave específicas para identificar itens da MCU
-const mcuKeywords = [
-  'Captain America', 'Captain Marvel', 'Iron Man', 'Thor', 'Avengers', 'Guardians of the Galaxy',
-  'Ant-Man', 'Black Panther', 'Doctor Strange', 'Spider-Man', 'Black Widow', 'Shang-Chi', 'Eternals',
-  'Loki', 'What If', 'WandaVision', 'Falcon and the Winter Soldier', 'Hawkeye', 'Moon Knight',
-  'Ms. Marvel', 'She-Hulk', 'Werewolf by Night', 'Guardians of the Galaxy Holiday Special',
-  'Secret Invasion', 'The Marvels', 'Echo', 'Deadpool & Wolverine', 'Agatha All Along',
-  'Daredevil: Born Again', 'Thunderbolts', 'The Fantastic Four', 'Blade', 'Ironheart'
-];
+def fetch_upcoming():
+    movies = requests.get(f"{TMDB_BASE_URL}/movie/upcoming?api_key={TMDB_API_KEY}").json()["results"]
+    series = requests.get(f"{TMDB_BASE_URL}/tv/on_the_air?api_key={TMDB_API_KEY}").json()["results"]
+    marvel_keywords = ["Marvel", "MCU", "Avengers", "Spider-Man"]
+    upcoming = []
+    for item in movies + series:
+        title = item.get("title") or item.get("name")
+        if any(kw in title.lower() or kw in item.get("overview", "").lower() for kw in marvel_keywords):
+            upcoming.append(item)
+    return upcoming
 
-// Função para buscar novos lançamentos da MCU no TMDB
-async function fetchNewMcuReleases() {
-  const upcomingMoviesUrl = `https://api.themoviedb.org/3/movie/upcoming?api_key=${TMDB_API_KEY}&language=en-US&page=1`;
-  const upcomingSeriesUrl = `https://api.themoviedb.org/3/tv/upcoming?api_key=${TMDB_API_KEY}&language=en-US&page=1`;
+def fetch_omdb_data(title):
+    response = requests.get(f"{OMDB_BASE_URL}?t={title}&apikey={OMDB_API_KEY}")
+    return response.json() if response.status_code == 200 and response.json().get("Response") == "True" else None
 
-  const [moviesRes, seriesRes] = await Promise.all([
-    axios.get(upcomingMoviesUrl).catch(() => ({ data: { results: [] } })),
-    axios.get(upcomingSeriesUrl).catch(() => ({ data: { results: [] } }))
-  ]);
+def load_existing_data():
+    try:
+        with open("mcudata.json", "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
 
-  const upcomingMovies = moviesRes.data.results.filter(item =>
-    mcuKeywords.some(keyword => item.title?.includes(keyword))
-  );
-  const upcomingSeries = seriesRes.data.results.filter(item =>
-    mcuKeywords.some(keyword => item.name?.includes(keyword))
-  );
+def generate_mcu_data():
+    existing_data = load_existing_data()
+    existing_ids = {item["id"] for item in existing_data}
+    
+    # Buscar filmes e séries
+    movies = fetch_mcu_collection()
+    upcoming = fetch_upcoming()
+    mcu_data = existing_data
 
-  return [...upcomingMovies.map(item => ({ ...item, type: 'movie' })), ...upcomingSeries.map(item => ({ ...item, type: 'series' }))];
-}
+    for item in movies + upcoming:
+        title = item.get("title") or item.get("name")
+        tmdb_id = str(item["id"])
+        if tmdb_id in existing_ids:
+            continue
+        
+        # Ignorar animações, exceto What If...?
+        if "animation" in [g["name"].lower() for g in item.get("genres", [])] and title != "What If...?":
+            continue
 
-// Função para obter o IMDb ID a partir do título e ano no OMDB
-async function getImdbId(title, year) {
-  const omdbUrl = `http://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${OMDB_API_KEY}`;
-  const res = await axios.get(omdbUrl).catch(() => ({}));
-  return res.data?.imdbID || null;
-}
+        year = (item.get("release_date") or item.get("first_air_date") or "TBA")[:4]
+        omdb_data = fetch_omdb_data(title)
+        
+        entry = {
+            "id": f"tt{omdb_data['imdbID']}" if omdb_data and omdb_data.get("imdbID") else f"tmdb-{tmdb_id}",
+            "name": title,
+            "type": "movie" if "release_date" in item else "series",
+            "year": year,
+            "poster": f"https://image.tmdb.org/t/p/w500{item['poster_path']}" if item.get("poster_path") else None
+        }
+        mcu_data.append(entry)
+        existing_ids.add(tmdb_id)
 
-// Atualizar o mcuData.js
-async function updateMcuData() {
-  console.log('Fetching new MCU releases...');
-  const newReleases = await fetchNewMcuReleases();
+    with open("mcudata.json", "w") as f:
+        json.dump(mcu_data, f, indent=2)
+    print(f"Gerado: {len(mcu_data)} itens")
 
-  const updatedMcuData = [...currentMcuData];
-
-  for (const release of newReleases) {
-    const title = release.title || release.name;
-    const releaseYear = release.release_date?.split('-')[0] || release.first_air_date?.split('-')[0] || 'TBD';
-    const existing = updatedMcuData.find(item => item.title === title && item.releaseYear === releaseYear);
-
-    if (!existing) {
-      const imdbId = await getImdbId(title, releaseYear);
-      if (imdbId) {
-        updatedMcuData.push({
-          title: title,
-          type: release.type,
-          imdbId: imdbId,
-          releaseYear: releaseYear
-        });
-        console.log(`Added new release: ${title} (${imdbId})`);
-      } else {
-        console.warn(`Could not find IMDb ID for ${title} (${releaseYear})`);
-      }
-    }
-  }
-
-  // Escrever o arquivo atualizado
-  const fileContent = `module.exports = ${JSON.stringify(updatedMcuData, null, 2)};\n`;
-  fs.writeFileSync(path.join(__dirname, '../src/mcuData.js'), fileContent, 'utf8');
-  console.log('mcuData.js updated successfully');
-}
-
-updateMcuData().catch(err => {
-  console.error('Error updating MCU data:', err);
-  process.exit(1);
-});
+if __name__ == "__main__":
+    if not TMDB_API_KEY or not OMDB_API_KEY:
+        print("Erro: API keys não definidas")
+    else:
+        generate_mcu_data()
