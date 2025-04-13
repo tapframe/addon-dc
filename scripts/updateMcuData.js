@@ -35,7 +35,17 @@ async function fetchNewMcuReleases() {
     mcuKeywords.some(keyword => item.name?.includes(keyword))
   );
 
-  return [...upcomingMovies.map(item => ({ ...item, type: 'movie' })), ...upcomingSeries.map(item => ({ ...item, type: 'series' }))];
+  // Incluir a URL completa do poster
+  return [...upcomingMovies.map(item => ({
+    ...item, 
+    type: 'movie', 
+    poster: item.poster_path ? `https://image.tmdb.org/t/p/original${item.poster_path}` : null
+  })), 
+  ...upcomingSeries.map(item => ({
+    ...item, 
+    type: 'series', 
+    poster: item.poster_path ? `https://image.tmdb.org/t/p/original${item.poster_path}` : null
+  }))];
 }
 
 // Função para obter o IMDb ID a partir do título e ano no OMDB
@@ -43,13 +53,6 @@ async function getImdbId(title, year) {
   const omdbUrl = `http://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${OMDB_API_KEY}`;
   const res = await axios.get(omdbUrl).catch(() => ({}));
   return res.data?.imdbID || null;
-}
-
-// Função para buscar o poster da TMDB
-async function getPoster(id, type) {
-  const url = `https://api.themoviedb.org/3/${type}/${id}?api_key=${TMDB_API_KEY}&language=en-US`;
-  const res = await axios.get(url).catch(() => ({}));
-  return res.data?.poster_path ? `https://image.tmdb.org/t/p/original${res.data.poster_path}` : null;
 }
 
 // Atualizar o mcuData.js
@@ -67,16 +70,13 @@ async function updateMcuData() {
     if (!existing) {
       const imdbId = await getImdbId(title, releaseYear);
       if (imdbId) {
-        // Pega o poster da TMDB
-        const poster = await getPoster(release.id, release.type);
-        
         updatedMcuData.push({
           title: title,
           type: release.type,
           imdbId: imdbId,  // Deixe o imdbId também para referência
           id: `marvel_${imdbId}`,  // Altera aqui para adicionar o prefixo
           releaseYear: releaseYear,
-          poster: poster  // Adiciona o poster
+          poster: release.poster || null // Adiciona o campo poster
         });
         console.log(`Added new release: ${title} (${imdbId})`);
       } else {
