@@ -63,7 +63,8 @@ async function updateMcuData() {
         updatedMcuData.push({
           title: title,
           type: release.type,
-          imdbId: imdbId,
+          imdbId: imdbId,  // Deixe o imdbId também para referência
+          id: `marvel_${imdbId}`,  // Altera aqui para adicionar o prefixo
           releaseYear: releaseYear
         });
         console.log(`Added new release: ${title} (${imdbId})`);
