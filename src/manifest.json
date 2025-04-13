@@ -14,7 +14,7 @@
   ],
   "resources": ["catalog"],
   "types": ["movie", "series"],
-  "idPrefixes": ["tt"],
+"idPrefixes": ["marvel_"],
   "behaviorHints": {
     "configurable": false
   },
