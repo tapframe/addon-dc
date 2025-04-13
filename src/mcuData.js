@@ -305,8 +305,28 @@ module.exports = [
     "imdbId": "tt10676052",
     "releaseYear": "2025"
   },
-  { title: "Ironheart", type: "series", imdbId: "tt13623126", releaseYear: "2025" },
-  { title: "Wonder Man", type: "series", imdbId: "tt21066182", releaseYear: "2025" },
-  { title: "Avengers: Doomsday", type: "movie", imdbId: "tt21357150", releaseYear: "2026" },
-  { title: "Avengers: Secret Wars", type: "movie", imdbId: "tt21361444", releaseYear: "2027" },
+  {
+    "title": "Ironheart",
+    "type": "series",
+    "imdbId": "tt13623126",
+    "releaseYear": "2025"
+  },
+  {
+    "title": "Wonder Man",
+    "type": "series",
+    "imdbId": "tt21066182",
+    "releaseYear": "2025"
+  },
+  {
+    "title": "Avengers: Doomsday",
+    "type": "movie",
+    "imdbId": "tt21357150",
+    "releaseYear": "2026"
+  },
+  {
+    "title": "Avengers: Secret Wars",
+    "type": "movie",
+    "imdbId": "tt21361444",
+    "releaseYear": "2027"
+  }
 ];
