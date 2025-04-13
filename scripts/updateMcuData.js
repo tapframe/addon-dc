@@ -45,6 +45,13 @@ async function getImdbId(title, year) {
   return res.data?.imdbID || null;
 }
 
+// Função para buscar o poster da TMDB
+async function getPoster(id, type) {
+  const url = `https://api.themoviedb.org/3/${type}/${id}?api_key=${TMDB_API_KEY}&language=en-US`;
+  const res = await axios.get(url).catch(() => ({}));
+  return res.data?.poster_path ? `https://image.tmdb.org/t/p/original${res.data.poster_path}` : null;
+}
+
 // Atualizar o mcuData.js
 async function updateMcuData() {
   console.log('Fetching new MCU releases...');
@@ -60,12 +67,16 @@ async function updateMcuData() {
     if (!existing) {
       const imdbId = await getImdbId(title, releaseYear);
       if (imdbId) {
+        // Pega o poster da TMDB
+        const poster = await getPoster(release.id, release.type);
+        
         updatedMcuData.push({
           title: title,
           type: release.type,
           imdbId: imdbId,  // Deixe o imdbId também para referência
           id: `marvel_${imdbId}`,  // Altera aqui para adicionar o prefixo
-          releaseYear: releaseYear
+          releaseYear: releaseYear,
+          poster: poster  // Adiciona o poster
         });
         console.log(`Added new release: ${title} (${imdbId})`);
       } else {
