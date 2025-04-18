@@ -156,7 +156,7 @@ module.exports = [
     "type": "movie",
     "imdbId": "tt3501632",
     "releaseYear": "2017",
-    "poster": "https://image.tmdb.org/t/p/w500/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/8hnNdUFlUkjPWxKDyiE4Kn8h7Q5.jpg",
     "id": "marvel_tt3501632"
   },
   {
@@ -188,7 +188,7 @@ module.exports = [
     "type": "series",
     "imdbId": "tt9140554",
     "releaseYear": "2021",
-    "poster": "https://image.tmdb.org/t/p/w500/oJdVHUYrjdS2IqiNztVIP4GPB1p.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
     "id": "marvel_tt9140554"
   },
   {
@@ -204,7 +204,7 @@ module.exports = [
     "type": "series",
     "imdbId": "tt9140560",
     "releaseYear": "2021",
-    "poster": "https://image.tmdb.org/t/p/w500/b9UKt5qX8zn2twmGUeVTse8Y9Ug.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/frobUz2X5Pc8OiVZU8Oo5K3NKMM.jpg",
     "id": "marvel_tt9140560"
   },
   {
@@ -228,7 +228,7 @@ module.exports = [
     "type": "movie",
     "imdbId": "tt6320628",
     "releaseYear": "2019",
-    "poster": "https://image.tmdb.org/t/p/w500/4q2NNj4S5dG2RLF9CpXsej7yXl.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/2KLkGP0qWZlNGOad2O6P069hlw0.jpg",
     "id": "marvel_tt6320628"
   },
   {
@@ -372,7 +372,7 @@ module.exports = [
     "type": "series",
     "imdbId": "tt15571732",
     "releaseYear": "2024",
-    "poster": "https://image.tmdb.org/t/p/w500/rwfDv05ck4McdvqdWU2sQVsQV2j.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/gOcqzHwkApTWD9i5ChDK5wO5pM5.jpg",
     "id": "marvel_tt15571732"
   },
   {
@@ -388,7 +388,7 @@ module.exports = [
     "type": "series",
     "imdbId": "tt18923754",
     "releaseYear": "2025",
-    "poster": "https://image.tmdb.org/t/p/w500/9lLuhV703HGCbnz6FxnqCwIwzAZ.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/wSYLO9m7nPXcxcY5xtZfH6Eewmp.jpg",
     "id": "marvel_tt18923754"
   },
   {
