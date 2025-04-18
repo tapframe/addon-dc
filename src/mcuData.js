@@ -404,7 +404,7 @@ module.exports = [
     "type": "movie",
     "imdbId": "tt10676052",
     "releaseYear": "2025",
-    "poster": "https://image.tmdb.org/t/p/w500/qnqHQMfvBy916X3tTV5lQMkbGxH.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/x26MtUlwtWD26d0G0FXcppxCJio.jpg",
     "id": "marvel_tt10676052"
   },
   {
