@@ -388,7 +388,7 @@ module.exports = [
     "type": "series",
     "imdbId": "tt18923754",
     "releaseYear": "2025",
-    "poster": "https://image.tmdb.org/t/p/original/wSYLO9m7nPXcxcY5xtZfH6Eewmp.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/9lLuhV703HGCbnz6FxnqCwIwzAZ.jpg",
     "id": "marvel_tt18923754"
   },
   {
@@ -396,7 +396,7 @@ module.exports = [
     "type": "movie",
     "imdbId": "tt20969586",
     "releaseYear": "2025",
-    "poster": "https://image.tmdb.org/t/p/w500/hqcexYHbiTBfDIdDWxrxPtVndBX.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/wSYLO9m7nPXcxcY5xtZfH6Eewmp.jpg",
     "id": "marvel_tt20969586"
   },
   {
