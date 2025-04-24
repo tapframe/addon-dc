@@ -1,0 +1,47 @@
+{
+  "id": "com.joaogonp.marveladdon",
+  "name": "Marvel Cinematic Universe",
+  "description": "Movies and Series of the MCU. Ordered chronologically and more.",
+  "version": "1.0.2",
+  "logo": "https://raw.githubusercontent.com/joaogonp/addon-marvel/main/assets/icon.png",
+  "background": "https://raw.githubusercontent.com/joaogonp/addon-marvel/main/assets/background.jpg",
+  "catalogs": [
+    {
+      "type": "Marvel",
+      "id": "marvel-mcu",
+      "name": "Chronologically Order"
+    },
+    {
+      "type": "Marvel",
+      "id": "release-order",
+      "name": "Release Order"
+    },
+    {
+      "type": "Marvel",
+      "id": "movies",
+      "name": "Movies"
+    },
+    {
+      "type": "Marvel",
+      "id": "series",
+      "name": "Series"
+    },
+    {
+      "type": "Marvel",
+      "id": "animations",
+      "name": "Animations"
+    }
+  ],
+  "resources": ["catalog"],
+  "types": ["movie", "series"],
+  "idPrefixes": ["marvel_"],
+  "behaviorHints": {
+    "configurable": false
+  },
+  "contactEmail": "jpnapsp@gmail.com",
+
+  "stremioAddonsConfig": {
+    "issuer": "https://stremio-addons.net",
+    "signature": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..zTaTTCcviqQPiIvU4QDfCQ.wSlk8AoM4p2nvlvoQJEoLRRx5_Msnu37O9bAsgwhJTZYu4uXd7Cve9GaVXdnwZ4nAeNSsRSgp51mofhf0EVQYwx7jGxh4FEvs8MMuWeHQ9alNsqVuy3-Mc459B9myIT-.R_1iaQbNExj4loQJlyWYtA"
+  }
+}
