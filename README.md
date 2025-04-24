@@ -1,6 +1,6 @@
 # 📺 Marvel Cinematic Universe Add-on for Stremio
 
-**Watch the entire Marvel Cinematic Universe (MCU) in chronological order — movies and series included!**  
+**Watch the entire Marvel Cinematic Universe (MCU) in chronological order or not we have all movies, series and animations included so you can choose!**  
 This add-on keeps you up-to-date with the latest MCU releases, from *Captain America: The First Avenger* to *The Fantastic Four: First Steps*.
 
 ---
@@ -17,7 +17,7 @@ Hi, I'm **joaogonp**! I'm a newbie developer, and this is my first serious proje
 - 🎬 **Movies & Series**: Includes Disney+ series like *Loki*, *WandaVision*, *Moon Knight*, and more.
 - 🌐 **Automatic Updates**: Updates monthly with new releases using GitHub Actions.
 - 🚀 **Easy to Use**: Just install via URL inside Stremio.
-- 📺 Here’s how it looks in Stremio: https://imgur.com/a/AWX37ak
+- 📺 Here’s how it looks in Stremio: https://imgur.com/a/JlcSlYx / https://imgur.com/a/KkWBlPf
 
 ---
 
