@@ -13,7 +13,7 @@ Watch the entire Marvel Cinematic Universe (MCU) in **chronological order**, **r
 🎬 **Movies, Series & Animations**: Filter by content type.  
 🚀 **Fast & Lightweight**: Optimized for performance with Redis caching.  
 📡 **Automatic Monthly Updates**: Always current with TMDB/OMDB & Cinemeta.  
-📺 **Here’s how it looks in Stremio**: https://imgur.com/a/JlcSlYx / https://imgur.com/a/KkWBlPf
+📺 **Here’s how it looks in Stremio**: https://imgur.com/a/wtCrXUH
 
 ---
 
