@@ -1,7 +1,7 @@
 {
   "id": "com.joaogonp.marveladdon",
   "name": "Marvel Cinematic Universe",
-  "description": "Movies and Series of the MCU. Ordered chronologically and more.",
+  "description": "Watch the entire Marvel Cinematic Universe (MCU) in chronological order, release date, or explore by movies, series, and animations. This add-on includes all canon MCU content — even announced titles — and stays up-to-date automatically!",
   "version": "1.0.2",
   "logo": "https://raw.githubusercontent.com/joaogonp/addon-marvel/main/assets/icon.png",
   "background": "https://raw.githubusercontent.com/joaogonp/addon-marvel/main/assets/background.jpg",
