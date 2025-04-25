@@ -28,6 +28,15 @@ module.exports = [
     ]
   },
   {
+    "title": "Hit-Monkey",
+    "type": "series",
+    "imdbId": "tt9811316",
+    "id": "marvel_tt9811316",
+    "releaseYear": "2021",
+    "poster": "https://image.tmdb.org/t/p/original/1aK7hApRSDUv8xxDQXyQil7qBjN.jpg",
+    "ratings": []
+  },
+  {
     "title": "Spidey and His Amazing Friends",
     "type": "series",
     "imdbId": "tt10862280",
