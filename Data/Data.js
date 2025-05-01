@@ -1331,7 +1331,12 @@ module.exports = [
     "id": "marvel_tt20969586",
     "releaseYear": "2025",
     "poster": "https://image.tmdb.org/t/p/w500/hqcexYHbiTBfDIdDWxrxPtVndBX.jpg",
-    "ratings": []
+    "ratings": [
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "89%"
+      }
+    ]
   },
   {
     "title": "The Fantastic Four: First Steps",
