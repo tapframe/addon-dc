@@ -26,7 +26,7 @@ Direct Installation Link**
 
 ## 📊 Updating Data
 
-This addon relies on generated data files. To update:
+This section is for those who self-host the addon. To update the data files:
 
 1.  Set up API keys in a `.env` file (`TMDB_API_KEY`, `OMDB_API_KEY`).
 2.  Install dependencies: `npm install`
