@@ -42,6 +42,18 @@ This section is for those who self-host the addon. To update the data files:
 
 ---
 
+## 🔄 Automatic Updates
+
+This addon's content is automatically updated on the 1st day of every month using GitHub Actions. The workflow:
+
+1. Fetches the latest DC Universe data from external APIs
+2. Updates the data files
+3. Commits and pushes changes to the repository
+
+You can also manually trigger updates through the GitHub Actions interface.
+
+---
+
 ## 🙏 Acknowledgements
 
 This addon is a modified fork of the original Marvel addon created by **joaogonp**. Many thanks for the initial work!
