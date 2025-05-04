@@ -14,6 +14,12 @@ Explore the DC Universe within Stremio! Browse movies and series by **chronologi
 
 ---
 
+## 📝 Current Coverage
+
+Currently, the addon primarily supports DC content from 2010 onwards with a limited catalog. Additional categories covering the entire DC universe will be added based on user needs and requests.
+
+---
+
 ## 📦 Installation
 
 Direct Installation Link**
@@ -42,18 +48,20 @@ This addon is a modified fork of the original Marvel addon created by **joaogonp
 
 ---
 
+## 📜 License
 
+This project is under the MIT License.
 
+---
 
+## ☕ Support
+
+If you find this addon useful, you can support its development:
+
+[Buy Me a Coffee](https://buymeacoffee.com/tapframe)
 
 ---
 
 ## 📬 Feedback
 
 Issues, suggestions, or questions? Open an issue.
-
----
-
-## 📜 License
-
-This project is under the MIT License.
