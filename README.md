@@ -58,7 +58,7 @@ This project is under the MIT License.
 
 If you find this addon useful, you can support its development:
 
-[![Buy Me a Coffee](https://images.seeklogo.com/logo-png/47/2/buy-me-a-coffee-logo-png_seeklogo-477198.png)](https://buymeacoffee.com/tapframe)
+[Buy Me a Coffee🍺](https://buymeacoffee.com/tapframe)
 
 ---
 
