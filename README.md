@@ -58,7 +58,7 @@ This project is under the MIT License.
 
 If you find this addon useful, you can support its development:
 
-[Buy Me a Coffee](https://buymeacoffee.com/tapframe)
+[Buy Me a Coffee☕](https://buymeacoffee.com/tapframe)
 
 ---
 
