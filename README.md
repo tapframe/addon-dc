@@ -26,7 +26,7 @@ Explore the DC Universe within Stremio! Browse movies and series by **chronologi
 
 1.  Deploy the addon.
 2.  In Stremio, go to *Addons* → *+ add Addon*.
-3.  Paste your manifest URL (e.g., `https://your-url.com/manifest.json`) and click "Install".
+3.  Paste your manifest URL (e.g., `https://addon-dc.onrender.com/manifest.json`) and click "Install".
 
 ---
 
