@@ -50,8 +50,6 @@ This addon's content is automatically updated on the 1st day of every month usin
 2. Updates the data files
 3. Commits and pushes changes to the repository
 
-You can also manually trigger updates through the GitHub Actions interface.
-
 ---
 
 ## 🙏 Acknowledgements
