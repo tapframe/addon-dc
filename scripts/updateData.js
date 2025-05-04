@@ -1,109 +1,215 @@
+require('dotenv').config();
+
 const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
+// --- Configuration ---
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
 const OMDB_API_KEY = process.env.OMDB_API_KEY;
+const DC_COMPANY_IDS = '9993|128064|184898'; // IDs for DC Comics, DC Entertainment, DC Studios
+const animationGenreId = 16; // TMDb Genre ID for Animation
 
-// ID da Marvel Studios no TMDb
-const MARVEL_COMPANY_ID = 420;
+const outputAllDataPath = path.join(__dirname, '../Data/Data.js');
+const outputMoviesPath = path.join(__dirname, '../Data/moviesData.js');
+const outputAnimationsPath = path.join(__dirname, '../Data/animationsData.js');
+const outputReleaseDataPath = path.join(__dirname, '../Data/releaseData.js');
+const outputSeriesDataPath = path.join(__dirname, '../Data/seriesData.js');
+
+// --- Helper Functions ---
 
 async function getTmdbDetails(id, type) {
-  const url = `https://api.themoviedb.org/3/${type}/${id}?api_key=${TMDB_API_KEY}&language=en-US&append_to_response=external_ids`;
-  const res = await axios.get(url).catch(() => null);
-  return res?.data || null;
+    const url = `https://api.themoviedb.org/3/${type}/${id}?api_key=${TMDB_API_KEY}&language=en-US&append_to_response=external_ids`;
+    try {
+        const res = await axios.get(url);
+        return res?.data || null;
+    } catch (error) {
+        console.warn(`⚠️ TMDb fetch warning for ${type}/${id}: ${error.message}`);
+        return null;
+    }
 }
 
 async function getOmdbDetails(imdbId) {
-  if (!imdbId) return null;
-  const url = `https://www.omdbapi.com/?i=${imdbId}&apikey=${OMDB_API_KEY}`;
-  const res = await axios.get(url).catch(() => null);
-  return res?.data || null;
+    if (!imdbId) return null;
+    const url = `https://www.omdbapi.com/?i=${imdbId}&apikey=${OMDB_API_KEY}`;
+    try {
+        const res = await axios.get(url);
+        return res?.data || null;
+    } catch (error) {
+        console.warn(`⚠️ OMDb fetch warning for ${imdbId}: ${error.message}`);
+        return null;
+    }
 }
 
 async function fetchAllPages(url) {
-  let page = 1;
-  let totalPages = 1;
-  const results = [];
+    let page = 1;
+    let totalPages = 1;
+    const results = [];
+    console.log(`   Fetching from ${url}&page=...`);
+    do {
+        try {
+            const response = await axios.get(`${url}&page=${page}`);
+            if (response && response.data) {
+                results.push(...response.data.results);
+                totalPages = response.data.total_pages || 1;
+                if (page === 1) { // Only log total pages once per URL
+                   console.log(`   Found ${totalPages} total pages for this source.`);
+                }
+            }
+        } catch (error) {
+            console.warn(`   ⚠️ Error fetching page ${page} from ${url}: ${error.message}`);
+            // Decide if you want to break or continue on error
+            // break; // Option: Stop fetching for this source if one page fails
+        }
+        page++;
+    } while (page <= totalPages && page < 50); // Add a safety limit (e.g., 50 pages)
+    console.log(`   Finished fetching. Got ${results.length} raw items from this source.`);
+    return results;
+}
 
-  do {
-    const response = await axios.get(`${url}&page=${page}`).catch(() => null);
-    if (response && response.data) {
-      results.push(...response.data.results);
-      totalPages = response.data.total_pages; // Total de páginas disponíveis
+/**
+ * Checks if an item has the Animation genre.
+ * @param {object} item - The item to check.
+ * @returns {boolean} True if the item has the Animation genre, false otherwise.
+ */
+function isAnimation(item) {
+    // Check if genres array exists and includes the animation genre ID
+    return item.genres && Array.isArray(item.genres) && item.genres.some(genre => genre && genre.id === animationGenreId);
+}
+
+/**
+ * Sorts items by release year (ascending). Handles 'TBD' or invalid years.
+ * @param {object} a - First item for comparison.
+ * @param {object} b - Second item for comparison.
+ * @returns {number} Sorting order.
+ */
+function sortByReleaseYear(a, b) {
+    const yearA = parseInt(a.releaseYear, 10);
+    const yearB = parseInt(b.releaseYear, 10);
+
+    // Handle cases where year might be 'TBD' or NaN
+    if (isNaN(yearA) && isNaN(yearB)) return 0;
+    if (isNaN(yearA)) return 1; // Put items without a valid year at the end
+    if (isNaN(yearB)) return -1; // Keep items with a valid year before those without
+
+    return yearA - yearB;
+}
+
+/**
+ * Writes data to a file, handling errors.
+ * @param {string} filePath - Path to the output file.
+ * @param {Array} data - The data array to write.
+ * @param {string} dataType - Name of the data type for logging (e.g., 'all', 'movies').
+ */
+function writeDataFile(filePath, data, dataType) {
+    const fileContent = `module.exports = ${JSON.stringify(data, null, 2)};\n`;
+    try {
+        fs.writeFileSync(filePath, fileContent, 'utf8');
+        console.log(`✅ Successfully wrote ${data.length} ${dataType} items to ${path.basename(filePath)}`);
+    } catch (error) {
+        console.error(`❌ Error writing ${dataType} data to ${path.basename(filePath)}:`, error.message);
+        // Decide if you want to stop the whole script on write error
+        // process.exit(1);
     }
-    page++;
-  } while (page <= totalPages);
-
-  return results;
 }
 
-async function fetchNewMcuReleases() {
-  console.log('🔄 Buscando novos lançamentos da Marvel Studios...');
+// --- Main Update Function ---
 
-  // URLs para buscar filmes e séries da Marvel Studios
-  const movieUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&language=en-US&with_companies=${MARVEL_COMPANY_ID}&sort_by=release_date.asc`;
-  const tvUrl = `https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&language=en-US&with_companies=${MARVEL_COMPANY_ID}&sort_by=first_air_date.asc`;
+async function updateAndGenerateData() {
+    console.log('🚀 Starting data update and generation process...');
 
-  // Busca todos os filmes e séries usando paginação
-  const movies = await fetchAllPages(movieUrl);
-  const series = await fetchAllPages(tvUrl);
+    // 1. Fetch Raw Data
+    console.log('🔄 Fetching new releases from DC...');
+    const movieUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&language=en-US&with_companies=${DC_COMPANY_IDS}&sort_by=release_date.asc`;
+    const tvUrl = `https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&language=en-US&with_companies=${DC_COMPANY_IDS}&sort_by=first_air_date.asc`;
 
-  // Processa os resultados
-  const filteredMovies = movies
-    .filter(movie => movie.release_date && parseInt(movie.release_date.split('-')[0]) >= 2008) // Ignora filmes antigos
-    .map(i => ({ ...i, type: 'movie' }));
+    const rawMovies = await fetchAllPages(movieUrl);
+    const rawSeries = await fetchAllPages(tvUrl);
 
-  const filteredSeries = series
-    .filter(serie => serie.first_air_date && parseInt(serie.first_air_date.split('-')[0]) >= 2008) // Ignora séries antigas
-    .map(i => ({ ...i, type: 'tv' }));
+    const rawReleases = [
+        ...rawMovies.map(i => ({ ...i, fetched_type: 'movie' })), // Keep track of original type
+        ...rawSeries.map(i => ({ ...i, fetched_type: 'tv' }))
+    ];
+    console.log(`Total raw items fetched: ${rawReleases.length}`);
 
-  console.log('Filmes retornados:', filteredMovies.map(m => m.title));
-  console.log('Séries retornadas:', filteredSeries.map(s => s.name));
+    // 2. Filter by Year and Fetch Details
+    console.log('🔄 Filtering by year (>= 2000) and fetching details...');
+    const detailedData = [];
+    let count = 0;
+    for (const release of rawReleases) {
+        const year = (release.release_date || release.first_air_date || '0').split('-')[0];
+        if (parseInt(year, 10) >= 2000) {
+            count++;
+            process.stdout.write(`   Processing item ${count}/${rawReleases.length}...\r`);
+            const details = await getTmdbDetails(release.id, release.fetched_type);
+            if (!details) {
+                console.log(`\n   Skipping item ${release.id} (${release.fetched_type}) due to missing details.`);
+                continue;
+            }
 
-  return [...filteredMovies, ...filteredSeries];
+            const title = (details.title || details.name || '').trim();
+            const releaseYear = (details.release_date || details.first_air_date || 'TBD').split('-')[0];
+            const imdbId = details.external_ids?.imdb_id || `tmdb_${release.id}`; // Fallback if no IMDb ID
+            const poster = details.poster_path ? `https://image.tmdb.org/t/p/w500${details.poster_path}` : null;
+            const genres = details.genres || []; // Extract genres
+
+            // Fetch additional info from OMDb
+            const omdbDetails = await getOmdbDetails(imdbId);
+            const ratings = omdbDetails?.Ratings || [];
+
+            detailedData.push({
+                tmdbId: release.id,
+                title,
+                type: release.fetched_type === 'tv' ? 'series' : 'movie',
+                imdbId,
+                id: `dc_${imdbId}`,
+                releaseYear,
+                poster,
+                ratings,
+                genres // Add genres
+            });
+        }
+    }
+    process.stdout.write('\n'); // Clear the progress line
+    console.log(`✅ Finished fetching details. ${detailedData.length} items meet criteria.`);
+
+    // 3. Write All Data (unsorted)
+    writeDataFile(outputAllDataPath, detailedData, 'all');
+
+    // 4. Filter, Sort, and Write Release Order Data (Non-Animated)
+    console.log('🔄 Processing release order data (excluding animations)...');
+    const releaseOrderData = detailedData
+        .filter(item => !isAnimation(item)) // Filter out animations first
+        .sort(sortByReleaseYear);
+    writeDataFile(outputReleaseDataPath, releaseOrderData, 'non-animated release order');
+
+    // 5. Filter, Sort, and Write Non-Animated Movies (Renumbered)
+    console.log('🔄 Processing non-animated movies...');
+    const nonAnimatedMovies = detailedData
+        .filter(item => item.type === 'movie' && !isAnimation(item))
+        .sort(sortByReleaseYear);
+    writeDataFile(outputMoviesPath, nonAnimatedMovies, 'non-animated movies');
+
+    // 6. Filter, Sort, and Write Animations (Renumbered)
+    console.log('🔄 Processing animations...');
+    const animations = detailedData
+        .filter(item => isAnimation(item))
+        .sort(sortByReleaseYear);
+    writeDataFile(outputAnimationsPath, animations, 'animations');
+
+    // 7. Filter, Sort, and Write Series (Non-Animated)
+    console.log('🔄 Processing non-animated series data...');
+    const seriesOnly = detailedData
+        .filter(item => item.type === 'series' && !isAnimation(item))
+        .sort(sortByReleaseYear);
+    writeDataFile(outputSeriesDataPath, seriesOnly, 'non-animated series');
+
+    console.log('✨ Data update and generation complete!');
 }
 
-async function updateData() {
-  console.log('🔄 Atualizando dados do arquivo na pasta Data...');
+// --- Run Script ---
 
-  const newReleases = await fetchNewMcuReleases();
-  const updatedData = [];
-
-  for (const release of newReleases) {
-    const title = (release.title || release.name || '').trim();
-    const releaseYear = (release.release_date || release.first_air_date || 'TBD').split('-')[0];
-
-    const details = await getTmdbDetails(release.id, release.type);
-    if (!details) continue;
-
-    const imdbId = details.external_ids?.imdb_id || `tmdb_${release.id}`;
-    const poster = details.poster_path ? `https://image.tmdb.org/t/p/w500${details.poster_path}` : null;
-
-    // Busca informações adicionais no OMDb
-    const omdbDetails = await getOmdbDetails(imdbId);
-    const ratings = omdbDetails?.Ratings || [];
-
-    updatedData.push({
-      title,
-      type: release.type === 'tv' ? 'series' : 'movie',
-      imdbId,
-      id: `marvel_${imdbId}`,
-      releaseYear,
-      poster,
-      ratings
-    });
-
-    console.log(`🆕 Adicionado novo: ${title} (${release.type})`);
-  }
-
-  // Salva os dados atualizados no arquivo Data.js
-  const fileContent = `module.exports = ${JSON.stringify(updatedData, null, 2)};\n`;
-  fs.writeFileSync(path.join(__dirname, '../Data/Data.js'), fileContent, 'utf8');
-  console.log('✅ Data.js atualizado com sucesso!');
-}
-
-updateData().catch(err => {
-  console.error('❌ Erro ao atualizar Data.js:', err);
-  process.exit(1);
+updateAndGenerateData().catch(err => {
+    console.error('❌ Critical error during script execution:', err);
+    process.exit(1);
 });

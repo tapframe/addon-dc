@@ -1,1030 +1,1537 @@
 module.exports = [
-    {
-      "title": "Iron Man",
-      "type": "movie",
-      "imdbId": "tt0371746",
-      "id": "marvel_tt0371746",
-      "releaseYear": "2008",
-      "poster": "https://image.tmdb.org/t/p/w500/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.9/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "94%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "79/100"
-        }
-      ]
-    },
-    {
-      "title": "The Incredible Hulk",
-      "type": "movie",
-      "imdbId": "tt0800080",
-      "id": "marvel_tt0800080",
-      "releaseYear": "2008",
-      "poster": "https://image.tmdb.org/t/p/w500/gKzYx79y0AQTL4UAk1cBQJ3nvrm.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.6/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "68%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "61/100"
-        }
-      ]
-    },
-    {
-      "title": "Iron Man 2",
-      "type": "movie",
-      "imdbId": "tt1228705",
-      "id": "marvel_tt1228705",
-      "releaseYear": "2010",
-      "poster": "https://image.tmdb.org/t/p/w500/6WBeq4fCfn7AN0o21W9qNcRF2l9.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.9/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "72%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "57/100"
-        }
-      ]
-    },
-    {
-      "title": "Thor",
-      "type": "movie",
-      "imdbId": "tt0800369",
-      "id": "marvel_tt0800369",
-      "releaseYear": "2011",
-      "poster": "https://image.tmdb.org/t/p/w500/prSfAi1xGrhLQNxVSUFh61xQ4Qy.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.0/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "77%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "57/100"
-        }
-      ]
-    },
-    {
-      "title": "Captain America: The First Avenger",
-      "type": "movie",
-      "imdbId": "tt0458339",
-      "id": "marvel_tt0458339",
-      "releaseYear": "2011",
-      "poster": "https://image.tmdb.org/t/p/w500/vSNxAJTlD0r02V9sPYpOjqDZXUK.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.9/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "80%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "66/100"
-        }
-      ]
-    },
-    {
-      "title": "The Avengers",
-      "type": "movie",
-      "imdbId": "tt0848228",
-      "id": "marvel_tt0848228",
-      "releaseYear": "2012",
-      "poster": "https://image.tmdb.org/t/p/w500/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.0/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "91%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "69/100"
-        }
-      ]
-    },
-    {
-      "title": "Iron Man 3",
-      "type": "movie",
-      "imdbId": "tt1300854",
-      "id": "marvel_tt1300854",
-      "releaseYear": "2013",
-      "poster": "https://image.tmdb.org/t/p/w500/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.1/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "79%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "62/100"
-        }
-      ]
-    },
-    {
-      "title": "Thor: The Dark World",
-      "type": "movie",
-      "imdbId": "tt1981115",
-      "id": "marvel_tt1981115",
-      "releaseYear": "2013",
-      "poster": "https://image.tmdb.org/t/p/w500/wD6g4EcmR6R3VNbuBmNOVq2qWrM.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.7/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "67%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "54/100"
-        }
-      ]
-    },
-    {
-      "title": "Captain America: The Winter Soldier",
-      "type": "movie",
-      "imdbId": "tt1843866",
-      "id": "marvel_tt1843866",
-      "releaseYear": "2014",
-      "poster": "https://image.tmdb.org/t/p/w500/tVFRpFw3xTedgPGqxW0AOI8Qhh0.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.7/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "90%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "70/100"
-        }
-      ]
-    },
-    {
-      "title": "Guardians of the Galaxy",
-      "type": "movie",
-      "imdbId": "tt2015381",
-      "id": "marvel_tt2015381",
-      "releaseYear": "2014",
-      "poster": "https://image.tmdb.org/t/p/w500/jPrJPZKJVhvyJ4DmUTrDgmFN0yG.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.0/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "92%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "76/100"
-        }
-      ]
-    },
-    {
-      "title": "Avengers: Age of Ultron",
-      "type": "movie",
-      "imdbId": "tt2395427",
-      "id": "marvel_tt2395427",
-      "releaseYear": "2015",
-      "poster": "https://image.tmdb.org/t/p/w500/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.3/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "76%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "66/100"
-        }
-      ]
-    },
-    {
-      "title": "Ant-Man",
-      "type": "movie",
-      "imdbId": "tt0478970",
-      "id": "marvel_tt0478970",
-      "releaseYear": "2015",
-      "poster": "https://image.tmdb.org/t/p/w500/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.2/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "83%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "64/100"
-        }
-      ]
-    },
-    {
-      "title": "Captain America: Civil War",
-      "type": "movie",
-      "imdbId": "tt3498820",
-      "id": "marvel_tt3498820",
-      "releaseYear": "2016",
-      "poster": "https://image.tmdb.org/t/p/w500/rAGiXaUfPzY7CDEyNKUofk3Kw2e.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.8/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "90%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "75/100"
-        }
-      ]
-    },
-    {
-      "title": "Doctor Strange",
-      "type": "movie",
-      "imdbId": "tt1211837",
-      "id": "marvel_tt1211837",
-      "releaseYear": "2016",
-      "poster": "https://image.tmdb.org/t/p/w500/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.5/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "89%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "72/100"
-        }
-      ]
-    },
-    {
-      "title": "Guardians of the Galaxy Vol. 2",
-      "type": "movie",
-      "imdbId": "tt3896198",
-      "id": "marvel_tt3896198",
-      "releaseYear": "2017",
-      "poster": "https://image.tmdb.org/t/p/w500/y4MBh0EjBlMuOzv9axM4qJlmhzz.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.6/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "85%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "67/100"
-        }
-      ]
-    },
-    {
-      "title": "Spider-Man: Homecoming",
-      "type": "movie",
-      "imdbId": "tt2250912",
-      "id": "marvel_tt2250912",
-      "releaseYear": "2017",
-      "poster": "https://image.tmdb.org/t/p/w500/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.4/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "92%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "73/100"
-        }
-      ]
-    },
-    {
-      "title": "Thor: Ragnarok",
-      "type": "movie",
-      "imdbId": "tt3501632",
-      "id": "marvel_tt3501632",
-      "releaseYear": "2017",
-      "poster": "https://image.tmdb.org/t/p/w500/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.9/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "93%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "74/100"
-        }
-      ]
-    },
-    {
-      "title": "Black Panther",
-      "type": "movie",
-      "imdbId": "tt1825683",
-      "id": "marvel_tt1825683",
-      "releaseYear": "2018",
-      "poster": "https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.3/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "96%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "88/100"
-        }
-      ]
-    },
-    {
-      "title": "Avengers: Infinity War",
-      "type": "movie",
-      "imdbId": "tt4154756",
-      "id": "marvel_tt4154756",
-      "releaseYear": "2018",
-      "poster": "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.4/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "85%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "68/100"
-        }
-      ]
-    },
-    {
-      "title": "Ant-Man and the Wasp",
-      "type": "movie",
-      "imdbId": "tt5095030",
-      "id": "marvel_tt5095030",
-      "releaseYear": "2018",
-      "poster": "https://image.tmdb.org/t/p/w500/cFQEO687n1K6umXbInzocxcnAQz.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.0/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "87%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "70/100"
-        }
-      ]
-    },
-    {
-      "title": "Captain Marvel",
-      "type": "movie",
-      "imdbId": "tt4154664",
-      "id": "marvel_tt4154664",
-      "releaseYear": "2019",
-      "poster": "https://image.tmdb.org/t/p/w500/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.8/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "79%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "64/100"
-        }
-      ]
-    },
-    {
-      "title": "Avengers: Endgame",
-      "type": "movie",
-      "imdbId": "tt4154796",
-      "id": "marvel_tt4154796",
-      "releaseYear": "2019",
-      "poster": "https://image.tmdb.org/t/p/w500/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.4/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "94%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "78/100"
-        }
-      ]
-    },
-    {
-      "title": "Spider-Man: Far From Home",
-      "type": "movie",
-      "imdbId": "tt6320628",
-      "id": "marvel_tt6320628",
-      "releaseYear": "2019",
-      "poster": "https://image.tmdb.org/t/p/w500/4q2NNj4S5dG2RLF9CpXsej7yXl.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.4/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "91%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "69/100"
-        }
-      ]
-    },
-    {
-      "title": "Black Widow",
-      "type": "movie",
-      "imdbId": "tt3480822",
-      "id": "marvel_tt3480822",
-      "releaseYear": "2021",
-      "poster": "https://image.tmdb.org/t/p/w500/kwB7d51AIcyzPOBOHLCEZJkmPhQ.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.6/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "79%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "68/100"
-        }
-      ]
-    },
-    {
-      "title": "WandaVision",
-      "type": "series",
-      "imdbId": "tt9140560",
-      "id": "marvel_tt9140560",
-      "releaseYear": "2021",
-      "poster": "https://image.tmdb.org/t/p/w500/sgCHdBJ1w0vJNUrW1Sq90KEXv9j.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.9/10"
-        }
-      ]
-    },
-    {
-      "title": "The Falcon and the Winter Soldier",
-      "type": "series",
-      "imdbId": "tt9208876",
-      "id": "marvel_tt9208876",
-      "releaseYear": "2021",
-      "poster": "https://image.tmdb.org/t/p/w500/6kbAMLteGO8yyewYau6bJ683sw7.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.1/10"
-        }
-      ]
-    },
-    {
-      "title": "Loki",
-      "type": "series",
-      "imdbId": "tt9140554",
-      "id": "marvel_tt9140554",
-      "releaseYear": "2021",
-      "poster": "https://image.tmdb.org/t/p/w500/oJdVHUYrjdS2IqiNztVIP4GPB1p.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.2/10"
-        }
-      ]
-    },
-    {
-      "title": "What If...?",
-      "type": "series",
-      "imdbId": "tt10168312",
-      "id": "marvel_tt10168312",
-      "releaseYear": "2021",
-      "poster": "https://image.tmdb.org/t/p/w500/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.3/10"
-        }
-      ]
-    },
-    {
-      "title": "Shang-Chi and the Legend of the Ten Rings",
-      "type": "movie",
-      "imdbId": "tt9376612",
-      "id": "marvel_tt9376612",
-      "releaseYear": "2021",
-      "poster": "https://image.tmdb.org/t/p/w500/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.3/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "92%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "71/100"
-        }
-      ]
-    },
-    {
-      "title": "Eternals",
-      "type": "movie",
-      "imdbId": "tt9032400",
-      "id": "marvel_tt9032400",
-      "releaseYear": "2021",
-      "poster": "https://image.tmdb.org/t/p/w500/lFByFSLV5WDJEv3KabbdAF959F2.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.3/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "47%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "52/100"
-        }
-      ]
-    },
-    {
-      "title": "Hawkeye",
-      "type": "series",
-      "imdbId": "tt10160804",
-      "id": "marvel_tt10160804",
-      "releaseYear": "2021",
-      "poster": "https://image.tmdb.org/t/p/w500/ct5pNE5dDHryHLDnxyZPYcqO1sz.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.5/10"
-        }
-      ]
-    },
-    {
-      "title": "Spider-Man: No Way Home",
-      "type": "movie",
-      "imdbId": "tt10872600",
-      "id": "marvel_tt10872600",
-      "releaseYear": "2021",
-      "poster": "https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.2/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "93%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "71/100"
-        }
-      ]
-    },
-    {
-      "title": "Moon Knight",
-      "type": "series",
-      "imdbId": "tt10234724",
-      "id": "marvel_tt10234724",
-      "releaseYear": "2022",
-      "poster": "https://image.tmdb.org/t/p/w500/vKDUmKO6F9bSKKyHhg7YGbgcEeF.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.3/10"
-        }
-      ]
-    },
-    {
-      "title": "Doctor Strange in the Multiverse of Madness",
-      "type": "movie",
-      "imdbId": "tt9419884",
-      "id": "marvel_tt9419884",
-      "releaseYear": "2022",
-      "poster": "https://image.tmdb.org/t/p/w500/ddJcSKbcp4rKZTmuyWaMhuwcfMz.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.9/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "74%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "60/100"
-        }
-      ]
-    },
-    {
-      "title": "Ms. Marvel",
-      "type": "series",
-      "imdbId": "tt10857164",
-      "id": "marvel_tt10857164",
-      "releaseYear": "2022",
-      "poster": "https://image.tmdb.org/t/p/w500/3HWWh92kZbD7odwJX7nKmXNZsYo.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.2/10"
-        }
-      ]
-    },
-    {
-      "title": "Thor: Love and Thunder",
-      "type": "movie",
-      "imdbId": "tt10648342",
-      "id": "marvel_tt10648342",
-      "releaseYear": "2022",
-      "poster": "https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.2/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "63%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "57/100"
-        }
-      ]
-    },
-    {
-      "title": "She-Hulk: Attorney at Law",
-      "type": "series",
-      "imdbId": "tt10857160",
-      "id": "marvel_tt10857160",
-      "releaseYear": "2022",
-      "poster": "https://image.tmdb.org/t/p/w500/5xz2orV8f0usyrfGNshcoXHmiaV.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "5.2/10"
-        }
-      ]
-    },
-    {
-      "title": "Werewolf by Night",
-      "type": "movie",
-      "imdbId": "tt15318872",
-      "id": "marvel_tt15318872",
-      "releaseYear": "2022",
-      "poster": "https://image.tmdb.org/t/p/w500/mvIvNKRIJPPS7WSFarFhOAGIVnU.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.1/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "90%"
-        }
-      ]
-    },
-    {
-      "title": "Black Panther: Wakanda Forever",
-      "type": "movie",
-      "imdbId": "tt9114286",
-      "id": "marvel_tt9114286",
-      "releaseYear": "2022",
-      "poster": "https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.6/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "84%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "67/100"
-        }
-      ]
-    },
-    {
-      "title": "The Guardians of the Galaxy Holiday Special",
-      "type": "movie",
-      "imdbId": "tt13623136",
-      "id": "marvel_tt13623136",
-      "releaseYear": "2022",
-      "poster": "https://image.tmdb.org/t/p/w500/8dqXyslZ2hv49Oiob9UjlGSHSTR.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.9/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "94%"
-        }
-      ]
-    },
-    {
-      "title": "Ant-Man and the Wasp: Quantumania",
-      "type": "movie",
-      "imdbId": "tt10954600",
-      "id": "marvel_tt10954600",
-      "releaseYear": "2023",
-      "poster": "https://image.tmdb.org/t/p/w500/qnqGbB22YJ7dSs4o6M7exTpNxPz.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.0/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "46%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "48/100"
-        }
-      ]
-    },
-    {
-      "title": "Guardians of the Galaxy Vol. 3",
-      "type": "movie",
-      "imdbId": "tt6791350",
-      "id": "marvel_tt6791350",
-      "releaseYear": "2023",
-      "poster": "https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.9/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "82%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "64/100"
-        }
-      ]
-    },
-    {
-      "title": "Secret Invasion",
-      "type": "series",
-      "imdbId": "tt13157618",
-      "id": "marvel_tt13157618",
-      "releaseYear": "2023",
-      "poster": "https://image.tmdb.org/t/p/w500/f5ZMzzCvt2IzVDxr54gHPv9jlC9.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "5.9/10"
-        }
-      ]
-    },
-    {
-      "title": "The Marvels",
-      "type": "movie",
-      "imdbId": "tt10676048",
-      "id": "marvel_tt10676048",
-      "releaseYear": "2023",
-      "poster": "https://image.tmdb.org/t/p/w500/9GBhzXMFjgcZ3FdR9w3bUMMTps5.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "5.5/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "62%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "50/100"
-        }
-      ]
-    },
-    {
-      "title": "Echo",
-      "type": "series",
-      "imdbId": "tt13966962",
-      "id": "marvel_tt13966962",
-      "releaseYear": "2024",
-      "poster": "https://image.tmdb.org/t/p/w500/vFyJH630cF68LohVYjQW49074Sy.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.0/10"
-        }
-      ]
-    },
-    {
-      "title": "Deadpool & Wolverine",
-      "type": "movie",
-      "imdbId": "tt6263850",
-      "id": "marvel_tt6263850",
-      "releaseYear": "2024",
-      "poster": "https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.6/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "78%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "56/100"
-        }
-      ]
-    },
-    {
-      "title": "Agatha All Along",
-      "type": "series",
-      "imdbId": "tt15571732",
-      "id": "marvel_tt15571732",
-      "releaseYear": "2024",
-      "poster": "https://image.tmdb.org/t/p/original/gOcqzHwkApTWD9i5ChDK5wO5pM5.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.2/10"
-        }
-      ]
-    },
-    {
-      "title": "Captain America: Brave New World",
-      "type": "movie",
-      "imdbId": "tt14513804",
-      "id": "marvel_tt14513804",
-      "releaseYear": "2025",
-      "poster": "https://image.tmdb.org/t/p/w500/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "5.8/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "48%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "42/100"
-        }
-      ]
-    },
-    {
-      "title": "Daredevil: Born Again",
-      "type": "series",
-      "imdbId": "tt18923754",
-      "id": "marvel_tt18923754",
-      "releaseYear": "2025",
-      "poster": "https://image.tmdb.org/t/p/w500/9lLuhV703HGCbnz6FxnqCwIwzAZ.jpg",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.5/10"
-        }
-      ]
-    },
-    {
-      "title": "Thunderbolts*",
-      "type": "movie",
-      "imdbId": "tt20969586",
-      "id": "marvel_tt20969586",
-      "releaseYear": "2025",
-      "poster": "https://image.tmdb.org/t/p/original/wSYLO9m7nPXcxcY5xtZfH6Eewmp.jpg",
-      "ratings": []
-    },
-    {
-      "title": "Ironheart",
-      "type": "series",
-      "imdbId": "tt13623126",
-      "id": "marvel_tt13623126",
-      "releaseYear": "2025",
-      "poster": "https://image.tmdb.org/t/p/w500/ha1kackPwP1BLtyibzuv5hABiDk.jpg",
-      "ratings": []
-    },
-    {
-      "title": "The Fantastic Four: First Steps",
-      "type": "movie",
-      "imdbId": "tt10676052",
-      "id": "marvel_tt10676052",
-      "releaseYear": "2025",
-      "poster": "https://image.tmdb.org/t/p/w500/x26MtUlwtWD26d0G0FXcppxCJio.jpg",
-      "ratings": []
-    },
-    {
-      "title": "Avengers: Doomsday",
-      "type": "movie",
-      "imdbId": "tt21357150",
-      "id": "marvel_tt21357150",
-      "releaseYear": "2026",
-      "poster": "https://image.tmdb.org/t/p/w500/6eB2oh1SplddsZYCdayrIdrIGLd.jpg",
-      "ratings": []
-    },
-    {
-    "title": "Spider-Man: Brand New Day",
+  {
+    "tmdbId": 44912,
+    "title": "Green Lantern",
     "type": "movie",
-    "imdbId": "tt22084616",
-    "id": "marvel_tt22084616",
+    "imdbId": "tt1133985",
+    "id": "dc_tt1133985",
+    "releaseYear": "2011",
+    "poster": "https://image.tmdb.org/t/p/w500/fj21HwUprqjjwTdkKC1XZurRSpV.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "5.5/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "26%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "39/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 53,
+        "name": "Thriller"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ]
+  },
+  {
+    "tmdbId": 49026,
+    "title": "The Dark Knight Rises",
+    "type": "movie",
+    "imdbId": "tt1345836",
+    "id": "dc_tt1345836",
+    "releaseYear": "2012",
+    "poster": "https://image.tmdb.org/t/p/w500/hr0L2aueqlP2BYUblTTjmtn0hw4.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.4/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "87%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "78/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 53,
+        "name": "Thriller"
+      }
+    ]
+  },
+  {
+    "tmdbId": 1412,
+    "title": "Arrow",
+    "type": "series",
+    "imdbId": "tt2193021",
+    "id": "dc_tt2193021",
+    "releaseYear": "2012",
+    "poster": "https://image.tmdb.org/t/p/w500/u8ZHFj1jC384JEkTt3vNg1DfWEb.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.5/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 49521,
+    "title": "Man of Steel",
+    "type": "movie",
+    "imdbId": "tt0770828",
+    "id": "dc_tt0770828",
+    "releaseYear": "2013",
+    "poster": "https://image.tmdb.org/t/p/w500/dksTL9NXc3GqPBRHYHcy1aIwjS.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.1/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "57%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "55/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ]
+  },
+  {
+    "tmdbId": 60708,
+    "title": "Gotham",
+    "type": "series",
+    "imdbId": "tt3749900",
+    "id": "dc_tt3749900",
+    "releaseYear": "2014",
+    "poster": "https://image.tmdb.org/t/p/w500/wt3uwxSKbMg5ZNJBUOrsJoDnNWX.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 60735,
+    "title": "The Flash",
+    "type": "series",
+    "imdbId": "tt3107288",
+    "id": "dc_tt3107288",
+    "releaseYear": "2014",
+    "poster": "https://image.tmdb.org/t/p/w500/yZevl2vHQgmosfwUdVNzviIfaWS.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.5/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 62688,
+    "title": "Supergirl",
+    "type": "series",
+    "imdbId": "tt4016454",
+    "id": "dc_tt4016454",
+    "releaseYear": "2015",
+    "poster": "https://image.tmdb.org/t/p/w500/cFO65xb0xiXKqk5BmgHawCXB1i0.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.2/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 378674,
+    "title": "DC Films Presents Dawn of the Justice League",
+    "type": "movie",
+    "imdbId": "tt5355872",
+    "id": "dc_tt5355872",
+    "releaseYear": "2016",
+    "poster": "https://image.tmdb.org/t/p/w500/jjYndp8PuLFNuIbGg6Zs7MkxWIc.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.6/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 99,
+        "name": "Documentary"
+      }
+    ]
+  },
+  {
+    "tmdbId": 209112,
+    "title": "Batman v Superman: Dawn of Justice",
+    "type": "movie",
+    "imdbId": "tt2975590",
+    "id": "dc_tt2975590",
+    "releaseYear": "2016",
+    "poster": "https://image.tmdb.org/t/p/w500/5UsK3grJvtQrtzEgqNlDljJW96w.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.5/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "29%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "44/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 297761,
+    "title": "Suicide Squad",
+    "type": "movie",
+    "imdbId": "tt1386697",
+    "id": "dc_tt1386697",
+    "releaseYear": "2016",
+    "poster": "https://image.tmdb.org/t/p/w500/sk3FZgh3sRrmr8vyhaitNobMcfh.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "5.9/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "26%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "40/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 62643,
+    "title": "DC's Legends of Tomorrow",
+    "type": "series",
+    "imdbId": "tt4532368",
+    "id": "dc_tt4532368",
+    "releaseYear": "2016",
+    "poster": "https://image.tmdb.org/t/p/w500/qNgAcg4gNYbZ9mySLB9ZX4ehZb6.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.7/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 63174,
+    "title": "Lucifer",
+    "type": "series",
+    "imdbId": "tt4052886",
+    "id": "dc_tt4052886",
+    "releaseYear": "2016",
+    "poster": "https://image.tmdb.org/t/p/w500/ekZobS8isE6mA53RAiGDG93hBxL.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.0/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 74556,
+    "title": "The Flash: Chronicles of Cisco",
+    "type": "series",
+    "imdbId": "tt5654736",
+    "id": "dc_tt5654736",
+    "releaseYear": "2016",
+    "poster": "https://image.tmdb.org/t/p/w500/bOtZcYsBkgwMJQ3ULweCW8wDpdM.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.2/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 297762,
+    "title": "Wonder Woman",
+    "type": "movie",
+    "imdbId": "tt0451279",
+    "id": "dc_tt0451279",
+    "releaseYear": "2017",
+    "poster": "https://image.tmdb.org/t/p/w500/v4ncgZjG2Zu8ZW5al1vIZTsSjqX.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.3/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "93%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "76/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 1255345,
+    "title": "Etta's Mission",
+    "type": "movie",
+    "imdbId": "tt7408556",
+    "id": "dc_tt7408556",
+    "releaseYear": "2017",
+    "poster": "https://image.tmdb.org/t/p/w500/piVyyIEtTYrWlQq9SHLXMnhsYFf.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.6/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 12,
+        "name": "Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 141052,
+    "title": "Justice League",
+    "type": "movie",
+    "imdbId": "tt0974015",
+    "id": "dc_tt0974015",
+    "releaseYear": "2017",
+    "poster": "https://image.tmdb.org/t/p/w500/eifGNCSDuxJeS1loAXil5bIGgvC.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.1/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "39%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "45/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ]
+  },
+  {
+    "tmdbId": 68001,
+    "title": "Powerless",
+    "type": "series",
+    "imdbId": "tt5083928",
+    "id": "dc_tt5083928",
+    "releaseYear": "2017",
+    "poster": "https://image.tmdb.org/t/p/w500/oAAAqgKiWVeZbotsR0zukHjM9B1.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.4/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 35,
+        "name": "Comedy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 297802,
+    "title": "Aquaman",
+    "type": "movie",
+    "imdbId": "tt1477834",
+    "id": "dc_tt1477834",
+    "releaseYear": "2018",
+    "poster": "https://image.tmdb.org/t/p/w500/oIDpaHSnTMYK0Cf5RkEoQzXPpBE.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.8/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "66%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "55/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 71340,
+    "title": "Krypton",
+    "type": "series",
+    "imdbId": "tt4276624",
+    "id": "dc_tt4276624",
+    "releaseYear": "2018",
+    "poster": "https://image.tmdb.org/t/p/w500/uiinjmSkka6JOrk4FsZmrjlNM26.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.8/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 75450,
+    "title": "Titans",
+    "type": "series",
+    "imdbId": "tt1043813",
+    "id": "dc_tt1043813",
+    "releaseYear": "2018",
+    "poster": "https://image.tmdb.org/t/p/w500/8e6QiSexmYKaiHGPvbhaFMmQEhc.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.5/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "50%"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 287947,
+    "title": "Shazam!",
+    "type": "movie",
+    "imdbId": "tt0448115",
+    "id": "dc_tt0448115",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/xnopI5Xtky18MPhK40cZAGAOVeV.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.0/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "90%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "71/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 35,
+        "name": "Comedy"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 475557,
+    "title": "Joker",
+    "type": "movie",
+    "imdbId": "tt7286456",
+    "id": "dc_tt7286456",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.3/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "68%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "59/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 53,
+        "name": "Thriller"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 79501,
+    "title": "Doom Patrol",
+    "type": "series",
+    "imdbId": "tt8416494",
+    "id": "dc_tt8416494",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/blkXhlNspC4vJol7QJ2e3Prt5tC.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.7/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 79240,
+    "title": "Swamp Thing",
+    "type": "series",
+    "imdbId": "tt8362852",
+    "id": "dc_tt8362852",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/dD3HcMczLC9wNvfNzx4pZVyl6q8.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.4/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 9648,
+        "name": "Mystery"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 79588,
+    "title": "Pennyworth: The Origin of Batman's Butler",
+    "type": "series",
+    "imdbId": "tt8425532",
+    "id": "dc_tt8425532",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/mEHMfWe7pCWMelEkdrtRvVULopT.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      }
+    ]
+  },
+  {
+    "tmdbId": 89247,
+    "title": "Batwoman",
+    "type": "series",
+    "imdbId": "tt8712204",
+    "id": "dc_tt8712204",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/pBpxKiitMuYXvtsXNSzya8DKKzV.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "3.6/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 79788,
+    "title": "Watchmen",
+    "type": "series",
+    "imdbId": "tt7049682",
+    "id": "dc_tt7049682",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/m8rWq3j73ZGhDuSCZWMMoE9ePH1.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.2/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 98069,
+    "title": "Crisis Aftermath",
+    "type": "series",
+    "imdbId": "tt11262172",
+    "id": "dc_tt11262172",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/kaCjmS5tyAcfCrcdKuqxQ1CwvZ9.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.8/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10767,
+        "name": "Talk"
+      }
+    ]
+  },
+  {
+    "tmdbId": 495764,
+    "title": "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+    "type": "movie",
+    "imdbId": "tt7713068",
+    "id": "dc_tt7713068",
+    "releaseYear": "2020",
+    "poster": "https://image.tmdb.org/t/p/w500/h4VB6m0RwcicVEZvzftYZyKXs6K.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.1/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "79%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "60/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      }
+    ]
+  },
+  {
+    "tmdbId": 464052,
+    "title": "Wonder Woman 1984",
+    "type": "movie",
+    "imdbId": "tt7126948",
+    "id": "dc_tt7126948",
+    "releaseYear": "2020",
+    "poster": "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "5.4/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "58%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "60/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 80986,
+    "title": "DC's Stargirl",
+    "type": "series",
+    "imdbId": "tt8722888",
+    "id": "dc_tt8722888",
+    "releaseYear": "2020",
+    "poster": "https://image.tmdb.org/t/p/w500/ogntmK9hwBomhajqYrHXUAaqkd7.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.1/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 791373,
+    "title": "Zack Snyder's Justice League",
+    "type": "movie",
+    "imdbId": "tt12361974",
+    "id": "dc_tt12361974",
+    "releaseYear": "2021",
+    "poster": "https://image.tmdb.org/t/p/w500/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.9/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "71%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "54/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 436969,
+    "title": "The Suicide Squad",
+    "type": "movie",
+    "imdbId": "tt6334354",
+    "id": "dc_tt6334354",
+    "releaseYear": "2021",
+    "poster": "https://image.tmdb.org/t/p/w500/q61qEyssk2ku3okWICKArlAdhBn.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.2/10"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "72/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 35,
+        "name": "Comedy"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 95057,
+    "title": "Superman & Lois",
+    "type": "series",
+    "imdbId": "tt11192306",
+    "id": "dc_tt11192306",
+    "releaseYear": "2021",
+    "poster": "https://image.tmdb.org/t/p/w500/qJ6ndkbqgqS1n7ETi0YHhcjASym.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 103768,
+    "title": "Sweet Tooth",
+    "type": "series",
+    "imdbId": "tt12809988",
+    "id": "dc_tt12809988",
+    "releaseYear": "2021",
+    "poster": "https://image.tmdb.org/t/p/w500/rgMfhcrVZjuy5b7Pn0KzCRCEnMX.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.7/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 414906,
+    "title": "The Batman",
+    "type": "movie",
+    "imdbId": "tt1877830",
+    "id": "dc_tt1877830",
+    "releaseYear": "2022",
+    "poster": "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "85%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "72/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 9648,
+        "name": "Mystery"
+      },
+      {
+        "id": 53,
+        "name": "Thriller"
+      }
+    ]
+  },
+  {
+    "tmdbId": 436270,
+    "title": "Black Adam",
+    "type": "movie",
+    "imdbId": "tt6443346",
+    "id": "dc_tt6443346",
+    "releaseYear": "2022",
+    "poster": "https://image.tmdb.org/t/p/w500/rCtreCr4xiYEWDQTebybolIh6Xe.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.2/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "39%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "41/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ]
+  },
+  {
+    "tmdbId": 125474,
+    "title": "Naomi",
+    "type": "series",
+    "imdbId": "tt13624900",
+    "id": "dc_tt13624900",
+    "releaseYear": "2022",
+    "poster": "https://image.tmdb.org/t/p/w500/xwS6ggTI8hTkVTz1I4U6BZ48pgZ.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "4.9/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 110492,
+    "title": "Peacemaker",
+    "type": "series",
+    "imdbId": "tt13146488",
+    "id": "dc_tt13146488",
+    "releaseYear": "2022",
+    "poster": "https://image.tmdb.org/t/p/w500/hE3LRZAY84fG19a18pzpkZERjTE.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.3/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 90802,
+    "title": "The Sandman",
+    "type": "series",
+    "imdbId": "tt1751634",
+    "id": "dc_tt1751634",
+    "releaseYear": "2022",
+    "poster": "https://image.tmdb.org/t/p/w500/vfJ1nBnqiiRWZWv3ZvtFWO5zccg.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.7/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 594767,
+    "title": "Shazam! Fury of the Gods",
+    "type": "movie",
+    "imdbId": "tt10151854",
+    "id": "dc_tt10151854",
+    "releaseYear": "2023",
+    "poster": "https://image.tmdb.org/t/p/w500/A3ZbZsmsvNGdprRi2lKgGEeVLEH.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "5.9/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "49%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "47/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 35,
+        "name": "Comedy"
+      },
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 298618,
+    "title": "The Flash",
+    "type": "movie",
+    "imdbId": "tt0439572",
+    "id": "dc_tt0439572",
+    "releaseYear": "2023",
+    "poster": "https://image.tmdb.org/t/p/w500/rktDFPbfHfUbArZ6OOOKsXcv0Bm.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.6/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "63%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "55/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ]
+  },
+  {
+    "tmdbId": 565770,
+    "title": "Blue Beetle",
+    "type": "movie",
+    "imdbId": "tt9362930",
+    "id": "dc_tt9362930",
+    "releaseYear": "2023",
+    "poster": "https://image.tmdb.org/t/p/w500/mXLOHHc1Zeuwsl4xYKjKh2280oL.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "5.9/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "78%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "61/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 572802,
+    "title": "Aquaman and the Lost Kingdom",
+    "type": "movie",
+    "imdbId": "tt9663764",
+    "id": "dc_tt9663764",
+    "releaseYear": "2023",
+    "poster": "https://image.tmdb.org/t/p/w500/oEyIhY1WzoFHUDE7U3p1AWwyoSN.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "5.6/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "33%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "42/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 195868,
+    "title": "Gotham Knights",
+    "type": "series",
+    "imdbId": "tt16418896",
+    "id": "dc_tt16418896",
+    "releaseYear": "2023",
+    "poster": "https://image.tmdb.org/t/p/w500/5riy7SdIhMhhYcDqeEOICVvXEHS.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "5.3/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 132750,
+    "title": "Dead Boy Detectives",
+    "type": "series",
+    "imdbId": "tt15358446",
+    "id": "dc_tt15358446",
+    "releaseYear": "2024",
+    "poster": "https://image.tmdb.org/t/p/w500/346ju9C5zy0tkzfQoetOYtM74gw.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.5/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 9648,
+        "name": "Mystery"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 194764,
+    "title": "The Penguin",
+    "type": "series",
+    "imdbId": "tt15435876",
+    "id": "dc_tt15435876",
+    "releaseYear": "2024",
+    "poster": "https://image.tmdb.org/t/p/w500/vOWcqC4oDQws1doDWLO7d3dh5qc.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.6/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      }
+    ]
+  },
+  {
+    "tmdbId": 1061474,
+    "title": "Superman",
+    "type": "movie",
+    "imdbId": "tt5950044",
+    "id": "dc_tt5950044",
+    "releaseYear": "2025",
+    "poster": "https://image.tmdb.org/t/p/w500/wPLysNDLffQLOVebZQCbXJEv6E6.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ]
+  },
+  {
+    "tmdbId": 1081003,
+    "title": "Supergirl: Woman of Tomorrow",
+    "type": "movie",
+    "imdbId": "tt8814476",
+    "id": "dc_tt8814476",
     "releaseYear": "2026",
-    "poster": "https://image.tmdb.org/t/p/w500/9JCQtDCSpPR2ld55yNlEg1VwcQo.jpg",
-    "ratings": []
-    },
-    {
-      "title": "Avengers: Secret Wars",
-      "type": "movie",
-      "imdbId": "tt21361444",
-      "id": "marvel_tt21361444",
-      "releaseYear": "2027",
-      "poster": "https://image.tmdb.org/t/p/w500/f0YBuh4hyiAheXhh4JnJWoKi9g5.jpg",
-      "ratings": []
-    }
+    "poster": null,
+    "ratings": [],
+    "genres": [
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ]
+  },
+  {
+    "tmdbId": 1400940,
+    "title": "Clayface",
+    "type": "movie",
+    "imdbId": "tt34890576",
+    "id": "dc_tt34890576",
+    "releaseYear": "2026",
+    "poster": null,
+    "ratings": [],
+    "genres": [
+      {
+        "id": 53,
+        "name": "Thriller"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 806704,
+    "title": "Untitled The Batman Sequel",
+    "type": "movie",
+    "imdbId": "tt19850008",
+    "id": "dc_tt19850008",
+    "releaseYear": "2027",
+    "poster": "https://image.tmdb.org/t/p/w500/qwDWC2OzPw9zGc2lVCbjDrdaL6A.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 9648,
+        "name": "Mystery"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      }
+    ]
+  }
 ];

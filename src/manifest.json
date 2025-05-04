@@ -1,40 +1,40 @@
 {
-  "id": "com.joaogonp.marveladdon",
-  "name": "Marvel Cinematic Universe",
-  "description": "Watch the entire Marvel Cinematic Universe (MCU) in chronological order, release date, or explore by movies, series, and animations!",
-  "version": "1.0.2",
-  "logo": "https://raw.githubusercontent.com/joaogonp/addon-marvel/main/assets/icon.png",
-  "background": "https://raw.githubusercontent.com/joaogonp/addon-marvel/main/assets/background.jpg",
+  "id": "com.joaogonp.dcaddon",
+  "name": "DC Universe",
+  "description": "Explore the DC Universe by release date, movies, series, and animations!",
+  "version": "1.0.0",
+  "logo": "https://raw.githubusercontent.com/joaogonp/addon-dc/main/assets/icon.png",
+  "background": "https://raw.githubusercontent.com/joaogonp/addon-dc/main/assets/background.jpg",
   "catalogs": [
     {
-      "type": "Marvel",
-      "id": "marvel-mcu",
-      "name": "Chronologically Order"
+      "type": "DC",
+      "id": "dc-chronological",
+      "name": "Chronological Order"
     },
     {
-      "type": "Marvel",
-      "id": "release-order",
+      "type": "DC",
+      "id": "dc-release",
       "name": "Release Order"
     },
     {
-      "type": "Marvel",
-      "id": "movies",
+      "type": "DC",
+      "id": "dc-movies",
       "name": "Movies"
     },
     {
-      "type": "Marvel",
-      "id": "series",
+      "type": "DC",
+      "id": "dc-series",
       "name": "Series"
     },
     {
-      "type": "Marvel",
-      "id": "animations",
+      "type": "DC",
+      "id": "dc-animations",
       "name": "Animations"
     }
   ],
   "resources": ["catalog"],
   "types": ["movie", "series"],
-  "idPrefixes": ["marvel_"],
+  "idPrefixes": ["dc_"],
   "behaviorHints": {
     "configurable": false
   },

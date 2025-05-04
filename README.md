@@ -1,58 +1,62 @@
-# 📺 Marvel Cinematic Universe Add-on for Stremio
+# 🦇 DC Universe Add-on for Stremio
 
-Watch the entire Marvel Cinematic Universe (MCU) in **chronological order**, **release date**, or explore by **movies**, **series**, and **animations**. This add-on includes all canon MCU content — even announced titles — and stays up-to-date automatically!
-
-> From *Captain America: The First Avenger* to *The Fantastic Four: First Steps* — and beyond.
+Explore the DC Universe within Stremio! Browse movies and series by **chronological order**, **release date**, or content type (**movies**, **series**, **animations**).
 
 ---
 
 ## ✨ Features
 
-🧬 **Chronological Order**: Based on Disney+ timeline, but expanded to include all MCU canon.  
-📅 **Release Date**: Browse titles by original release order.  
-🎬 **Movies, Series & Animations**: Filter by content type.  
-🚀 **Fast & Lightweight**: Optimized for performance with Redis caching.  
-📡 **Automatic Monthly Updates**: Always current with TMDB/OMDB & Cinemeta.  
-📺 **Here’s how it looks in Stremio**: https://imgur.com/a/wtCrXUH
+*   🕰️ **Chronological Order**: Based on a curated DCEU timeline.
+*   📅 **Release Date**: Browse non-animated titles by original release order.
+*   🎬 **Movies, Series & Animations**: Filter by content type.
+*   ⚡ **Data Updates**: Easily refresh content using the included scripts.
+*   🚀 **Fast & Lightweight**: Optimized for performance.
 
 ---
 
 ## 📦 Installation
 
-In **Stremio**:
+**Option 1: Find in Stremio (If Published)**
 
-1. Go to *Addons* → *+ add Addon*
-2. Paste this URL and click "Install":  
-   👉 `https://addon-marvel.onrender.com/manifest.json`
+1.  Go to *Addons* → *Community Addons*.
+2.  Search for "DC Universe Addon".
+3.  Click "Install".
 
-Or install directly via:  
-🔗 [beta.stremio-addons.net/addons/marvel-cinematic-universe](https://beta.stremio-addons.net/addons/marvel-cinematic-universe)  
+**Option 2: Self-Hosting**
 
----
-
-## 🧑‍💻 About the Developer
-
-Hey! I'm **joaogonp**, a newbie dev and Marvel fan. This is my first serious project — I built this addon to help fellow fans enjoy the MCU in the best possible way.
-
-If you liked it and want to support me:  
-🍺 [buymeacoffee.com/joaogonp](https://buymeacoffee.com/joaogonp) — feel free to buy me a beer!
+1.  Deploy the addon.
+2.  In Stremio, go to *Addons* → *+ add Addon*.
+3.  Paste your manifest URL (e.g., `https://your-url.com/manifest.json`) and click "Install".
 
 ---
 
-## 🧠 Tech Stuff
+## 📊 Updating Data
 
-- Uses **TMDB/OMDB API** for movie/series data  
-- Uses **Cinemeta/OMDB/TMDB** for posters and Stremio metadata  
-- Powered by **GitHub Actions** for auto-updates  
-- Hosted on **Render.com**
+This addon relies on generated data files. To update:
+
+1.  Set up API keys in a `.env` file (`TMDB_API_KEY`, `OMDB_API_KEY`).
+2.  Install dependencies: `npm install`
+3.  Run the update script: `node scripts/updateData.js`
+4.  Run the chronological script: `node scripts/generateChronologicalData.js`
+5.  Restart/redeploy the addon.
+
+---
+
+## 🙏 Acknowledgements
+
+This addon is a modified fork of the original Marvel addon created by **joaogonp**. Many thanks for the initial work!
+
+---
+
+
+
+
 
 ---
 
 ## 📬 Feedback
 
-This project is a work in progress — I’d love to hear your thoughts!  
-Issues, suggestions, or questions? Open an issue or email me:  
-📧 **jpnapsp@gmail.com**
+Issues, suggestions, or questions? Open an issue.
 
 ---
 

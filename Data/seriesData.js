@@ -1,304 +1,671 @@
 module.exports = [
   {
-    "title": "Wolverine and the X-Men",
+    "tmdbId": 1412,
+    "title": "Arrow",
     "type": "series",
-    "imdbId": "tt0772145",
-    "id": "marvel_tt0772145",
-    "releaseYear": "2009",
-    "poster": "https://image.tmdb.org/t/p/w500/oSeJ2nESB77iC6SLo4qcqoadjdt.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "8.0/10"
-      }
-    ]
-  },
-  {
-    "title": "Marvel Studios Legends",
-    "type": "series",
-    "imdbId": "tt13650480",
-    "id": "marvel_tt13650480",
-    "releaseYear": "2021",
-    "poster": "https://image.tmdb.org/t/p/w500/EpDuYIK81YtCUT3gH2JDpyj8Qk.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "6.5/10"
-      }
-    ]
-  },
-  {
-    "title": "WandaVision",
-    "type": "series",
-    "imdbId": "tt9140560",
-    "id": "marvel_tt9140560",
-    "releaseYear": "2021",
-    "poster": "https://image.tmdb.org/t/p/w500/sgCHdBJ1w0vJNUrW1Sq90KEXv9j.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.9/10"
-      }
-    ]
-  },
-  {
-    "title": "Marvel Studios Assembled",
-    "type": "series",
-    "imdbId": "tt14094206",
-    "id": "marvel_tt14094206",
-    "releaseYear": "2021",
-    "poster": "https://image.tmdb.org/t/p/w500/v2BHRwtQVkt5fssLdo5MpFgHJPY.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.9/10"
-      }
-    ]
-  },
-  {
-    "title": "The Falcon and the Winter Soldier",
-    "type": "series",
-    "imdbId": "tt9208876",
-    "id": "marvel_tt9208876",
-    "releaseYear": "2021",
-    "poster": "https://image.tmdb.org/t/p/w500/6kbAMLteGO8yyewYau6bJ683sw7.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.1/10"
-      }
-    ]
-  },
-  {
-    "title": "Loki",
-    "type": "series",
-    "imdbId": "tt9140554",
-    "id": "marvel_tt9140554",
-    "releaseYear": "2021",
-    "poster": "https://image.tmdb.org/t/p/w500/oJdVHUYrjdS2IqiNztVIP4GPB1p.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "8.2/10"
-      }
-    ]
-  },
-  {
-    "title": "Spidey and His Amazing Friends",
-    "type": "series",
-    "imdbId": "tt10862280",
-    "id": "marvel_tt10862280",
-    "releaseYear": "2021",
-    "poster": "https://image.tmdb.org/t/p/w500/etO5jDS5WgR4Y1lTyXhQcilJ6u2.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "5.8/10"
-      }
-    ]
-  },
-  {
-    "title": "What If...?",
-    "type": "series",
-    "imdbId": "tt10168312",
-    "id": "marvel_tt10168312",
-    "releaseYear": "2021",
-    "poster": "https://image.tmdb.org/t/p/w500/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.3/10"
-      }
-    ]
-  },
-  {
-    "title": "Hawkeye",
-    "type": "series",
-    "imdbId": "tt10160804",
-    "id": "marvel_tt10160804",
-    "releaseYear": "2021",
-    "poster": "https://image.tmdb.org/t/p/w500/ct5pNE5dDHryHLDnxyZPYcqO1sz.jpg",
+    "imdbId": "tt2193021",
+    "id": "dc_tt2193021",
+    "releaseYear": "2012",
+    "poster": "https://image.tmdb.org/t/p/w500/u8ZHFj1jC384JEkTt3vNg1DfWEb.jpg",
     "ratings": [
       {
         "Source": "Internet Movie Database",
         "Value": "7.5/10"
       }
-    ]
-  },
-  {
-    "title": "Moon Knight",
-    "type": "series",
-    "imdbId": "tt10234724",
-    "id": "marvel_tt10234724",
-    "releaseYear": "2022",
-    "poster": "https://image.tmdb.org/t/p/w500/vKDUmKO6F9bSKKyHhg7YGbgcEeF.jpg",
-    "ratings": [
+    ],
+    "genres": [
       {
-        "Source": "Internet Movie Database",
-        "Value": "7.3/10"
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
       }
     ]
   },
   {
-    "title": "Ms. Marvel",
+    "tmdbId": 60708,
+    "title": "Gotham",
     "type": "series",
-    "imdbId": "tt10857164",
-    "id": "marvel_tt10857164",
-    "releaseYear": "2022",
-    "poster": "https://image.tmdb.org/t/p/w500/3HWWh92kZbD7odwJX7nKmXNZsYo.jpg",
+    "imdbId": "tt3749900",
+    "id": "dc_tt3749900",
+    "releaseYear": "2014",
+    "poster": "https://image.tmdb.org/t/p/w500/wt3uwxSKbMg5ZNJBUOrsJoDnNWX.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 60735,
+    "title": "The Flash",
+    "type": "series",
+    "imdbId": "tt3107288",
+    "id": "dc_tt3107288",
+    "releaseYear": "2014",
+    "poster": "https://image.tmdb.org/t/p/w500/yZevl2vHQgmosfwUdVNzviIfaWS.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.5/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 62688,
+    "title": "Supergirl",
+    "type": "series",
+    "imdbId": "tt4016454",
+    "id": "dc_tt4016454",
+    "releaseYear": "2015",
+    "poster": "https://image.tmdb.org/t/p/w500/cFO65xb0xiXKqk5BmgHawCXB1i0.jpg",
     "ratings": [
       {
         "Source": "Internet Movie Database",
         "Value": "6.2/10"
       }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      }
     ]
   },
   {
-    "title": "I Am Groot",
+    "tmdbId": 62643,
+    "title": "DC's Legends of Tomorrow",
     "type": "series",
-    "imdbId": "tt13623148",
-    "id": "marvel_tt13623148",
-    "releaseYear": "2022",
-    "poster": "https://image.tmdb.org/t/p/w500/lYwFSsP4KsoRhOLhJvBFp3GEGEm.jpg",
+    "imdbId": "tt4532368",
+    "id": "dc_tt4532368",
+    "releaseYear": "2016",
+    "poster": "https://image.tmdb.org/t/p/w500/qNgAcg4gNYbZ9mySLB9ZX4ehZb6.jpg",
     "ratings": [
       {
         "Source": "Internet Movie Database",
         "Value": "6.7/10"
       }
-    ]
-  },
-  {
-    "title": "She-Hulk: Attorney at Law",
-    "type": "series",
-    "imdbId": "tt10857160",
-    "id": "marvel_tt10857160",
-    "releaseYear": "2022",
-    "poster": "https://image.tmdb.org/t/p/w500/5xz2orV8f0usyrfGNshcoXHmiaV.jpg",
-    "ratings": [
+    ],
+    "genres": [
       {
-        "Source": "Internet Movie Database",
-        "Value": "5.2/10"
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
       }
     ]
   },
   {
-    "title": "Voices Rising: The Music of Wakanda Forever",
+    "tmdbId": 63174,
+    "title": "Lucifer",
     "type": "series",
-    "imdbId": "tt26345409",
-    "id": "marvel_tt26345409",
-    "releaseYear": "2023",
-    "poster": "https://image.tmdb.org/t/p/w500/tD0z0ONzplsO7JLkDk1cMTWR1Rd.jpg",
-    "ratings": []
-  },
-  {
-    "title": "Secret Invasion",
-    "type": "series",
-    "imdbId": "tt13157618",
-    "id": "marvel_tt13157618",
-    "releaseYear": "2023",
-    "poster": "https://image.tmdb.org/t/p/w500/f5ZMzzCvt2IzVDxr54gHPv9jlC9.jpg",
+    "imdbId": "tt4052886",
+    "id": "dc_tt4052886",
+    "releaseYear": "2016",
+    "poster": "https://image.tmdb.org/t/p/w500/ekZobS8isE6mA53RAiGDG93hBxL.jpg",
     "ratings": [
       {
         "Source": "Internet Movie Database",
-        "Value": "5.9/10"
+        "Value": "8.0/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
       }
     ]
   },
   {
-    "title": "Echo",
+    "tmdbId": 74556,
+    "title": "The Flash: Chronicles of Cisco",
     "type": "series",
-    "imdbId": "tt13966962",
-    "id": "marvel_tt13966962",
-    "releaseYear": "2024",
-    "poster": "https://image.tmdb.org/t/p/w500/vFyJH630cF68LohVYjQW49074Sy.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "6.0/10"
-      }
-    ]
-  },
-  {
-    "title": "X-Men '97",
-    "type": "series",
-    "imdbId": "tt16026746",
-    "id": "marvel_tt16026746",
-    "releaseYear": "2024",
-    "poster": "https://image.tmdb.org/t/p/w500/9Ycz7yYRf9V4jk3YXwcZhFtbNcF.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "8.8/10"
-      }
-    ]
-  },
-  {
-    "title": "Agatha All Along",
-    "type": "series",
-    "imdbId": "tt15571732",
-    "id": "marvel_tt15571732",
-    "releaseYear": "2024",
-    "poster": "https://image.tmdb.org/t/p/w500/rwfDv05ck4McdvqdWU2sQVsQV2j.jpg",
+    "imdbId": "tt5654736",
+    "id": "dc_tt5654736",
+    "releaseYear": "2016",
+    "poster": "https://image.tmdb.org/t/p/w500/bOtZcYsBkgwMJQ3ULweCW8wDpdM.jpg",
     "ratings": [
       {
         "Source": "Internet Movie Database",
         "Value": "7.2/10"
       }
-    ]
-  },
-  {
-    "title": "Your Friendly Neighborhood Spider-Man",
-    "type": "series",
-    "imdbId": "tt16027074",
-    "id": "marvel_tt16027074",
-    "releaseYear": "2025",
-    "poster": "https://image.tmdb.org/t/p/w500/kjcsNeqF52YUQ2rUBGLMHwLkxvR.jpg",
-    "ratings": [
+    ],
+    "genres": [
       {
-        "Source": "Internet Movie Database",
-        "Value": "6.7/10"
+        "id": 10759,
+        "name": "Action & Adventure"
       }
     ]
   },
   {
-    "title": "Daredevil: Born Again",
+    "tmdbId": 68001,
+    "title": "Powerless",
     "type": "series",
-    "imdbId": "tt18923754",
-    "id": "marvel_tt18923754",
-    "releaseYear": "2025",
-    "poster": "https://image.tmdb.org/t/p/w500/9lLuhV703HGCbnz6FxnqCwIwzAZ.jpg",
+    "imdbId": "tt5083928",
+    "id": "dc_tt5083928",
+    "releaseYear": "2017",
+    "poster": "https://image.tmdb.org/t/p/w500/oAAAqgKiWVeZbotsR0zukHjM9B1.jpg",
     "ratings": [
       {
         "Source": "Internet Movie Database",
-        "Value": "8.5/10"
+        "Value": "6.4/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 35,
+        "name": "Comedy"
       }
     ]
   },
   {
-    "title": "Ironheart",
+    "tmdbId": 71340,
+    "title": "Krypton",
     "type": "series",
-    "imdbId": "tt13623126",
-    "id": "marvel_tt13623126",
-    "releaseYear": "2025",
-    "poster": "https://image.tmdb.org/t/p/w500/ha1kackPwP1BLtyibzuv5hABiDk.jpg",
-    "ratings": []
+    "imdbId": "tt4276624",
+    "id": "dc_tt4276624",
+    "releaseYear": "2018",
+    "poster": "https://image.tmdb.org/t/p/w500/uiinjmSkka6JOrk4FsZmrjlNM26.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.8/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
   },
   {
-    "title": "Eyes of Wakanda",
+    "tmdbId": 75450,
+    "title": "Titans",
     "type": "series",
-    "imdbId": "tt13968252",
-    "id": "marvel_tt13968252",
-    "releaseYear": "2025",
-    "poster": "https://image.tmdb.org/t/p/w500/b16lExo3HVcw2AWStyaFvAy5HFX.jpg",
-    "ratings": []
+    "imdbId": "tt1043813",
+    "id": "dc_tt1043813",
+    "releaseYear": "2018",
+    "poster": "https://image.tmdb.org/t/p/w500/8e6QiSexmYKaiHGPvbhaFMmQEhc.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.5/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "50%"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
   },
   {
-    "title": "Marvel Zombies",
+    "tmdbId": 79501,
+    "title": "Doom Patrol",
     "type": "series",
-    "imdbId": "tt16027014",
-    "id": "marvel_tt16027014",
-    "releaseYear": "2025",
-    "poster": "https://image.tmdb.org/t/p/w500/jmGjVKBNxaQD2l0e4Jz5RbguRre.jpg",
-    "ratings": []
+    "imdbId": "tt8416494",
+    "id": "dc_tt8416494",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/blkXhlNspC4vJol7QJ2e3Prt5tC.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.7/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 79240,
+    "title": "Swamp Thing",
+    "type": "series",
+    "imdbId": "tt8362852",
+    "id": "dc_tt8362852",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/dD3HcMczLC9wNvfNzx4pZVyl6q8.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.4/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 9648,
+        "name": "Mystery"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 79588,
+    "title": "Pennyworth: The Origin of Batman's Butler",
+    "type": "series",
+    "imdbId": "tt8425532",
+    "id": "dc_tt8425532",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/mEHMfWe7pCWMelEkdrtRvVULopT.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      }
+    ]
+  },
+  {
+    "tmdbId": 89247,
+    "title": "Batwoman",
+    "type": "series",
+    "imdbId": "tt8712204",
+    "id": "dc_tt8712204",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/pBpxKiitMuYXvtsXNSzya8DKKzV.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "3.6/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 79788,
+    "title": "Watchmen",
+    "type": "series",
+    "imdbId": "tt7049682",
+    "id": "dc_tt7049682",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/m8rWq3j73ZGhDuSCZWMMoE9ePH1.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.2/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 98069,
+    "title": "Crisis Aftermath",
+    "type": "series",
+    "imdbId": "tt11262172",
+    "id": "dc_tt11262172",
+    "releaseYear": "2019",
+    "poster": "https://image.tmdb.org/t/p/w500/kaCjmS5tyAcfCrcdKuqxQ1CwvZ9.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.8/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10767,
+        "name": "Talk"
+      }
+    ]
+  },
+  {
+    "tmdbId": 80986,
+    "title": "DC's Stargirl",
+    "type": "series",
+    "imdbId": "tt8722888",
+    "id": "dc_tt8722888",
+    "releaseYear": "2020",
+    "poster": "https://image.tmdb.org/t/p/w500/ogntmK9hwBomhajqYrHXUAaqkd7.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.1/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 95057,
+    "title": "Superman & Lois",
+    "type": "series",
+    "imdbId": "tt11192306",
+    "id": "dc_tt11192306",
+    "releaseYear": "2021",
+    "poster": "https://image.tmdb.org/t/p/w500/qJ6ndkbqgqS1n7ETi0YHhcjASym.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 103768,
+    "title": "Sweet Tooth",
+    "type": "series",
+    "imdbId": "tt12809988",
+    "id": "dc_tt12809988",
+    "releaseYear": "2021",
+    "poster": "https://image.tmdb.org/t/p/w500/rgMfhcrVZjuy5b7Pn0KzCRCEnMX.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.7/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 125474,
+    "title": "Naomi",
+    "type": "series",
+    "imdbId": "tt13624900",
+    "id": "dc_tt13624900",
+    "releaseYear": "2022",
+    "poster": "https://image.tmdb.org/t/p/w500/xwS6ggTI8hTkVTz1I4U6BZ48pgZ.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "4.9/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 110492,
+    "title": "Peacemaker",
+    "type": "series",
+    "imdbId": "tt13146488",
+    "id": "dc_tt13146488",
+    "releaseYear": "2022",
+    "poster": "https://image.tmdb.org/t/p/w500/hE3LRZAY84fG19a18pzpkZERjTE.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.3/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 90802,
+    "title": "The Sandman",
+    "type": "series",
+    "imdbId": "tt1751634",
+    "id": "dc_tt1751634",
+    "releaseYear": "2022",
+    "poster": "https://image.tmdb.org/t/p/w500/vfJ1nBnqiiRWZWv3ZvtFWO5zccg.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.7/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 195868,
+    "title": "Gotham Knights",
+    "type": "series",
+    "imdbId": "tt16418896",
+    "id": "dc_tt16418896",
+    "releaseYear": "2023",
+    "poster": "https://image.tmdb.org/t/p/w500/5riy7SdIhMhhYcDqeEOICVvXEHS.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "5.3/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 132750,
+    "title": "Dead Boy Detectives",
+    "type": "series",
+    "imdbId": "tt15358446",
+    "id": "dc_tt15358446",
+    "releaseYear": "2024",
+    "poster": "https://image.tmdb.org/t/p/w500/346ju9C5zy0tkzfQoetOYtM74gw.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.5/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 9648,
+        "name": "Mystery"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 194764,
+    "title": "The Penguin",
+    "type": "series",
+    "imdbId": "tt15435876",
+    "id": "dc_tt15435876",
+    "releaseYear": "2024",
+    "poster": "https://image.tmdb.org/t/p/w500/vOWcqC4oDQws1doDWLO7d3dh5qc.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.6/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      }
+    ]
   }
 ];
