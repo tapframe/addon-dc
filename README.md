@@ -16,17 +16,11 @@ Explore the DC Universe within Stremio! Browse movies and series by **chronologi
 
 ## 📦 Installation
 
-**Option 1: Find in Stremio (If Published)**
+Direct Installation Link**
 
-1.  Go to *Addons* → *Community Addons*.
-2.  Search for "DC Universe Addon".
-3.  Click "Install".
+1.  Click this link to install directly in Stremio:
+    [`https://addon-dc.onrender.com`](https://addon-dc.onrender.com)
 
-**Option 2: Self-Hosting**
-
-1.  Deploy the addon.
-2.  In Stremio, go to *Addons* → *+ add Addon*.
-3.  Paste your manifest URL (e.g., `https://addon-dc.onrender.com/manifest.json`) and click "Install".
 
 ---
 
