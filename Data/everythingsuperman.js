@@ -1,5 +1,88 @@
 module.exports = [
   {
+    "tmdbId": 126712,
+    "title": "Superman",
+    "type": "movie",
+    "imdbId": "tt0040852",
+    "id": "dc_tt0040852",
+    "releaseYear": "1948",
+    "poster": "https://image.tmdb.org/t/p/w500/vLvSA6HLaldOBOCeKw8jJejXV8J.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ],
+    "overview": "Superman comes to Earth as a child and grows up to be his home's first superhero with his first major challenge being to oppose The Spider Lady."
+  },
+  {
+    "tmdbId": 106358,
+    "title": "Atom Man vs. Superman",
+    "type": "movie",
+    "imdbId": "tt0042211",
+    "id": "dc_tt0042211",
+    "releaseYear": "1950",
+    "poster": "https://image.tmdb.org/t/p/w500/ujs17umEBEhhBONTBF5OXJ3h3Pc.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ],
+    "overview": "Superman battles Lex Luthor, who is using a teleportation device and a new identity as Atom Man in his criminal plans."
+  },
+  {
+    "tmdbId": 41800,
+    "title": "Superman and the Mole Men",
+    "type": "movie",
+    "imdbId": "tt0044091",
+    "id": "dc_tt0044091",
+    "releaseYear": "1951",
+    "poster": "https://image.tmdb.org/t/p/w500/9vRltKcX4wK4ms0A6PbRz42EMdq.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 10751,
+        "name": "Family"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      },
+      {
+        "id": 10749,
+        "name": "Romance"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ],
+    "overview": "Reporters Clark Kent and Lois Lane arrive in the small town of Silsby to witness the drilling of the world's deepest oil well. The drill, however, has penetrated the underground home of a race of small, furry people who then come to the surface at night to look around. The fact that they glow in the dark scares the townfolk, who form a mob, led by the vicious Luke Benson, intent on killing the strange people. Only Superman has a chance to prevent this tragedy."
+  },
+  {
     "tmdbId": 1924,
     "title": "Superman",
     "type": "movie",
@@ -34,7 +117,8 @@ module.exports = [
         "id": 12,
         "name": "Adventure"
       }
-    ]
+    ],
+    "overview": "Mild-mannered Clark Kent works as a reporter at the Daily Planet alongside his crush, Lois Lane. Clark must summon his superhero alter-ego when the nefarious Lex Luthor launches a plan to take over the world."
   },
   {
     "tmdbId": 8536,
@@ -71,7 +155,8 @@ module.exports = [
         "id": 12,
         "name": "Adventure"
       }
-    ]
+    ],
+    "overview": "Three escaped criminals from the planet Krypton, who have the same powers on Earth as Superman, test the Man of Steel's mettle. Led by General Zod, the Kryptonians take control of the White House and partner with Lex Luthor to destroy Superman and rule the world. But Superman, who made himself human in order to get closer to Lois, realizes he has a responsibility to save the planet."
   },
   {
     "tmdbId": 9531,
@@ -112,48 +197,8 @@ module.exports = [
         "id": 12,
         "name": "Adventure"
       }
-    ]
-  },
-  {
-    "tmdbId": 9651,
-    "title": "Supergirl",
-    "type": "movie",
-    "imdbId": "tt0088206",
-    "id": "dc_tt0088206",
-    "releaseYear": "1984",
-    "poster": "https://image.tmdb.org/t/p/w500/6OfuKKCPFclHOj4SSRRpLzF1lfP.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "4.4/10"
-      },
-      {
-        "Source": "Rotten Tomatoes",
-        "Value": "8%"
-      },
-      {
-        "Source": "Metacritic",
-        "Value": "41/100"
-      }
     ],
-    "genres": [
-      {
-        "id": 12,
-        "name": "Adventure"
-      },
-      {
-        "id": 14,
-        "name": "Fantasy"
-      },
-      {
-        "id": 28,
-        "name": "Action"
-      },
-      {
-        "id": 878,
-        "name": "Science Fiction"
-      }
-    ]
+    "overview": "Aiming to defeat the Man of Steel, wealthy executive Ross Webster hires bumbling but brilliant Gus Gorman to develop synthetic kryptonite, which yields some unexpected psychological effects. Between rekindling romance with his high school sweetheart and saving himself, Superman must contend with a powerful supercomputer."
   },
   {
     "tmdbId": 11411,
@@ -190,106 +235,8 @@ module.exports = [
         "id": 878,
         "name": "Science Fiction"
       }
-    ]
-  },
-  {
-    "tmdbId": 4604,
-    "title": "Smallville",
-    "type": "tv",
-    "imdbId": "tt0279600",
-    "id": "dc_tt0279600",
-    "releaseYear": "2001-2011",
-    "poster": "https://image.tmdb.org/t/p/w500/dc9a9n4g9Ibs485t5eBtyNG0mcr.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.5/10"
-      }
     ],
-    "genres": [
-      {
-        "id": 10765,
-        "name": "Sci-Fi & Fantasy"
-      },
-      {
-        "id": 10759,
-        "name": "Action & Adventure"
-      },
-      {
-        "id": 18,
-        "name": "Drama"
-      }
-    ]
-  },
-  {
-    "tmdbId": 39783,
-    "title": "Smallville: Chloe Chronicles",
-    "type": "tv",
-    "imdbId": "tt0421167",
-    "id": "dc_tt0421167",
-    "releaseYear": "2003-2004",
-    "poster": "https://image.tmdb.org/t/p/w500/pCO7atSxXQ04GqBHIz5VDSzgu6o.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "6.7/10"
-      }
-    ],
-    "genres": []
-  },
-  {
-    "tmdbId": 854414,
-    "title": "You Will Believe: The Cinematic Saga of Superman",
-    "type": "movie",
-    "imdbId": "tt0961761",
-    "id": "dc_tt0961761",
-    "releaseYear": "2006",
-    "poster": "https://image.tmdb.org/t/p/w500/ixZn97gsbIbi5Ayxmsm2ecFlDAt.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.9/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
-  },
-  {
-    "tmdbId": 624479,
-    "title": "Superman II: The Richard Donner Cut",
-    "type": "movie",
-    "imdbId": "tt0839995",
-    "id": "dc_tt0839995",
-    "releaseYear": "2006",
-    "poster": "https://image.tmdb.org/t/p/w500/9y5y3LrrdOVQ4spdT3skBntBGth.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.6/10"
-      },
-      {
-        "Source": "Rotten Tomatoes",
-        "Value": "90%"
-      }
-    ],
-    "genres": [
-      {
-        "id": 878,
-        "name": "Science Fiction"
-      },
-      {
-        "id": 28,
-        "name": "Action"
-      },
-      {
-        "id": 12,
-        "name": "Adventure"
-      }
-    ]
+    "overview": "With global superpowers engaged in an increasingly hostile arms race, Superman leads a crusade to rid the world of nuclear weapons. But Lex Luthor, recently sprung from jail, is declaring war on the Man of Steel and his quest to save the planet. Using a strand of Superman's hair, Luthor synthesizes a powerful ally known as Nuclear Man and ignites an epic battle spanning Earth and space."
   },
   {
     "tmdbId": 1452,
@@ -326,91 +273,8 @@ module.exports = [
         "id": 12,
         "name": "Adventure"
       }
-    ]
-  },
-  {
-    "tmdbId": 24479,
-    "title": "Look, Up in the Sky! The Amazing Story of Superman",
-    "type": "movie",
-    "imdbId": "tt0499516",
-    "id": "dc_tt0499516",
-    "releaseYear": "2006",
-    "poster": "https://image.tmdb.org/t/p/w500/njxYrHZYfYHQ1gia19t2Nt5Bxfp.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.8/10"
-      }
     ],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
-  },
-  {
-    "tmdbId": 55649,
-    "title": "The Science of Superman",
-    "type": "movie",
-    "imdbId": "tt0823154",
-    "id": "dc_tt0823154",
-    "releaseYear": "2006",
-    "poster": "https://image.tmdb.org/t/p/w500/rkmNvVPU2PNxS3BwxjxUsrzq6S9.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.1/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
-  },
-  {
-    "tmdbId": 419003,
-    "title": "Requiem & Rebirth: Superman Lives!",
-    "type": "movie",
-    "imdbId": "tt1189442",
-    "id": "dc_tt1189442",
-    "releaseYear": "2007",
-    "poster": null,
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "8.0/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
-  },
-  {
-    "tmdbId": 50056,
-    "title": "Secret Origin: The Story of DC Comics",
-    "type": "movie",
-    "imdbId": "tt1599373",
-    "id": "dc_tt1599373",
-    "releaseYear": "2010",
-    "poster": "https://image.tmdb.org/t/p/w500/bi4k7EE8JFuTHKWhiWEgdIlp40Z.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.7/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
+    "overview": "Superman returns to discover his 5-year absence has allowed Lex Luthor to walk free, and that those he was closest to felt abandoned and have moved on. Luthor plots his ultimate revenge that could see millions killed and change the face of the planet forever, as well as ridding himself of the Man of Steel."
   },
   {
     "tmdbId": 49521,
@@ -447,36 +311,8 @@ module.exports = [
         "id": 878,
         "name": "Science Fiction"
       }
-    ]
-  },
-  {
-    "tmdbId": 62688,
-    "title": "Supergirl",
-    "type": "tv",
-    "imdbId": "tt4016454",
-    "id": "dc_tt4016454",
-    "releaseYear": "2015-2021",
-    "poster": "https://image.tmdb.org/t/p/w500/cFO65xb0xiXKqk5BmgHawCXB1i0.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "6.2/10"
-      }
     ],
-    "genres": [
-      {
-        "id": 18,
-        "name": "Drama"
-      },
-      {
-        "id": 10765,
-        "name": "Sci-Fi & Fantasy"
-      },
-      {
-        "id": 10759,
-        "name": "Action & Adventure"
-      }
-    ]
+    "overview": "A young boy learns that he has extraordinary powers and is not of this earth. As a young man, he journeys to discover where he came from and what he was sent here to do. But the hero in him must emerge if he is to save the world from annihilation and become the symbol of hope for all mankind."
   },
   {
     "tmdbId": 209112,
@@ -513,28 +349,8 @@ module.exports = [
         "id": 14,
         "name": "Fantasy"
       }
-    ]
-  },
-  {
-    "tmdbId": 378674,
-    "title": "DC Films Presents Dawn of the Justice League",
-    "type": "movie",
-    "imdbId": "tt5355872",
-    "id": "dc_tt5355872",
-    "releaseYear": "2016",
-    "poster": "https://image.tmdb.org/t/p/w500/jjYndp8PuLFNuIbGg6Zs7MkxWIc.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.6/10"
-      }
     ],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
+    "overview": "Fearing the actions of a god-like Super Hero left unchecked, Gotham City’s own formidable, forceful vigilante takes on Metropolis’s most revered, modern-day savior, while the world wrestles with what sort of hero it really needs. And with Batman and Superman at war with one another, a new threat quickly arises, putting mankind in greater danger than it’s ever known before."
   },
   {
     "tmdbId": 141052,
@@ -571,61 +387,8 @@ module.exports = [
         "id": 878,
         "name": "Science Fiction"
       }
-    ]
-  },
-  {
-    "tmdbId": 71340,
-    "title": "Krypton",
-    "type": "tv",
-    "imdbId": "tt4276624",
-    "id": "dc_tt4276624",
-    "releaseYear": "2018-2019",
-    "poster": "https://image.tmdb.org/t/p/w500/uiinjmSkka6JOrk4FsZmrjlNM26.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "6.8/10"
-      }
     ],
-    "genres": [
-      {
-        "id": 10759,
-        "name": "Action & Adventure"
-      },
-      {
-        "id": 18,
-        "name": "Drama"
-      },
-      {
-        "id": 10765,
-        "name": "Sci-Fi & Fantasy"
-      }
-    ]
-  },
-  {
-    "tmdbId": 95057,
-    "title": "Superman & Lois",
-    "type": "tv",
-    "imdbId": "tt11192306",
-    "id": "dc_tt11192306",
-    "releaseYear": "2021-2024",
-    "poster": "https://image.tmdb.org/t/p/w500/qJ6ndkbqgqS1n7ETi0YHhcjASym.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.8/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 18,
-        "name": "Drama"
-      },
-      {
-        "id": 10765,
-        "name": "Sci-Fi & Fantasy"
-      }
-    ]
+    "overview": "Fuelled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne and Diana Prince assemble a team of metahumans consisting of Barry Allen, Arthur Curry and Victor Stone to face the catastrophic threat of Steppenwolf and the Parademons who are on the hunt for three Mother Boxes on Earth."
   },
   {
     "tmdbId": 791373,
@@ -662,23 +425,8 @@ module.exports = [
         "id": 14,
         "name": "Fantasy"
       }
-    ]
-  },
-  {
-    "tmdbId": 1356119,
-    "title": "Christopher Reeve, Superman Forever",
-    "type": "movie",
-    "imdbId": "tmdb_1356119",
-    "id": "dc_tmdb_1356119",
-    "releaseYear": "2024",
-    "poster": "https://image.tmdb.org/t/p/w500/kEQK9y0iavNaxv2LH2jKR6JWYAS.jpg",
-    "ratings": [],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
+    ],
+    "overview": "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions."
   },
   {
     "tmdbId": 1061474,
@@ -702,22 +450,7 @@ module.exports = [
         "id": 878,
         "name": "Science Fiction"
       }
-    ]
-  },
-  {
-    "tmdbId": 1081003,
-    "title": "Supergirl: Woman of Tomorrow",
-    "type": "movie",
-    "imdbId": "tt8814476",
-    "id": "dc_tt8814476",
-    "releaseYear": "2026",
-    "poster": null,
-    "ratings": [],
-    "genres": [
-      {
-        "id": 878,
-        "name": "Science Fiction"
-      }
-    ]
+    ],
+    "overview": "Superman, a cub reporter in Metropolis, embarks on a journey to reconcile his Kryptonian heritage with his human upbringing as Clark Kent."
   }
 ];

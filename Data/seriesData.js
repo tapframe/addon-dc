@@ -1,5 +1,295 @@
 module.exports = [
   {
+    "tmdbId": 12662,
+    "title": "Adventures of Superman",
+    "type": "series",
+    "imdbId": "tt0044231",
+    "id": "dc_tt0044231",
+    "releaseYear": "1952",
+    "poster": "https://image.tmdb.org/t/p/w500/sg51T20FN5Dccj7JLzRdLWge0Ct.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 35,
+        "name": "Comedy"
+      },
+      {
+        "id": 10751,
+        "name": "Family"
+      }
+    ]
+  },
+  {
+    "tmdbId": 2287,
+    "title": "Batman",
+    "type": "series",
+    "imdbId": "tt0059968",
+    "id": "dc_tt0059968",
+    "releaseYear": "1966",
+    "poster": "https://image.tmdb.org/t/p/w500/1ZEJuuDh0Zpi5ELM3Zev0GBhQ3R.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 35,
+        "name": "Comedy"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 10444,
+    "title": "Shazam!",
+    "type": "series",
+    "imdbId": "tt0071050",
+    "id": "dc_tt0071050",
+    "releaseYear": "1974",
+    "poster": "https://image.tmdb.org/t/p/w500/iXNoY4ThylStpcDKrGJ3LIYiasE.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 12072,
+    "title": "Isis",
+    "type": "series",
+    "imdbId": "tt0072516",
+    "id": "dc_tt0072516",
+    "releaseYear": "1975",
+    "poster": "https://image.tmdb.org/t/p/w500/lIc5LUIoshHlFXrC40e229Bu6IU.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 4331,
+    "title": "Wonder Woman",
+    "type": "series",
+    "imdbId": "tt0074074",
+    "id": "dc_tt0074074",
+    "releaseYear": "1975",
+    "poster": "https://image.tmdb.org/t/p/w500/7vHxWO6ahByDWzWufFL48MXaktT.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 4532,
+    "title": "Superboy",
+    "type": "series",
+    "imdbId": "tt0094559",
+    "id": "dc_tt0094559",
+    "releaseYear": "1988",
+    "poster": "https://image.tmdb.org/t/p/w500/g8QxvkOSGiGRk0nW6U8QLX0Y8NV.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 236,
+    "title": "The Flash",
+    "type": "series",
+    "imdbId": "tt0098798",
+    "id": "dc_tt0098798",
+    "releaseYear": "1990",
+    "poster": "https://image.tmdb.org/t/p/w500/kkPYezpeDV6qEPdwvqko9NqTN1A.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 31919,
+    "title": "Human Target",
+    "type": "series",
+    "imdbId": "tt0103447",
+    "id": "dc_tt0103447",
+    "releaseYear": "1992",
+    "poster": "https://image.tmdb.org/t/p/w500/550hahC7sDSi3UEvBxCmrIDJrHD.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 4515,
+    "title": "Lois & Clark: The New Adventures of Superman",
+    "type": "series",
+    "imdbId": "tt0106057",
+    "id": "dc_tt0106057",
+    "releaseYear": "1993",
+    "poster": "https://image.tmdb.org/t/p/w500/1LbPs6i1h4BKjVUwK5S9GjPCydi.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 35,
+        "name": "Comedy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 4604,
+    "title": "Smallville",
+    "type": "series",
+    "imdbId": "tt0279600",
+    "id": "dc_tt0279600",
+    "releaseYear": "2001",
+    "poster": "https://image.tmdb.org/t/p/w500/dc9a9n4g9Ibs485t5eBtyNG0mcr.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.5/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 1469,
+    "title": "Birds of Prey",
+    "type": "series",
+    "imdbId": "tt0312098",
+    "id": "dc_tt0312098",
+    "releaseYear": "2002",
+    "poster": "https://image.tmdb.org/t/p/w500/gXeFSST0xqy5XNgrbuEaa5BxvDM.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.4/10"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 18653,
+    "title": "Human Target",
+    "type": "series",
+    "imdbId": "tt1439741",
+    "id": "dc_tt1439741",
+    "releaseYear": "2010",
+    "poster": "https://image.tmdb.org/t/p/w500/28DQmHuzVetpvq3dcK0snfEXflG.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
     "tmdbId": 1412,
     "title": "Arrow",
     "type": "series",
@@ -72,6 +362,30 @@ module.exports = [
       }
     ],
     "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 60743,
+    "title": "Constantine",
+    "type": "series",
+    "imdbId": "tt3489184",
+    "id": "dc_tt3489184",
+    "releaseYear": "2014",
+    "poster": "https://image.tmdb.org/t/p/w500/gQ3bA1DBKyZwkDCHJFEAT0MkKpu.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
       {
         "id": 18,
         "name": "Drama"
@@ -166,27 +480,6 @@ module.exports = [
     ]
   },
   {
-    "tmdbId": 74556,
-    "title": "The Flash: Chronicles of Cisco",
-    "type": "series",
-    "imdbId": "tt5654736",
-    "id": "dc_tt5654736",
-    "releaseYear": "2016",
-    "poster": "https://image.tmdb.org/t/p/w500/bOtZcYsBkgwMJQ3ULweCW8wDpdM.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.2/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 10759,
-        "name": "Action & Adventure"
-      }
-    ]
-  },
-  {
     "tmdbId": 68001,
     "title": "Powerless",
     "type": "series",
@@ -208,6 +501,30 @@ module.exports = [
       {
         "id": 35,
         "name": "Comedy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 71663,
+    "title": "Black Lightning",
+    "type": "series",
+    "imdbId": "tt6045840",
+    "id": "dc_tt6045840",
+    "releaseYear": "2018",
+    "poster": "https://image.tmdb.org/t/p/w500/h1xbvvO6oqchfLe6xh0yLNnQxeM.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
       }
     ]
   },
@@ -328,106 +645,6 @@ module.exports = [
     ]
   },
   {
-    "tmdbId": 79588,
-    "title": "Pennyworth: The Origin of Batman's Butler",
-    "type": "series",
-    "imdbId": "tt8425532",
-    "id": "dc_tt8425532",
-    "releaseYear": "2019",
-    "poster": "https://image.tmdb.org/t/p/w500/mEHMfWe7pCWMelEkdrtRvVULopT.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.8/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 18,
-        "name": "Drama"
-      },
-      {
-        "id": 80,
-        "name": "Crime"
-      }
-    ]
-  },
-  {
-    "tmdbId": 89247,
-    "title": "Batwoman",
-    "type": "series",
-    "imdbId": "tt8712204",
-    "id": "dc_tt8712204",
-    "releaseYear": "2019",
-    "poster": "https://image.tmdb.org/t/p/w500/pBpxKiitMuYXvtsXNSzya8DKKzV.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "3.6/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 10765,
-        "name": "Sci-Fi & Fantasy"
-      },
-      {
-        "id": 10759,
-        "name": "Action & Adventure"
-      }
-    ]
-  },
-  {
-    "tmdbId": 79788,
-    "title": "Watchmen",
-    "type": "series",
-    "imdbId": "tt7049682",
-    "id": "dc_tt7049682",
-    "releaseYear": "2019",
-    "poster": "https://image.tmdb.org/t/p/w500/m8rWq3j73ZGhDuSCZWMMoE9ePH1.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "8.2/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 18,
-        "name": "Drama"
-      },
-      {
-        "id": 80,
-        "name": "Crime"
-      },
-      {
-        "id": 10765,
-        "name": "Sci-Fi & Fantasy"
-      }
-    ]
-  },
-  {
-    "tmdbId": 98069,
-    "title": "Crisis Aftermath",
-    "type": "series",
-    "imdbId": "tt11262172",
-    "id": "dc_tt11262172",
-    "releaseYear": "2019",
-    "poster": "https://image.tmdb.org/t/p/w500/kaCjmS5tyAcfCrcdKuqxQ1CwvZ9.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "6.8/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 10767,
-        "name": "Talk"
-      }
-    ]
-  },
-  {
     "tmdbId": 80986,
     "title": "DC's Stargirl",
     "type": "series",
@@ -457,6 +674,26 @@ module.exports = [
     ]
   },
   {
+    "tmdbId": 96195,
+    "title": "Paradise Lost",
+    "type": "series",
+    "imdbId": "tt10306320",
+    "id": "dc_tt10306320",
+    "releaseYear": "2020",
+    "poster": "https://image.tmdb.org/t/p/w500/ddmZnaxFkAl2yTCjiaHnxsaydtT.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 9648,
+        "name": "Mystery"
+      }
+    ]
+  },
+  {
     "tmdbId": 95057,
     "title": "Superman & Lois",
     "type": "series",
@@ -468,31 +705,6 @@ module.exports = [
       {
         "Source": "Internet Movie Database",
         "Value": "7.8/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 18,
-        "name": "Drama"
-      },
-      {
-        "id": 10765,
-        "name": "Sci-Fi & Fantasy"
-      }
-    ]
-  },
-  {
-    "tmdbId": 103768,
-    "title": "Sweet Tooth",
-    "type": "series",
-    "imdbId": "tt12809988",
-    "id": "dc_tt12809988",
-    "releaseYear": "2021",
-    "poster": "https://image.tmdb.org/t/p/w500/rgMfhcrVZjuy5b7Pn0KzCRCEnMX.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.7/10"
       }
     ],
     "genres": [

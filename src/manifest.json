@@ -2,7 +2,7 @@
   "id": "com.tapframe.dcaddon",
   "name": "DC Universe",
   "description": "Explore the DC Universe by release date, movies, series, and animations!",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "logo": "https://github.com/tapframe/addon-dc/blob/main/assets/icon.png?raw=true",
   "background": "https://github.com/tapframe/addon-dc/blob/main/assets/background.jpg?raw=true",
   "catalogs": [
@@ -23,8 +23,18 @@
     },
     {
       "type": "DC",
+      "id": "dceu_movies",
+      "name": "DCEU Movies"
+    },
+    {
+      "type": "DC",
       "id": "dc-series",
       "name": "Series"
+    },
+    {
+      "type": "DC",
+      "id": "dc_modern_series",
+      "name": "DC Modern Series"
     },
     {
       "type": "DC",
@@ -33,23 +43,23 @@
     },
     {
       "type": "DC",
-      "id": "dc-batman",
-      "name": "Batman Collection"
-    },
-    {
-      "type": "DC",
       "id": "dc-batman-animations",
       "name": "Batman Animations"
     },
     {
       "type": "DC",
-      "id": "dc-superman",
-      "name": "Superman Collection"
+      "id": "dc-superman-animations",
+      "name": "Superman Animations"
     },
     {
       "type": "DC",
-      "id": "dc-superman-animations",
-      "name": "Superman Animations"
+      "id": "dc-batman",
+      "name": "Batman Collection"
+    },
+    {
+      "type": "DC",
+      "id": "dc-superman",
+      "name": "Superman Collection"
     }
   ],
   "resources": ["catalog"],

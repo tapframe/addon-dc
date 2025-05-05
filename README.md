@@ -14,6 +14,19 @@ Explore the DC Universe within Stremio! Browse movies and series by **chronologi
 
 ---
 
+## 🎉 What's New (May 2024)
+
+*   **Curated Catalogs**: Added specific, curated catalogs for:
+    *   DCEU Movies
+    *   Modern DC Series (Live-Action, 2010s-Present)
+    *   All Batman Movies (Live-Action & Serials)
+    *   All Superman Movies (Live-Action & Serials)
+*   **Improved Data Quality**: Items without essential metadata (poster image, overview) are now filtered out during data generation.
+*   **Catalog Reordering**: Catalogs are now ordered more logically in the Stremio interface.
+*   **Manifest Update**: Catalogs now use the `DC` type for better grouping in Stremio.
+
+---
+
 ## 📝 Current Coverage
 
 Currently, the addon primarily supports DC content from 2010 onwards with a limited catalog. Additional categories covering the entire DC universe will be added based on user needs and requests.
@@ -34,11 +47,12 @@ Direct Installation Link**
 
 This section is for those who self-host the addon. To update the data files:
 
-1.  Set up API keys in a `.env` file (`TMDB_API_KEY`, `OMDB_API_KEY`).
+1.  Set up API keys in a `.env` file (`TMDB_API_KEY`, `OMDB_API_KEY` - OMDb is optional but recommended for ratings).
 2.  Install dependencies: `npm install`
-3.  Run the update script: `node scripts/updateData.js`
-4.  Run the chronological script: `node scripts/generateChronologicalData.js`
-5.  Restart/redeploy the addon.
+3.  Run the specific fetch scripts you need (e.g., `node scripts/fetchMoviesList.js`, `node scripts/fetchSeriesList.js`, etc.).
+4.  Run the combine script if you updated movies or series: `node scripts/combineReleaseData.js`
+5.  Run the chronological script (if it relies on updated base data): `node scripts/generateChronologicalData.js`
+6.  Restart/redeploy the addon.
 
 ---
 

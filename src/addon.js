@@ -10,6 +10,8 @@ const batmanData = require('../Data/everythingbatman'); // Batman data
 const batmanAnimationData = require('../Data/everythingbatmananimation'); // Batman animation data
 const supermanData = require('../Data/everythingsuperman'); // Superman data
 const supermanAnimationData = require('../Data/everythingsupermananimation'); // Superman animation data
+const dceuMoviesData = require('../Data/DCEUMovies'); // DCEU movie data
+const modernDCSeriesData = require('../Data/DCSeries'); // Modern DC Series data
 
 let tmdbKey, omdbKey, port;
 try {
@@ -52,105 +54,142 @@ async function fetchAdditionalData(item) {
   console.log('\n--- Fetching details for item: ---', item); // Log raw item
 
   // Basic validation of the input item
-  if (!item || !item.imdbId || !item.type || !item.title) {
+  if (!item || (!item.imdbId && !item.id) || !item.type || !item.title) { // Allow using item.id if imdbId missing
       console.warn('Skipping item due to missing essential data:', item);
       return null;
   }
+  const lookupId = item.imdbId || item.id; // Prefer imdbId but use item.id as fallback
+  const idPrefix = lookupId.split('_')[0]; // Check prefix (e.g., 'tt' or 'tmdb')
+  const isImdb = idPrefix === 'tt' || (item.imdbId && !item.imdbId.startsWith('tmdb_'));
+
 
   // Check if API keys are available
-  if (!tmdbKey || !omdbKey) {
-      console.warn(`Skipping metadata fetch for ${item.title} (${item.imdbId}) because API keys are missing.`);
+  if (!tmdbKey || (!omdbKey && isImdb)) { // OMDb key only needed if we have an IMDb ID
+      console.warn(`Skipping metadata fetch for ${item.title} (${lookupId}) because API keys are missing.`);
       // Return minimal data if keys are missing
       return {
-          id: item.imdbId,
+          id: lookupId,
           type: item.type,
           name: item.type === 'series' ? item.title.replace(/ Season \d+/, '') : item.title,
           poster: item.poster || null, // Use poster from data file if available
-          description: 'Metadata lookup unavailable (API key missing).',
+          description: item.overview || 'Metadata lookup unavailable (API key missing).', // Use local overview
           releaseInfo: item.releaseYear || 'N/A',
           imdbRating: 'N/A',
-          genres: []
+          genres: item.genres ? item.genres.map(g => g.name) : []
       };
   }
 
-  try {
-    const omdbUrl = `http://www.omdbapi.com/?i=${item.imdbId}&apikey=${omdbKey}`;
-    // Separate TMDb calls for search and images
-    const tmdbSearchUrl = `https://api.themoviedb.org/3/search/${item.type === 'movie' ? 'movie' : 'tv'}?api_key=${tmdbKey}&query=${encodeURIComponent(item.title)}&year=${item.releaseYear}`;
-    const tmdbImagesUrl = `https://api.themoviedb.org/3/${item.type === 'movie' ? 'movie' : 'tv'}/${item.tmdbId}/images?api_key=${tmdbKey}`;
+  let omdbData = {};
+  let tmdbData = {};
+  let tmdbImagesData = {};
 
-    console.log(`Fetching data for ${item.title} (${item.imdbId})...`);
-    // Fetch OMDb, TMDb Search, and TMDb Images concurrently
-    const [omdbRes, tmdbSearchRes, tmdbImagesRes] = await Promise.all([
-      axios.get(omdbUrl).catch((err) => {
-        console.error(`OMDB error for ${item.imdbId}: ${err.message}`);
-        return {};
-      }),
-      axios.get(tmdbSearchUrl).catch((err) => {
-        console.error(`TMDB error for ${item.title}: ${err.message}`);
-        return {};
-      }),
-      // Fetch Images
-      axios.get(tmdbImagesUrl).catch((err) => {
-        // Don't log error if it's just a 404 (no images found)
-        if (!err.response || err.response.status !== 404) {
-             console.warn(`TMDb Images error for ${item.title}: ${err.message}`);
+  try {
+    // OMDb call only if we have a real IMDb ID
+    const omdbPromise = isImdb
+        ? axios.get(`http://www.omdbapi.com/?i=${lookupId}&apikey=${omdbKey}`).catch((err) => {
+              console.error(`OMDB error for ${lookupId}: ${err.message}`);
+              return {};
+          })
+        : Promise.resolve({}); // Resolve immediately if no IMDb ID
+
+    // TMDb search/details call
+    // We need TMDb ID for images, try to get it from item first
+    let effectiveTmdbId = item.tmdbId || (idPrefix === 'tmdb' ? lookupId.split('_')[1] : null);
+    let tmdbDetailsPromise;
+    if (effectiveTmdbId) {
+        // If we have tmdbId, fetch details directly
+        const tmdbDetailsUrl = `https://api.themoviedb.org/3/${item.type}/${effectiveTmdbId}?api_key=${tmdbKey}&language=en-US`;
+        tmdbDetailsPromise = axios.get(tmdbDetailsUrl).catch((err) => {
+            console.error(`TMDB Details error for ${item.type}/${effectiveTmdbId}: ${err.message}`);
+            return {};
+        });
+    } else {
+        // If no tmdbId, search TMDb by title/year
+        const tmdbSearchUrl = `https://api.themoviedb.org/3/search/${item.type}?api_key=${tmdbKey}&query=${encodeURIComponent(item.title)}&year=${item.releaseYear}`;
+        tmdbDetailsPromise = axios.get(tmdbSearchUrl).then(res => res.data?.results?.[0] ? getTmdbDetails(res.data.results[0].id, item.type) : {}).catch((err) => {
+            console.error(`TMDB Search error for ${item.title}: ${err.message}`);
+            return {};
+        });
+    }
+
+    // Fetch Images using TMDb ID (if we found one)
+    const tmdbImagesPromise = tmdbDetailsPromise.then(detailsRes => {
+        const foundTmdbId = detailsRes?.data?.id || effectiveTmdbId; // Get ID from details if available
+        if (foundTmdbId) {
+            const tmdbImagesUrl = `https://api.themoviedb.org/3/${item.type}/${foundTmdbId}/images?api_key=${tmdbKey}`;
+            return axios.get(tmdbImagesUrl).catch((err) => {
+                if (!err.response || err.response.status !== 404) {
+                     console.warn(`TMDb Images error for ${item.title}: ${err.message}`);
+                }
+                return {};
+            });
+        } else {
+            return Promise.resolve({}); // No TMDb ID, no images
         }
-        return {}; // Return empty object on error
-      })
+    });
+
+    console.log(`Fetching data for ${item.title} (${lookupId})...`);
+    const [omdbRes, tmdbDetailsResult, tmdbImagesRes] = await Promise.all([
+      omdbPromise,
+      tmdbDetailsPromise,
+      tmdbImagesPromise
     ]);
 
-    const omdbData = omdbRes.data || {};
-    const tmdbData = tmdbSearchRes.data?.results?.[0] || {};
-    const tmdbImagesData = tmdbImagesRes.data || {};
+    omdbData = omdbRes.data || {};
+    tmdbData = tmdbDetailsResult.data || {}; // If searched, this might already be details
+    tmdbImagesData = tmdbImagesRes.data || {};
 
-    // Prioritize poster from item, then OMDB, TMDB, and fallback
+    // Poster priority: local data -> TMDb -> OMDb -> fallback
     let poster = item.poster || null;
-    if (!poster && omdbData.Poster && omdbData.Poster !== 'N/A') {
-      poster = omdbData.Poster;
-    }
     if (!poster && tmdbData.poster_path) {
       poster = `https://image.tmdb.org/t/p/w500${tmdbData.poster_path}`;
     }
+    if (!poster && omdbData.Poster && omdbData.Poster !== 'N/A') {
+      poster = omdbData.Poster;
+    }
     if (!poster) {
-      poster = `https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg`;
-      console.warn(`No poster found for ${item.title} (${item.imdbId}).`);
+      // poster = `https://via.placeholder.com/150x225.png?text=No+Poster`; // Generic Placeholder
+      console.warn(`No poster found for ${item.title} (${lookupId}).`);
+       return null; // Skip items without posters as per previous request?
     }
 
-    // --- Find the best logo --- 
     let logoUrl = null;
     if (tmdbImagesData.logos && tmdbImagesData.logos.length > 0) {
-      // Prefer English logo if available
       let bestLogo = tmdbImagesData.logos.find(logo => logo.iso_639_1 === 'en');
-      // Otherwise, take the first one
       if (!bestLogo) {
         bestLogo = tmdbImagesData.logos[0];
       }
       if (bestLogo && bestLogo.file_path) {
-          // Use original size for logo for better quality
           logoUrl = `https://image.tmdb.org/t/p/original${bestLogo.file_path}`;
       }
     }
-    // --- End Logo Logic ---
-    console.log(`   > Selected logo URL: ${logoUrl || 'Not found'}`); // Log selected logo
+    console.log(`   > Selected logo URL: ${logoUrl || 'Not found'}`);
+
+    // Description priority: local data -> TMDb -> OMDb -> fallback
+    const description = item.overview || tmdbData.overview || omdbData.Plot || 'No description available.';
+    if (description === 'No description available.') {
+         console.warn(`No overview/plot found for ${item.title} (${lookupId}).`);
+         return null; // Skip items without overview?
+    }
 
     const meta = {
-      id: item.imdbId,
+      id: lookupId, // Use the ID we actually used for lookup
       type: item.type,
       name: item.type === 'series' ? item.title.replace(/ Season \d+/, '') : item.title,
       logo: logoUrl,
       poster: poster,
-      description: tmdbData.overview || omdbData.Plot || 'No description available',
-      releaseInfo: item.releaseYear,
+      description: description,
+      releaseInfo: item.releaseYear || (tmdbData.release_date ? tmdbData.release_date.split('-')[0] : (tmdbData.first_air_date ? tmdbData.first_air_date.split('-')[0] : 'N/A')),
       imdbRating: omdbData.imdbRating || 'N/A',
-      genres: tmdbData.genres ? tmdbData.genres.map(g => g.name) : (item.genres ? item.genres.map(g => g.name) : ['Action', 'Adventure'])
+      // Use TMDb genres if available, otherwise fallback to local genres
+      genres: tmdbData.genres ? tmdbData.genres.map(g => g.name) : (item.genres ? item.genres.map(g => g.name) : [])
     };
 
-    console.log('   > Returning metadata:', meta); // Log final meta object
+    console.log('   > Returning metadata:', { ...meta, description: meta.description.substring(0, 50) + '...'}); // Log truncated desc
     return meta;
   } catch (err) {
-    console.error(`Error processing ${item.title} (${item.imdbId}): ${err.message}`);
-    return null; // Return null for items with error, will be filtered later
+    console.error(`Error processing ${item.title} (${lookupId}): ${err.message}`);
+    return null;
   }
 }
 
@@ -158,76 +197,75 @@ async function fetchAdditionalData(item) {
 builder.defineCatalogHandler(async ({ type, id }) => {
   console.log(`Catalog requested - Type: ${type}, ID: ${id}`);
 
-  // Return cached catalog if available
   if (cachedCatalog[id]) {
     console.log(`✅ Returning cached catalog for ID: ${id}`);
     return cachedCatalog[id];
   }
 
-  let dataSourcePath;
+  let dataSource;
   let dataSourceName = id;
 
-  // Map catalog IDs to data file paths
-  switch (id) {
-    case 'dc-chronological':
-      dataSourcePath = '../Data/chronologicalData';
-      break;
-    case 'dc-release':
-      dataSourcePath = '../Data/releaseData';
-      break;
-    case 'dc-movies':
-      dataSourcePath = '../Data/moviesData';
-      break;
-    case 'dc-series':
-      dataSourcePath = '../Data/seriesData';
-      break;
-    case 'dc-animations':
-      dataSourcePath = '../Data/animationsData';
-      break;
-    case 'dc-batman':
-      dataSourcePath = '../Data/everythingbatman';
-      break;
-    case 'dc-batman-animations':
-      dataSourcePath = '../Data/everythingbatmananimation';
-      break;
-    case 'dc-superman':
-      dataSourcePath = '../Data/everythingsuperman';
-      break;
-    case 'dc-superman-animations':
-      dataSourcePath = '../Data/everythingsupermananimation';
-      break;
-    default:
-      console.warn(`Unrecognized catalog ID: ${id}`);
-      return Promise.resolve({ metas: [] }); // Return empty for unrecognized IDs
-  }
-
-  let dataSource = [];
+  // Load data based on catalog ID
   try {
-    // Dynamically require the data source only when needed
-    dataSource = require(dataSourcePath);
-    if (!Array.isArray(dataSource)) {
-      throw new Error(`Data file ${dataSourcePath}.js does not contain a valid array.`);
-    }
-    console.log(`Loaded ${dataSource.length} items from ${dataSourcePath}.js`);
+      switch (id) {
+        case 'dc-chronological':
+          dataSource = require('../Data/chronologicalData'); // Assuming this exists
+          break;
+        case 'dc-release':
+          dataSource = releaseData; // Already required
+          break;
+        case 'dc-movies':
+          dataSource = moviesData; // Already required
+          break;
+        case 'dc-series':
+          dataSource = seriesData; // Already required
+          break;
+        case 'dc-animations':
+          dataSource = animationsData; // Already required
+          break;
+        case 'dc-batman': // Original Batman catalog
+          dataSource = batmanData; // Already required
+          break;
+        case 'dc-batman-animations':
+          dataSource = batmanAnimationData; // Already required
+          break;
+        case 'dc-superman': // Original Superman catalog
+          dataSource = supermanData; // Already required
+          break;
+        case 'dc-superman-animations':
+          dataSource = supermanAnimationData; // Already required
+          break;
+        // --- Add cases for new catalogs ---
+        case 'dceu_movies':
+          dataSource = dceuMoviesData; // Use newly required data
+          dataSourceName = 'DCEU Movies';
+          break;
+        case 'dc_modern_series':
+          dataSource = modernDCSeriesData; // Use newly required data
+          dataSourceName = 'DC Modern Series';
+          break;
+        default:
+          console.warn(`Unrecognized catalog ID: ${id}`);
+          return Promise.resolve({ metas: [] });
+      }
+      if (!Array.isArray(dataSource)) {
+        throw new Error(`Data source for ID ${id} is not a valid array.`);
+      }
+      console.log(`Loaded ${dataSource.length} items for catalog: ${dataSourceName}`);
   } catch (error) {
-      console.error(`❌ Error loading data from ${dataSourcePath}.js:`, error.message);
-      // Return empty catalog if data loading fails
+      console.error(`❌ Error loading data for catalog ID ${id}:`, error.message);
       return Promise.resolve({ metas: [] });
   }
 
-  // Process data to generate catalog
-  console.log(`⏳ Generating catalog for ${dataSourceName}... (This might take a moment for the first request)`);
+  console.log(`⏳ Generating catalog for ${dataSourceName}...`);
   const metas = await Promise.all(
-    dataSource.map(fetchAdditionalData)
+    dataSource.map(item => fetchAdditionalData(item))
   );
 
-  // Filter out null items (which failed)
   const validMetas = metas.filter(item => item !== null);
   console.log(`✅ Catalog generated with ${validMetas.length} items for ID: ${id}`);
 
-  // Store catalog in cache by ID
   cachedCatalog[id] = { metas: validMetas };
-
   return cachedCatalog[id];
 });
 

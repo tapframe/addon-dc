@@ -1,5 +1,100 @@
 module.exports = [
   {
+    "tmdbId": 125249,
+    "title": "Batman",
+    "type": "movie",
+    "imdbId": "tt0035665",
+    "id": "dc_tt0035665",
+    "releaseYear": "1943",
+    "poster": "https://image.tmdb.org/t/p/w500/AvzD3mrtokIzZOiV6zAG7geIo6F.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      },
+      {
+        "id": 53,
+        "name": "Thriller"
+      },
+      {
+        "id": 10752,
+        "name": "War"
+      }
+    ],
+    "overview": "Japanese master spy Daka operates a covert espionage-sabotage organization located in Gotham City's now-deserted Little Tokyo, which turns American scientists into pliable zombies. The great crime-fighters Batman and Robin, with the help of their allies, are in pursuit."
+  },
+  {
+    "tmdbId": 93560,
+    "title": "Batman and Robin",
+    "type": "movie",
+    "imdbId": "tt0041162",
+    "id": "dc_tt0041162",
+    "releaseYear": "1949",
+    "poster": "https://image.tmdb.org/t/p/w500/411pEyeqP5rLS6Zc9batSRL0c8G.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      },
+      {
+        "id": 53,
+        "name": "Thriller"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      }
+    ],
+    "overview": "This 15-chapter serial pits Batman and Robin against The Wizard, who uses a device that allows him to control machinery to hold the city hostage."
+  },
+  {
+    "tmdbId": 2661,
+    "title": "Batman",
+    "type": "movie",
+    "imdbId": "tt0060153",
+    "id": "dc_tt0060153",
+    "releaseYear": "1966",
+    "poster": "https://image.tmdb.org/t/p/w500/zzoPxWHnPa0eyfkMLgwbNvdEcVF.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 35,
+        "name": "Comedy"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      }
+    ],
+    "overview": "The Dynamic Duo faces four super-villains who plan to hold the world for ransom with the help of a secret invention that instantly dehydrates people."
+  },
+  {
     "tmdbId": 268,
     "title": "Batman",
     "type": "movie",
@@ -34,7 +129,8 @@ module.exports = [
         "id": 80,
         "name": "Crime"
       }
-    ]
+    ],
+    "overview": "Batman must face his most ruthless nemesis when a deformed madman calling himself \"The Joker\" seizes control of Gotham's criminal underworld."
   },
   {
     "tmdbId": 364,
@@ -67,7 +163,8 @@ module.exports = [
         "id": 14,
         "name": "Fantasy"
       }
-    ]
+    ],
+    "overview": "Batman must face The Penguin, a sewer-dwelling gangleader intent on being accepted into Gotham society.  Meanwhile, another Gotham resident finds herself transformed into Catwoman and is out for revenge..."
   },
   {
     "tmdbId": 414,
@@ -104,7 +201,8 @@ module.exports = [
         "id": 14,
         "name": "Fantasy"
       }
-    ]
+    ],
+    "overview": "In the looming shadows of Gotham City, two villainous souls devise twin schemes of revenge against the city's dark guardian. Two-Face, disfigured by chance and fueled by vengeance, is obsessed with destroying Batman, while the Riddler, a disillusioned genius, pursues the destruction of billionaire Bruce Wayne. Together they've hatched a plot to absorb and control the minds of all of Gotham City's residents, and only Batman and his new partner, Robin, can stop them! But the Dark Knight is hindered by a mystery from his own childhood. He must hope that a new found love can help him overcome the incident that made him what he is. In the end, he must decide: will he be Batman—forever?"
   },
   {
     "tmdbId": 415,
@@ -141,36 +239,8 @@ module.exports = [
         "id": 12,
         "name": "Adventure"
       }
-    ]
-  },
-  {
-    "tmdbId": 1469,
-    "title": "Birds of Prey",
-    "type": "tv",
-    "imdbId": "tt0312098",
-    "id": "dc_tt0312098",
-    "releaseYear": "2002-2003",
-    "poster": "https://image.tmdb.org/t/p/w500/gXeFSST0xqy5XNgrbuEaa5BxvDM.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "6.4/10"
-      }
     ],
-    "genres": [
-      {
-        "id": 18,
-        "name": "Drama"
-      },
-      {
-        "id": 10759,
-        "name": "Action & Adventure"
-      },
-      {
-        "id": 10765,
-        "name": "Sci-Fi & Fantasy"
-      }
-    ]
+    "overview": "Batman and Robin deal with relationship issues while preventing Mr. Freeze and Poison Ivy from attacking Gotham City."
   },
   {
     "tmdbId": 272,
@@ -207,70 +277,8 @@ module.exports = [
         "id": 18,
         "name": "Drama"
       }
-    ]
-  },
-  {
-    "tmdbId": 141559,
-    "title": "Legends of the Dark Knight: The History of Batman",
-    "type": "movie",
-    "imdbId": "tt0486410",
-    "id": "dc_tt0486410",
-    "releaseYear": "2005",
-    "poster": "https://image.tmdb.org/t/p/w500/ijOIT8msWufRPp1OCVIPIaWgvwc.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.9/10"
-      }
     ],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
-  },
-  {
-    "tmdbId": 186579,
-    "title": "Batman Tech",
-    "type": "movie",
-    "imdbId": "tt1265588",
-    "id": "dc_tt1265588",
-    "releaseYear": "2008",
-    "poster": "https://image.tmdb.org/t/p/w500/tlAYMNTvga69AUXMIY0HeeoblHT.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.3/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
-  },
-  {
-    "tmdbId": 29751,
-    "title": "Batman Unmasked: The Psychology of The Dark Knight",
-    "type": "movie",
-    "imdbId": "tt1265589",
-    "id": "dc_tt1265589",
-    "releaseYear": "2008",
-    "poster": "https://image.tmdb.org/t/p/w500/e15wNHmLX7PJUo8lqzQRhwbX7PL.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.2/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
+    "overview": "Driven by tragedy, billionaire Bruce Wayne dedicates his life to uncovering and defeating the corruption that plagues his home, Gotham City.  Unable to work within the system, he instead creates a new identity, a symbol of fear for the criminal underworld - The Batman."
   },
   {
     "tmdbId": 155,
@@ -311,44 +319,8 @@ module.exports = [
         "id": 53,
         "name": "Thriller"
       }
-    ]
-  },
-  {
-    "tmdbId": 1406348,
-    "title": "Shadows of the Bat: The Cinematic Saga of the Dark Knight",
-    "type": "movie",
-    "imdbId": "tmdb_1406348",
-    "id": "dc_tmdb_1406348",
-    "releaseYear": "2008",
-    "poster": "https://image.tmdb.org/t/p/w500/bcwMNsbInmW4PlNb8SIVE07A5NO.jpg",
-    "ratings": [],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
-  },
-  {
-    "tmdbId": 536861,
-    "title": "A First Look at Batman: Under the Red Hood",
-    "type": "movie",
-    "imdbId": "tt1640102",
-    "id": "dc_tt1640102",
-    "releaseYear": "2010",
-    "poster": "https://image.tmdb.org/t/p/w500/ecRsNVGjpf129zKZMJeWVbRQHIN.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.7/10"
-      }
     ],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
+    "overview": "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker."
   },
   {
     "tmdbId": 49026,
@@ -389,65 +361,8 @@ module.exports = [
         "id": 53,
         "name": "Thriller"
       }
-    ]
-  },
-  {
-    "tmdbId": 60708,
-    "title": "Gotham",
-    "type": "tv",
-    "imdbId": "tt3749900",
-    "id": "dc_tt3749900",
-    "releaseYear": "2014-2019",
-    "poster": "https://image.tmdb.org/t/p/w500/wt3uwxSKbMg5ZNJBUOrsJoDnNWX.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.8/10"
-      }
     ],
-    "genres": [
-      {
-        "id": 18,
-        "name": "Drama"
-      },
-      {
-        "id": 80,
-        "name": "Crime"
-      },
-      {
-        "id": 10765,
-        "name": "Sci-Fi & Fantasy"
-      }
-    ]
-  },
-  {
-    "tmdbId": 100535,
-    "title": "Batman Unlimited",
-    "type": "tv",
-    "imdbId": "tt4818178",
-    "id": "dc_tt4818178",
-    "releaseYear": "2015-2016",
-    "poster": "https://image.tmdb.org/t/p/w500/xwFsHsa8VQeUUuiLygiDmypLo0D.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "6.4/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 10762,
-        "name": "Kids"
-      },
-      {
-        "id": 10751,
-        "name": "Family"
-      },
-      {
-        "id": 10759,
-        "name": "Action & Adventure"
-      }
-    ]
+    "overview": "Following the death of District Attorney Harvey Dent, Batman assumes responsibility for Dent's crimes to protect the late attorney's reputation and is subsequently hunted by the Gotham City Police Department. Eight years later, Batman encounters the mysterious Selina Kyle and the villainous Bane, a new terrorist leader who overwhelms Gotham's finest. The Dark Knight resurfaces to protect a city that has branded him an enemy."
   },
   {
     "tmdbId": 209112,
@@ -484,28 +399,46 @@ module.exports = [
         "id": 14,
         "name": "Fantasy"
       }
-    ]
+    ],
+    "overview": "Fearing the actions of a god-like Super Hero left unchecked, Gotham City’s own formidable, forceful vigilante takes on Metropolis’s most revered, modern-day savior, while the world wrestles with what sort of hero it really needs. And with Batman and Superman at war with one another, a new threat quickly arises, putting mankind in greater danger than it’s ever known before."
   },
   {
-    "tmdbId": 378674,
-    "title": "DC Films Presents Dawn of the Justice League",
+    "tmdbId": 297761,
+    "title": "Suicide Squad",
     "type": "movie",
-    "imdbId": "tt5355872",
-    "id": "dc_tt5355872",
+    "imdbId": "tt1386697",
+    "id": "dc_tt1386697",
     "releaseYear": "2016",
-    "poster": "https://image.tmdb.org/t/p/w500/jjYndp8PuLFNuIbGg6Zs7MkxWIc.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/sk3FZgh3sRrmr8vyhaitNobMcfh.jpg",
     "ratings": [
       {
         "Source": "Internet Movie Database",
-        "Value": "7.6/10"
+        "Value": "5.9/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "26%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "40/100"
       }
     ],
     "genres": [
       {
-        "id": 99,
-        "name": "Documentary"
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
       }
-    ]
+    ],
+    "overview": "From DC Comics comes the Suicide Squad, an antihero team of incarcerated supervillains who act as deniable assets for the United States government, undertaking high-risk black ops missions in exchange for commuted prison sentences."
   },
   {
     "tmdbId": 141052,
@@ -542,102 +475,8 @@ module.exports = [
         "id": 878,
         "name": "Science Fiction"
       }
-    ]
-  },
-  {
-    "tmdbId": 622408,
-    "title": "Heart of Batman",
-    "type": "movie",
-    "imdbId": "tt9555800",
-    "id": "dc_tt9555800",
-    "releaseYear": "2018",
-    "poster": "https://image.tmdb.org/t/p/w500/pLWwHFsj8tiGffSA1FHl6J7umxX.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "8.0/10"
-      }
     ],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
-  },
-  {
-    "tmdbId": 75450,
-    "title": "Titans",
-    "type": "tv",
-    "imdbId": "tt1043813",
-    "id": "dc_tt1043813",
-    "releaseYear": "2018-2023",
-    "poster": "https://image.tmdb.org/t/p/w500/8e6QiSexmYKaiHGPvbhaFMmQEhc.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.5/10"
-      },
-      {
-        "Source": "Rotten Tomatoes",
-        "Value": "50%"
-      }
-    ],
-    "genres": [
-      {
-        "id": 18,
-        "name": "Drama"
-      },
-      {
-        "id": 10759,
-        "name": "Action & Adventure"
-      },
-      {
-        "id": 10765,
-        "name": "Sci-Fi & Fantasy"
-      }
-    ]
-  },
-  {
-    "tmdbId": 1457270,
-    "title": "Nostalgic Tomorrow: A Batman Gathering",
-    "type": "movie",
-    "imdbId": "tmdb_1457270",
-    "id": "dc_tmdb_1457270",
-    "releaseYear": "2019",
-    "poster": null,
-    "ratings": [],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
-  },
-  {
-    "tmdbId": 79588,
-    "title": "Pennyworth: The Origin of Batman's Butler",
-    "type": "tv",
-    "imdbId": "tt8425532",
-    "id": "dc_tt8425532",
-    "releaseYear": "2019-2022",
-    "poster": "https://image.tmdb.org/t/p/w500/mEHMfWe7pCWMelEkdrtRvVULopT.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.8/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 18,
-        "name": "Drama"
-      },
-      {
-        "id": 80,
-        "name": "Crime"
-      }
-    ]
+    "overview": "Fuelled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne and Diana Prince assemble a team of metahumans consisting of Barry Allen, Arthur Curry and Victor Stone to face the catastrophic threat of Steppenwolf and the Parademons who are on the hunt for three Mother Boxes on Earth."
   },
   {
     "tmdbId": 791373,
@@ -674,7 +513,8 @@ module.exports = [
         "id": 14,
         "name": "Fantasy"
       }
-    ]
+    ],
+    "overview": "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions."
   },
   {
     "tmdbId": 414906,
@@ -711,48 +551,46 @@ module.exports = [
         "id": 53,
         "name": "Thriller"
       }
-    ]
+    ],
+    "overview": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler."
   },
   {
-    "tmdbId": 1457272,
-    "title": "The Batman: The Dark Dynasty Continues",
+    "tmdbId": 298618,
+    "title": "The Flash",
     "type": "movie",
-    "imdbId": "tt28080915",
-    "id": "dc_tt28080915",
-    "releaseYear": "2022",
-    "poster": null,
-    "ratings": [],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
-  },
-  {
-    "tmdbId": 195868,
-    "title": "Gotham Knights",
-    "type": "tv",
-    "imdbId": "tt16418896",
-    "id": "dc_tt16418896",
+    "imdbId": "tt0439572",
+    "id": "dc_tt0439572",
     "releaseYear": "2023",
-    "poster": "https://image.tmdb.org/t/p/w500/5riy7SdIhMhhYcDqeEOICVvXEHS.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/rktDFPbfHfUbArZ6OOOKsXcv0Bm.jpg",
     "ratings": [
       {
         "Source": "Internet Movie Database",
-        "Value": "5.3/10"
+        "Value": "6.6/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "63%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "55/100"
       }
     ],
     "genres": [
       {
-        "id": 10759,
-        "name": "Action & Adventure"
+        "id": 12,
+        "name": "Adventure"
       },
       {
-        "id": 18,
-        "name": "Drama"
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
       }
-    ]
+    ],
+    "overview": "When his attempt to save his family inadvertently alters the future, Barry Allen becomes trapped in a reality in which General Zod has returned and there are no Super Heroes to turn to. In order to save the world that he is in and return to the future that he knows, Barry's only hope is to race for his life. But will making the ultimate sacrifice be enough to reset the universe?"
   },
   {
     "tmdbId": 806704,
@@ -776,6 +614,7 @@ module.exports = [
         "id": 80,
         "name": "Crime"
       }
-    ]
+    ],
+    "overview": "Sequel to the 2022 film The Batman."
   }
 ];

@@ -1,5 +1,582 @@
 module.exports = [
   {
+    "tmdbId": 1924,
+    "title": "Superman",
+    "type": "movie",
+    "imdbId": "tt0078346",
+    "id": "dc_tt0078346",
+    "releaseYear": "1978",
+    "poster": "https://image.tmdb.org/t/p/w500/d7px1FQxW4tngdACVRsCSaZq0Xl.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.4/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "93%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "82/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      },
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 8536,
+    "title": "Superman II",
+    "type": "movie",
+    "imdbId": "tt0081573",
+    "id": "dc_tt0081573",
+    "releaseYear": "1980",
+    "poster": "https://image.tmdb.org/t/p/w500/3xk5cno9BHcnwc97XO9k21aI1Zi.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.8/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "83%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "83/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      },
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 9531,
+    "title": "Superman III",
+    "type": "movie",
+    "imdbId": "tt0086393",
+    "id": "dc_tt0086393",
+    "releaseYear": "1983",
+    "poster": "https://image.tmdb.org/t/p/w500/aac3vujaTWRLARNDEcMyGSvJfsx.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "5.0/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "29%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "44/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 35,
+        "name": "Comedy"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      },
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 11411,
+    "title": "Superman IV: The Quest for Peace",
+    "type": "movie",
+    "imdbId": "tt0094074",
+    "id": "dc_tt0094074",
+    "releaseYear": "1987",
+    "poster": "https://image.tmdb.org/t/p/w500/aQ1d9OB0xtAenIL0Ke3xV17St4S.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "3.7/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "10%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "24/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ]
+  },
+  {
+    "tmdbId": 268,
+    "title": "Batman",
+    "type": "movie",
+    "imdbId": "tt0096895",
+    "id": "dc_tt0096895",
+    "releaseYear": "1989",
+    "poster": "https://image.tmdb.org/t/p/w500/cij4dd21v2Rk2YtUQbV5kW69WB2.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.5/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "77%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "69/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 14,
+        "name": "Fantasy"
+      },
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      }
+    ]
+  },
+  {
+    "tmdbId": 364,
+    "title": "Batman Returns",
+    "type": "movie",
+    "imdbId": "tt0103776",
+    "id": "dc_tt0103776",
+    "releaseYear": "1992",
+    "poster": "https://image.tmdb.org/t/p/w500/uEIvgvxzK08922iU61OvO3ORs0s.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.1/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "82%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "68/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 414,
+    "title": "Batman Forever",
+    "type": "movie",
+    "imdbId": "tt0112462",
+    "id": "dc_tt0112462",
+    "releaseYear": "1995",
+    "poster": "https://image.tmdb.org/t/p/w500/i0fJS8M5UKoETjjJ0zwUiKaR8tr.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "5.4/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "39%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "54/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 415,
+    "title": "Batman & Robin",
+    "type": "movie",
+    "imdbId": "tt0118688",
+    "id": "dc_tt0118688",
+    "releaseYear": "1997",
+    "poster": "https://image.tmdb.org/t/p/w500/cGRDufDDSrFrv7VI4YnmWnslne0.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "3.8/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "11%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "29/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 8854,
+    "title": "Steel",
+    "type": "movie",
+    "imdbId": "tt0120207",
+    "id": "dc_tt0120207",
+    "releaseYear": "1997",
+    "poster": "https://image.tmdb.org/t/p/w500/hbH8oXJZPwcYxaa1JrUMq4ogg7G.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      },
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      }
+    ]
+  },
+  {
+    "tmdbId": 314,
+    "title": "Catwoman",
+    "type": "movie",
+    "imdbId": "tt0327554",
+    "id": "dc_tt0327554",
+    "releaseYear": "2004",
+    "poster": "https://image.tmdb.org/t/p/w500/pvnPgukFyEKgCzyOxyLiwyZ8T1C.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "3.4/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "8%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "27/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      }
+    ]
+  },
+  {
+    "tmdbId": 272,
+    "title": "Batman Begins",
+    "type": "movie",
+    "imdbId": "tt0372784",
+    "id": "dc_tt0372784",
+    "releaseYear": "2005",
+    "poster": "https://image.tmdb.org/t/p/w500/4MpN4kIEqUjW8OPtOQJXlTdHiJV.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.2/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "85%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "70/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ]
+  },
+  {
+    "tmdbId": 561,
+    "title": "Constantine",
+    "type": "movie",
+    "imdbId": "tt0360486",
+    "id": "dc_tt0360486",
+    "releaseYear": "2005",
+    "poster": "https://image.tmdb.org/t/p/w500/vPYgvd2MwHlxTamAOjwVQp4qs1W.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.0/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "46%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "50/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 14,
+        "name": "Fantasy"
+      },
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 27,
+        "name": "Horror"
+      }
+    ]
+  },
+  {
+    "tmdbId": 1452,
+    "title": "Superman Returns",
+    "type": "movie",
+    "imdbId": "tt0348150",
+    "id": "dc_tt0348150",
+    "releaseYear": "2006",
+    "poster": "https://image.tmdb.org/t/p/w500/385XwTQZDpRX2d3kxtnpiLrjBXw.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.1/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "74%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "72/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      },
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      }
+    ]
+  },
+  {
+    "tmdbId": 155,
+    "title": "The Dark Knight",
+    "type": "movie",
+    "imdbId": "tt0468569",
+    "id": "dc_tt0468569",
+    "releaseYear": "2008",
+    "poster": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "9.0/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "94%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "84/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 53,
+        "name": "Thriller"
+      }
+    ]
+  },
+  {
+    "tmdbId": 13183,
+    "title": "Watchmen",
+    "type": "movie",
+    "imdbId": "tt0409459",
+    "id": "dc_tt0409459",
+    "releaseYear": "2009",
+    "poster": "https://image.tmdb.org/t/p/w500/aVURelN3pM56lFM7Dgfs5TixcIf.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 9648,
+        "name": "Mystery"
+      },
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ]
+  },
+  {
+    "tmdbId": 20533,
+    "title": "Jonah Hex",
+    "type": "movie",
+    "imdbId": "tt1075747",
+    "id": "dc_tt1075747",
+    "releaseYear": "2010",
+    "poster": "https://image.tmdb.org/t/p/w500/b1BLIXEe9zzaFvuWdYGoeuhuh75.jpg",
+    "ratings": [],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 37,
+        "name": "Western"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      },
+      {
+        "id": 53,
+        "name": "Thriller"
+      }
+    ]
+  },
+  {
     "tmdbId": 44912,
     "title": "Green Lantern",
     "type": "movie",
@@ -119,27 +696,6 @@ module.exports = [
     ]
   },
   {
-    "tmdbId": 378674,
-    "title": "DC Films Presents Dawn of the Justice League",
-    "type": "movie",
-    "imdbId": "tt5355872",
-    "id": "dc_tt5355872",
-    "releaseYear": "2016",
-    "poster": "https://image.tmdb.org/t/p/w500/jjYndp8PuLFNuIbGg6Zs7MkxWIc.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.6/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 99,
-        "name": "Documentary"
-      }
-    ]
-  },
-  {
     "tmdbId": 209112,
     "title": "Batman v Superman: Dawn of Justice",
     "type": "movie",
@@ -247,27 +803,6 @@ module.exports = [
       {
         "id": 14,
         "name": "Fantasy"
-      }
-    ]
-  },
-  {
-    "tmdbId": 1255345,
-    "title": "Etta's Mission",
-    "type": "movie",
-    "imdbId": "tt7408556",
-    "id": "dc_tt7408556",
-    "releaseYear": "2017",
-    "poster": "https://image.tmdb.org/t/p/w500/piVyyIEtTYrWlQq9SHLXMnhsYFf.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "6.6/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 12,
-        "name": "Adventure"
       }
     ]
   },
@@ -560,43 +1095,6 @@ module.exports = [
     ]
   },
   {
-    "tmdbId": 414906,
-    "title": "The Batman",
-    "type": "movie",
-    "imdbId": "tt1877830",
-    "id": "dc_tt1877830",
-    "releaseYear": "2022",
-    "poster": "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "7.8/10"
-      },
-      {
-        "Source": "Rotten Tomatoes",
-        "Value": "85%"
-      },
-      {
-        "Source": "Metacritic",
-        "Value": "72/100"
-      }
-    ],
-    "genres": [
-      {
-        "id": 80,
-        "name": "Crime"
-      },
-      {
-        "id": 9648,
-        "name": "Mystery"
-      },
-      {
-        "id": 53,
-        "name": "Thriller"
-      }
-    ]
-  },
-  {
     "tmdbId": 436270,
     "title": "Black Adam",
     "type": "movie",
@@ -630,6 +1128,43 @@ module.exports = [
       {
         "id": 878,
         "name": "Science Fiction"
+      }
+    ]
+  },
+  {
+    "tmdbId": 414906,
+    "title": "The Batman",
+    "type": "movie",
+    "imdbId": "tt1877830",
+    "id": "dc_tt1877830",
+    "releaseYear": "2022",
+    "poster": "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "85%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "72/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 9648,
+        "name": "Mystery"
+      },
+      {
+        "id": 53,
+        "name": "Thriller"
       }
     ]
   },
@@ -782,6 +1317,43 @@ module.exports = [
     ]
   },
   {
+    "tmdbId": 889737,
+    "title": "Joker: Folie à Deux",
+    "type": "movie",
+    "imdbId": "tt11315808",
+    "id": "dc_tt11315808",
+    "releaseYear": "2024",
+    "poster": "https://image.tmdb.org/t/p/w500/zPOOyw6HBb5Qo6uaWJ5UxrBR6Ll.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "5.2/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "31%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "45/100"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 53,
+        "name": "Thriller"
+      }
+    ]
+  },
+  {
     "tmdbId": 1061474,
     "title": "Superman",
     "type": "movie",
@@ -802,66 +1374,6 @@ module.exports = [
       {
         "id": 878,
         "name": "Science Fiction"
-      }
-    ]
-  },
-  {
-    "tmdbId": 1081003,
-    "title": "Supergirl: Woman of Tomorrow",
-    "type": "movie",
-    "imdbId": "tt8814476",
-    "id": "dc_tt8814476",
-    "releaseYear": "2026",
-    "poster": null,
-    "ratings": [],
-    "genres": [
-      {
-        "id": 878,
-        "name": "Science Fiction"
-      }
-    ]
-  },
-  {
-    "tmdbId": 1400940,
-    "title": "Clayface",
-    "type": "movie",
-    "imdbId": "tt34890576",
-    "id": "dc_tt34890576",
-    "releaseYear": "2026",
-    "poster": null,
-    "ratings": [],
-    "genres": [
-      {
-        "id": 53,
-        "name": "Thriller"
-      },
-      {
-        "id": 14,
-        "name": "Fantasy"
-      }
-    ]
-  },
-  {
-    "tmdbId": 806704,
-    "title": "Untitled The Batman Sequel",
-    "type": "movie",
-    "imdbId": "tt19850008",
-    "id": "dc_tt19850008",
-    "releaseYear": "2027",
-    "poster": "https://image.tmdb.org/t/p/w500/qwDWC2OzPw9zGc2lVCbjDrdaL6A.jpg",
-    "ratings": [],
-    "genres": [
-      {
-        "id": 9648,
-        "name": "Mystery"
-      },
-      {
-        "id": 18,
-        "name": "Drama"
-      },
-      {
-        "id": 80,
-        "name": "Crime"
       }
     ]
   }
