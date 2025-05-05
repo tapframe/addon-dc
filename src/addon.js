@@ -6,6 +6,10 @@ const releaseData = require('../Data/releaseData'); // Data in release order
 const moviesData = require('../Data/moviesData'); // Movie data
 const seriesData = require('../Data/seriesData'); // Series data
 const animationsData = require('../Data/animationsData'); // Animation data
+const batmanData = require('../Data/everythingbatman'); // Batman data
+const batmanAnimationData = require('../Data/everythingbatmananimation'); // Batman animation data
+const supermanData = require('../Data/everythingsuperman'); // Superman data
+const supermanAnimationData = require('../Data/everythingsupermananimation'); // Superman animation data
 
 let tmdbKey, omdbKey, port;
 try {
@@ -179,6 +183,18 @@ builder.defineCatalogHandler(async ({ type, id }) => {
       break;
     case 'dc-animations':
       dataSourcePath = '../Data/animationsData';
+      break;
+    case 'dc-batman':
+      dataSourcePath = '../Data/everythingbatman';
+      break;
+    case 'dc-batman-animations':
+      dataSourcePath = '../Data/everythingbatmananimation';
+      break;
+    case 'dc-superman':
+      dataSourcePath = '../Data/everythingsuperman';
+      break;
+    case 'dc-superman-animations':
+      dataSourcePath = '../Data/everythingsupermananimation';
       break;
     default:
       console.warn(`Unrecognized catalog ID: ${id}`);

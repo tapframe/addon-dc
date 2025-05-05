@@ -30,6 +30,26 @@
       "type": "DC",
       "id": "dc-animations",
       "name": "Animations"
+    },
+    {
+      "type": "DC",
+      "id": "dc-batman",
+      "name": "Batman Collection"
+    },
+    {
+      "type": "DC",
+      "id": "dc-batman-animations",
+      "name": "Batman Animations"
+    },
+    {
+      "type": "DC",
+      "id": "dc-superman",
+      "name": "Superman Collection"
+    },
+    {
+      "type": "DC",
+      "id": "dc-superman-animations",
+      "name": "Superman Animations"
     }
   ],
   "resources": ["catalog"],
