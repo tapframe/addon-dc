@@ -1,14 +1,17 @@
 {
   "name": "dc-addon",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "src/addon.js",
   "scripts": {
-    "start": "node src/addon.js"
+    "start": "node src/addon.js",
+    "start:server": "node src/start.js"
   },
   "dependencies": {
     "axios": "^1.6.8",
     "compression": "^1.8.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
+    "express": "^4.18.2",
     "stremio-addon-sdk": "^1.6.7"
   }
 }

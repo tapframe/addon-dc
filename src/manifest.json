@@ -66,7 +66,7 @@
   "types": ["movie", "series"],
   "idPrefixes": ["dc_"],
   "behaviorHints": {
-    "configurable": false
+    "configurable": true
   },
   "contactEmail": "nayifveliya99@gmail.com",
 
