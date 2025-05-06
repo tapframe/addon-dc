@@ -1,34 +1,5 @@
 module.exports = [
   {
-    "tmdbId": 36257,
-    "title": "Tiny Toon Adventures: How I Spent My Vacation",
-    "type": "movie",
-    "imdbId": "tt0105598",
-    "id": "dc_tt0105598",
-    "releaseYear": "1992",
-    "poster": "https://image.tmdb.org/t/p/w500/83LA6ypvAIhV9bOqd2QAZZ9aHaP.jpg",
-    "ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "8.0/10"
-      }
-    ],
-    "genres": [
-      {
-        "id": 16,
-        "name": "Animation"
-      },
-      {
-        "id": 35,
-        "name": "Comedy"
-      },
-      {
-        "id": 10751,
-        "name": "Family"
-      }
-    ]
-  },
-  {
     "tmdbId": 49076,
     "title": "Superman: The Last Son of Krypton",
     "type": "movie",
