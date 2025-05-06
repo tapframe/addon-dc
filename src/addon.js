@@ -147,11 +147,12 @@ async function fetchAdditionalData(item) {
     if (!poster && omdbData.Poster && omdbData.Poster !== 'N/A') {
       poster = omdbData.Poster;
     }
-    if (!poster) {
-      // poster = `https://via.placeholder.com/150x225.png?text=No+Poster`; // Generic Placeholder
-      console.warn(`No poster found for ${item.title} (${lookupId}).`);
-       return null; // Skip items without posters as per previous request?
-    }
+    // --- Temporarily allow missing posters --- 
+    // if (!poster) {
+    //   console.warn(`No poster found for ${item.title} (${lookupId}).`);
+    //    return null; // Skip items without posters
+    // }
+    // --- End Temp Change ---
 
     let logoUrl = null;
     if (tmdbImagesData.logos && tmdbImagesData.logos.length > 0) {
@@ -167,10 +168,12 @@ async function fetchAdditionalData(item) {
 
     // Description priority: local data -> TMDb -> OMDb -> fallback
     const description = item.overview || tmdbData.overview || omdbData.Plot || 'No description available.';
-    if (description === 'No description available.') {
-         console.warn(`No overview/plot found for ${item.title} (${lookupId}).`);
-         return null; // Skip items without overview?
-    }
+    // --- Temporarily allow missing overview --- 
+    // if (description === 'No description available.') {
+    //      console.warn(`No overview/plot found for ${item.title} (${lookupId}).`);
+    //      return null; // Skip items without overview
+    // }
+    // --- End Temp Change ---
 
     const meta = {
       id: lookupId, // Use the ID we actually used for lookup
@@ -197,10 +200,12 @@ async function fetchAdditionalData(item) {
 builder.defineCatalogHandler(async ({ type, id }) => {
   console.log(`Catalog requested - Type: ${type}, ID: ${id}`);
 
+  // --- RE-ENABLED CACHE ---
   if (cachedCatalog[id]) {
     console.log(`✅ Returning cached catalog for ID: ${id}`);
     return cachedCatalog[id];
   }
+  // --- END RE-ENABLED CACHE ---
 
   let dataSource;
   let dataSourceName = id;
@@ -265,8 +270,13 @@ builder.defineCatalogHandler(async ({ type, id }) => {
   const validMetas = metas.filter(item => item !== null);
   console.log(`✅ Catalog generated with ${validMetas.length} items for ID: ${id}`);
 
+  // --- RE-ENABLED CACHE ---
   cachedCatalog[id] = { metas: validMetas };
-  return cachedCatalog[id];
+  // --- END RE-ENABLED CACHE ---
+
+  // Return the cached metas
+  // return { metas: validMetas }; // Line from when cache was disabled
+  return cachedCatalog[id]; // Original line - return the cached value
 });
 
 // Server configuration
