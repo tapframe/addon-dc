@@ -101,14 +101,14 @@ async function fetchAdditionalData(item) {
         const tmdbDetailsUrl = `https://api.themoviedb.org/3/${item.type}/${effectiveTmdbId}?api_key=${tmdbKey}&language=en-US`;
         tmdbDetailsPromise = axios.get(tmdbDetailsUrl).catch((err) => {
             console.error(`TMDB Details error for ${item.type}/${effectiveTmdbId}: ${err.message}`);
-            return {};
+        return {};
         });
     } else {
         // If no tmdbId, search TMDb by title/year
         const tmdbSearchUrl = `https://api.themoviedb.org/3/search/${item.type}?api_key=${tmdbKey}&query=${encodeURIComponent(item.title)}&year=${item.releaseYear}`;
         tmdbDetailsPromise = axios.get(tmdbSearchUrl).then(res => res.data?.results?.[0] ? getTmdbDetails(res.data.results[0].id, item.type) : {}).catch((err) => {
             console.error(`TMDB Search error for ${item.title}: ${err.message}`);
-            return {};
+        return {};
         });
     }
 
@@ -118,9 +118,9 @@ async function fetchAdditionalData(item) {
         if (foundTmdbId) {
             const tmdbImagesUrl = `https://api.themoviedb.org/3/${item.type}/${foundTmdbId}/images?api_key=${tmdbKey}`;
             return axios.get(tmdbImagesUrl).catch((err) => {
-                if (!err.response || err.response.status !== 404) {
-                     console.warn(`TMDb Images error for ${item.title}: ${err.message}`);
-                }
+        if (!err.response || err.response.status !== 404) {
+             console.warn(`TMDb Images error for ${item.title}: ${err.message}`);
+        }
                 return {};
             });
         } else {
@@ -207,32 +207,32 @@ builder.defineCatalogHandler(async ({ type, id }) => {
 
   // Load data based on catalog ID
   try {
-      switch (id) {
-        case 'dc-chronological':
+  switch (id) {
+    case 'dc-chronological':
           dataSource = require('../Data/chronologicalData'); // Assuming this exists
-          break;
-        case 'dc-release':
+      break;
+    case 'dc-release':
           dataSource = releaseData; // Already required
-          break;
-        case 'dc-movies':
+      break;
+    case 'dc-movies':
           dataSource = moviesData; // Already required
-          break;
-        case 'dc-series':
+      break;
+    case 'dc-series':
           dataSource = seriesData; // Already required
-          break;
-        case 'dc-animations':
+      break;
+    case 'dc-animations':
           dataSource = animationsData; // Already required
-          break;
+      break;
         case 'dc-batman': // Original Batman catalog
           dataSource = batmanData; // Already required
-          break;
-        case 'dc-batman-animations':
+      break;
+    case 'dc-batman-animations':
           dataSource = batmanAnimationData; // Already required
-          break;
+      break;
         case 'dc-superman': // Original Superman catalog
           dataSource = supermanData; // Already required
-          break;
-        case 'dc-superman-animations':
+      break;
+    case 'dc-superman-animations':
           dataSource = supermanAnimationData; // Already required
           break;
         // --- Add cases for new catalogs ---
@@ -243,14 +243,14 @@ builder.defineCatalogHandler(async ({ type, id }) => {
         case 'dc_modern_series':
           dataSource = modernDCSeriesData; // Use newly required data
           dataSourceName = 'DC Modern Series';
-          break;
-        default:
-          console.warn(`Unrecognized catalog ID: ${id}`);
+      break;
+    default:
+      console.warn(`Unrecognized catalog ID: ${id}`);
           return Promise.resolve({ metas: [] });
-      }
-      if (!Array.isArray(dataSource)) {
+  }
+    if (!Array.isArray(dataSource)) {
         throw new Error(`Data source for ID ${id} is not a valid array.`);
-      }
+    }
       console.log(`Loaded ${dataSource.length} items for catalog: ${dataSourceName}`);
   } catch (error) {
       console.error(`❌ Error loading data for catalog ID ${id}:`, error.message);
