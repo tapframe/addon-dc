@@ -1,5 +1,5 @@
 module.exports = [
-  
+  {
     "tmdbId": 49076,
     "title": "Superman: The Last Son of Krypton",
     "type": "movie",
