@@ -46,6 +46,11 @@ app.use((req, res, next) => {
     next();
 });
 
+// Route to serve configure.html for paths like /catalog/id1,id2/configure
+app.get('/catalog/:ids/configure', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'configure.html'));
+});
+
 // Variable to store cache separated by ID
 let cachedCatalog = {};
 

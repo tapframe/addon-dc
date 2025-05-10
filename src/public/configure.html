@@ -758,10 +758,21 @@
                     
                     const host = window.location.host;
                     const protocol = window.location.protocol;
-                    const catalogParam = this.selectedCatalogs.join(',');
-                    
-                    this.installUrl = `${protocol}//${host}/catalog/${encodeURIComponent(catalogParam)}/manifest.json`;
-                    this.stremioUrl = `stremio://${host}/catalog/${encodeURIComponent(catalogParam)}/manifest.json`;
+
+                    // Determine if all catalogs are selected
+                    const allCatalogIds = this.catalogs.map(c => c.id);
+                    const sortedSelected = [...this.selectedCatalogs].sort();
+                    const sortedAll = [...allCatalogIds].sort();
+                    const allSelected = sortedSelected.length === sortedAll.length && sortedSelected.every((val, index) => val === sortedAll[index]);
+
+                    if (allSelected) {
+                        this.installUrl = `${protocol}//${host}/manifest.json`;
+                        this.stremioUrl = `stremio://${host}/manifest.json`;
+                    } else {
+                        const catalogParam = this.selectedCatalogs.join(',');
+                        this.installUrl = `${protocol}//${host}/catalog/${encodeURIComponent(catalogParam)}/manifest.json`;
+                        this.stremioUrl = `stremio://${host}/catalog/${encodeURIComponent(catalogParam)}/manifest.json`;
+                    }
                     
                     // First set the panel visibility
                     const wasAlreadyVisible = this.showInstallPanel;
@@ -827,8 +838,53 @@
                 }
             },
             created() {
-                // Initialize with all catalogs selected
-                this.selectedCatalogs = this.catalogs.map(catalog => catalog.id);
+                console.log('[DC Addon Configure] created() hook started.');
+                let initialSelectedIds = [];
+                const path = window.location.pathname;
+                console.log('[DC Addon Configure] pathname:', path);
+                const parts = path.split('/');
+                console.log('[DC Addon Configure] path parts:', parts);
+
+                // Ensure this.catalogs is available and has content
+                const allAvailableCatalogIds = this.catalogs && this.catalogs.length > 0 ? this.catalogs.map(c => c.id) : [];
+                console.log('[DC Addon Configure] All available catalog IDs from this.catalogs:', allAvailableCatalogIds);
+
+                if (parts.length === 4 && parts[1].toLowerCase() === 'catalog' && parts[3].toLowerCase() === 'configure') {
+                    console.log('[DC Addon Configure] Path matches /catalog/:ids/configure pattern.');
+                    const encodedIdsString = parts[2];
+                    console.log('[DC Addon Configure] Extracted encodedIdsString from URL parts[2]:', encodedIdsString);
+                    if (encodedIdsString) {
+                        const idsString = decodeURIComponent(encodedIdsString);
+                        console.log('[DC Addon Configure] Decoded idsString:', idsString);
+                        const potentialIds = idsString.split(',').map(id => id.trim()).filter(id => id); // trim and remove empty strings
+                        console.log('[DC Addon Configure] Potential IDs from decoded idsString:', potentialIds);
+                        
+                        if (allAvailableCatalogIds.length > 0) {
+                            initialSelectedIds = potentialIds.filter(id => allAvailableCatalogIds.includes(id));
+                            console.log('[DC Addon Configure] Filtered initialSelectedIds (valid & found): ', initialSelectedIds);
+                        } else {
+                            console.warn('[DC Addon Configure] this.catalogs seems empty or not yet populated for filtering.');
+                        }
+                    } else {
+                        console.log('[DC Addon Configure] idsString from URL is empty.');
+                    }
+                } else {
+                    console.log('[DC Addon Configure] Path does NOT match /catalog/:ids/configure pattern.');
+                }
+
+                if (initialSelectedIds.length > 0) {
+                    console.log('[DC Addon Configure] Setting selectedCatalogs from URL IDs:', initialSelectedIds);
+                    this.selectedCatalogs = initialSelectedIds;
+                } else {
+                    console.log('[DC Addon Configure] No valid IDs from URL or pattern mismatch. Defaulting to select all.');
+                    if (allAvailableCatalogIds.length > 0) {
+                        this.selectedCatalogs = [...allAvailableCatalogIds]; // Select all
+                    } else {
+                        console.warn('[DC Addon Configure] Cannot select all because allAvailableCatalogIds is empty. selectedCatalogs will be empty.');
+                        this.selectedCatalogs = [];
+                    }
+                }
+                console.log('[DC Addon Configure] Final selectedCatalogs:', JSON.parse(JSON.stringify(this.selectedCatalogs)));
             },
             mounted() {
                 this.checkDarkModePreference();
