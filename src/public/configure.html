@@ -384,6 +384,12 @@
                     </button>
                 </div>
             </div>
+            <!-- Prompt to regenerate -->
+            <transition name="fade">
+                <div v-if="promptToRegenerate" class="bg-yellow-100 dark:bg-yellow-900 border-l-4 border-yellow-500 dark:border-yellow-400 text-yellow-700 dark:text-yellow-200 p-3 text-center text-sm" role="alert">
+                    <p><i class="fas fa-exclamation-triangle mr-2"></i>Your catalog selection has changed. Please click "Generate Link" again to update your installation URL.</p>
+                </div>
+            </transition>
         </nav>
 
         <header class="dc-header shadow-lg relative mt-0">
@@ -583,6 +589,23 @@
             </transition>
         </main>
         
+        <!-- Bottom Generate Link Button Section -->
+        <section v-if="catalogs.length > 0" class="container mx-auto px-4 py-6 md:py-8 text-center">
+            <transition name="fade">
+                <div v-if="promptToRegenerate" class="bg-yellow-100 dark:bg-yellow-900 border-yellow-500 dark:border-yellow-400 text-yellow-700 dark:text-yellow-200 p-3 mb-4 rounded-md text-sm" role="alert">
+                    <p><i class="fas fa-exclamation-triangle mr-2"></i>Your catalog selection has changed. Please click "Generate Link" again to update your installation URL.</p>
+                </div>
+            </transition>
+            <button 
+                @click="generateLink" 
+                class="dc-button bg-dcblue text-white px-6 py-3 rounded-lg hover:bg-dcblue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dcblue transition-all text-lg"
+                :disabled="selectedCatalogs.length === 0"
+                :class="{'opacity-50 cursor-not-allowed': selectedCatalogs.length === 0}"
+            >
+                <i class="fas fa-magic mr-2"></i>Generate Installation Link
+            </button>
+        </section>
+
         <footer class="bg-gray-100 dark:bg-slate-800 py-6 md:py-8 border-t border-dcgray dark:border-slate-700">
             <div class="container mx-auto px-4">
                 <div class="flex flex-col md:flex-row justify-between items-center">
@@ -712,7 +735,8 @@
                 currentCategory: '',
                 copied: false,
                 showCopiedToast: false,
-                darkMode: false
+                darkMode: false,
+                promptToRegenerate: false
             },
             computed: {
                 categories() {
@@ -723,6 +747,15 @@
                         return [this.currentCategory];
                     }
                     return this.categories;
+                }
+            },
+            watch: {
+                selectedCatalogs: function(newSelection, oldSelection) {
+                    if (this.showInstallPanel) {
+                        console.log('[DC Addon Configure] Catalog selection changed while install panel was visible.');
+                        this.showInstallPanel = false;
+                        this.promptToRegenerate = true;
+                    }
                 }
             },
             methods: {
@@ -751,6 +784,7 @@
                     }
                 },
                 generateLink() {
+                    this.promptToRegenerate = false;
                     if (this.selectedCatalogs.length === 0) {
                         alert('Please select at least one catalog');
                         return;
