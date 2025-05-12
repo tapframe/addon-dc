@@ -834,9 +834,9 @@
 
                     if (allSelected) {
                         if (this.rpdbKey) {
-                            // Include RPDB key as a query parameter
-                            this.installUrl = `${protocol}//${host}/manifest.json?rpdb=${encodeURIComponent(this.rpdbKey)}`;
-                            this.stremioUrl = `stremio://${host}/manifest.json?rpdb=${encodeURIComponent(this.rpdbKey)}`;
+                            // Include RPDB key as a path parameter instead of query parameter
+                            this.installUrl = `${protocol}//${host}/rpdb/${encodeURIComponent(this.rpdbKey)}/manifest.json`;
+                            this.stremioUrl = `stremio://${host}/rpdb/${encodeURIComponent(this.rpdbKey)}/manifest.json`;
                         } else {
                             this.installUrl = `${protocol}//${host}/manifest.json`;
                             this.stremioUrl = `stremio://${host}/manifest.json`;

@@ -382,6 +382,34 @@ app.get('/manifest.json', (req, res) => {
     res.json(manifest);
 });
 
+// RPDB key manifest endpoint - handles full manifest with RPDB key using path structure
+app.get('/rpdb/:rpdbKey/manifest.json', (req, res) => {
+    const { rpdbKey } = req.params;
+    console.log(`RPDB path-based manifest requested with key: ${rpdbKey}`);
+    
+    // Create a custom ID that includes RPDB key info
+    const manifestId = `com.tapframe.dcaddon.rpdb.${rpdbKey.substring(0, 8)}`;
+    
+    const manifest = {
+        id: manifestId,
+        name: "DC Universe",
+        description: "Explore the DC Universe by release date, movies, series, and animations! (with IMDb ratings on posters)",
+        version: "1.2.0",
+        logo: "https://github.com/tapframe/addon-dc/blob/main/assets/icon.png?raw=true",
+        background: "https://github.com/tapframe/addon-dc/blob/main/assets/background.jpg?raw=true",
+        catalogs: getAllCatalogs(),
+        resources: ["catalog"],
+        types: ["movie", "series"],
+        idPrefixes: ["dc_"],
+        behaviorHints: {
+            configurable: true
+        },
+        contactEmail: "nayifveliya99@gmail.com"
+    };
+    
+    res.json(manifest);
+});
+
 // API endpoint for catalog info
 app.get('/api/catalogs', (req, res) => {
     console.log('Catalog info requested');
@@ -467,6 +495,90 @@ app.get('/api/catalogs', (req, res) => {
     ];
     
     res.json(catalogInfo);
+});
+
+// RPDB path-based catalog endpoint
+app.get('/rpdb/:rpdbKey/catalog/:type/:id.json', async (req, res) => {
+    const { rpdbKey, type, id } = req.params;
+    console.log(`RPDB path-based catalog requested - Type: ${type}, ID: ${id}, RPDB Key: ${rpdbKey}`);
+    
+    // Check cache
+    const cacheKey = `default-${id}`;
+    if (cachedCatalog[cacheKey]) {
+        console.log(`✅ Returning cached catalog for ID: ${cacheKey} with RPDB posters`);
+        const metasWithRpdbPosters = replaceRpdbPosters(rpdbKey, cachedCatalog[cacheKey].metas);
+        return res.json({ metas: metasWithRpdbPosters });
+    }
+    
+    let dataSource;
+    let dataSourceName = id;
+    
+    // Load data based on catalog ID
+    try {
+        switch (id) {
+            case 'dc-chronological':
+                dataSource = require('../Data/chronologicalData');
+                break;
+            case 'dc-release':
+                dataSource = releaseData;
+                break;
+            case 'dc-movies':
+                dataSource = moviesData;
+                break;
+            case 'dc-series':
+                dataSource = seriesData;
+                break;
+            case 'dc-animations':
+                dataSource = animationsData;
+                break;
+            case 'dc-batman':
+                dataSource = batmanData;
+                break;
+            case 'dc-batman-animations':
+                dataSource = batmanAnimationData;
+                break;
+            case 'dc-superman':
+                dataSource = supermanData;
+                break;
+            case 'dc-superman-animations':
+                dataSource = supermanAnimationData;
+                break;
+            case 'dceu_movies':
+                dataSource = dceuMoviesData;
+                dataSourceName = 'DCEU Movies';
+                break;
+            case 'dc_modern_series':
+                dataSource = modernDCSeriesData;
+                dataSourceName = 'DC Modern Series';
+                break;
+            default:
+                console.warn(`Unrecognized catalog ID: ${id}`);
+                return res.json({ metas: [] });
+        }
+        
+        if (!Array.isArray(dataSource)) {
+            throw new Error(`Data source for ID ${id} is not a valid array.`);
+        }
+        console.log(`Loaded ${dataSource.length} items for catalog: ${dataSourceName}`);
+    } catch (error) {
+        console.error(`❌ Error loading data for catalog ID ${id}:`, error.message);
+        return res.json({ metas: [] });
+    }
+    
+    console.log(`⏳ Generating catalog for ${dataSourceName} with RPDB posters...`);
+    const metas = await Promise.all(
+        dataSource.map(item => fetchAdditionalData(item))
+    );
+    
+    const validMetas = metas.filter(item => item !== null);
+    console.log(`✅ Catalog generated with ${validMetas.length} items for ID: ${id}`);
+    
+    // Store in cache (without RPDB posters)
+    cachedCatalog[cacheKey] = { metas: validMetas };
+    
+    // Apply RPDB posters 
+    const metasWithRpdbPosters = replaceRpdbPosters(rpdbKey, validMetas);
+    return res.json({ metas: metasWithRpdbPosters });
 });
 
 // Custom catalog endpoint
@@ -579,10 +691,26 @@ app.get('/catalog/:type/:id.json', async (req, res) => {
     const { type, id } = req.params;
     console.log(`Default catalog requested - Type: ${type}, ID: ${id}`);
     
-    // Check for RPDB key in query parameters
-    const rpdbKey = req.query.rpdb || null;
+    // Check for RPDB key in various sources
+    let rpdbKey = null;
+    
+    // Check for RPDB key in query parameters (for backward compatibility)
+    if (req.query.rpdb) {
+        rpdbKey = req.query.rpdb;
+    }
+    
+    // Check referer for a path-based RPDB key format
+    const referer = req.get('Referrer') || '';
+    if (!rpdbKey && referer) {
+        // Extract RPDB key from path like /rpdb/KEY/manifest.json
+        const rpdbMatch = referer.match(/\/rpdb\/([^\/]+)\/manifest\.json/);
+        if (rpdbMatch && rpdbMatch[1]) {
+            rpdbKey = decodeURIComponent(rpdbMatch[1]);
+        }
+    }
+    
     if (rpdbKey) {
-        console.log(`RPDB key detected in query: ${rpdbKey}`);
+        console.log(`RPDB key detected: ${rpdbKey}`);
     }
     
     // Check cache
