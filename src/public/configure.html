@@ -290,7 +290,7 @@
                     <div v-else class="catalog-grid mb-8">
                         <div 
                             v-for="catalog in catalogs" 
-                            :key="catalog.id"
+                            :key="catalog.id" 
                             @click="toggleCatalog(catalog)"
                             :class="['catalog-item', {'selected pulse-effect': selectedCatalogs.includes(catalog.id)}]"
                         >
@@ -310,9 +310,9 @@
                             </template>
                             
                             <span class="item-name">{{ catalog.name }}</span>
-                        </div>
-                    </div>
-                    
+                                        </div>
+                                    </div>
+                                    
                     <!-- Selected count -->
                     <div v-if="!loading && !error" class="mb-6 bg-black/30 rounded-lg p-3 text-center text-sm">
                         <span>{{ selectedCatalogs.length }} {{ selectedCatalogs.length === 1 ? 'catalog' : 'catalogs' }} selected</span>

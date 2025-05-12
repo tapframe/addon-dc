@@ -2,7 +2,7 @@
   "id": "com.tapframe.dcaddon",
   "name": "DC Universe",
   "description": "Explore the DC Universe by release date, movies, series, and animations!",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "logo": "https://github.com/tapframe/addon-dc/blob/main/assets/icon.png?raw=true",
   "background": "https://github.com/tapframe/addon-dc/blob/main/assets/background.jpg?raw=true",
   "catalogs": [
