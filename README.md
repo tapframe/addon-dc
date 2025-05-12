@@ -12,6 +12,7 @@ Explore the DC Universe within Stremio! Browse movies and series by **chronologi
 *   ⚡ **Data Updates**: Easily refresh content using the included scripts.
 *   🚀 **Fast & Lightweight**: Optimized for performance.
 *   🔍 **Custom Catalogs**: Create your personal catalog selection based on your preferences.
+*   ⭐ **RPDB Support (Optional)**: Show ratings directly on posters by adding your [RatingPosterDB](https://ratingposterdb.com) API key during configuration.
 
 ---
 
