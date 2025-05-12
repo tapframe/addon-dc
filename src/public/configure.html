@@ -529,6 +529,38 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- RPDB Key Input Section -->
+                <div class="max-w-2xl mx-auto mb-6 bg-white dark:bg-slate-700 p-4 rounded-lg">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-gray-800 dark:text-white text-sm md:text-base">
+                            <i class="fas fa-star-half-alt mr-2"></i>Poster Ratings (Optional)
+                        </h4>
+                        <a href="https://ratingposterdb.com" target="_blank" class="text-dcblue dark:text-dcblue-light text-xs hover:underline">
+                            <i class="fas fa-info-circle mr-1"></i>About RPDB
+                        </a>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 text-xs md:text-sm mb-3">
+                        Show IMDb ratings directly on movie/series posters by adding your RatingPosterDB key.
+                    </p>
+                    <div class="flex">
+                        <input 
+                            type="text" 
+                            v-model="rpdbKey" 
+                            class="flex-grow px-3 py-2 bg-gray-50 dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-l-lg text-sm focus:outline-none focus:ring-2 focus:ring-dcblue" 
+                            placeholder="Enter RPDB key (format: t0-xxxxxxxx)" 
+                            pattern="t[0-3]-[a-zA-Z0-9\-]+"
+                        >
+                        <a 
+                            href="https://ratingposterdb.com" 
+                            target="_blank" 
+                            class="px-3 py-2 bg-gray-200 dark:bg-slate-600 text-gray-800 dark:text-white rounded-r-lg hover:bg-gray-300 dark:hover:bg-slate-500 transition-colors"
+                            title="Visit RatingPosterDB to get your key"
+                        >
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Installation panel -->
@@ -736,7 +768,8 @@
                 copied: false,
                 showCopiedToast: false,
                 darkMode: false,
-                promptToRegenerate: false
+                promptToRegenerate: false,
+                rpdbKey: ''
             },
             computed: {
                 categories() {
@@ -800,12 +833,25 @@
                     const allSelected = sortedSelected.length === sortedAll.length && sortedSelected.every((val, index) => val === sortedAll[index]);
 
                     if (allSelected) {
-                        this.installUrl = `${protocol}//${host}/manifest.json`;
-                        this.stremioUrl = `stremio://${host}/manifest.json`;
+                        if (this.rpdbKey) {
+                            // Include RPDB key as a query parameter
+                            this.installUrl = `${protocol}//${host}/manifest.json?rpdb=${encodeURIComponent(this.rpdbKey)}`;
+                            this.stremioUrl = `stremio://${host}/manifest.json?rpdb=${encodeURIComponent(this.rpdbKey)}`;
+                        } else {
+                            this.installUrl = `${protocol}//${host}/manifest.json`;
+                            this.stremioUrl = `stremio://${host}/manifest.json`;
+                        }
                     } else {
                         const catalogParam = this.selectedCatalogs.join(',');
-                        this.installUrl = `${protocol}//${host}/catalog/${encodeURIComponent(catalogParam)}/manifest.json`;
-                        this.stremioUrl = `stremio://${host}/catalog/${encodeURIComponent(catalogParam)}/manifest.json`;
+                        if (this.rpdbKey) {
+                            // Include RPDB key in the catalog path
+                            const configParts = [catalogParam, this.rpdbKey].join(':');
+                            this.installUrl = `${protocol}//${host}/catalog/${encodeURIComponent(configParts)}/manifest.json`;
+                            this.stremioUrl = `stremio://${host}/catalog/${encodeURIComponent(configParts)}/manifest.json`;
+                        } else {
+                            this.installUrl = `${protocol}//${host}/catalog/${encodeURIComponent(catalogParam)}/manifest.json`;
+                            this.stremioUrl = `stremio://${host}/catalog/${encodeURIComponent(catalogParam)}/manifest.json`;
+                        }
                     }
                     
                     // First set the panel visibility
