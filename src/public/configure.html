@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -16,20 +16,14 @@
             theme: {
                 extend: {
                     colors: {
-                        dcblue: {
-                            light: '#0096e5',
-                            DEFAULT: '#0078d7',
-                            dark: '#0056a3',
-                        },
-                        dcgray: {
-                            light: '#f7f9fc',
-                            DEFAULT: '#e0e6ed',
-                            dark: '#8492a6',
+                        stremio: {
+                            purple: '#7A3DB8',
+                            dark: '#0f1012',
+                            card: 'rgba(15, 17, 23, 0.7)',
+                            button: '#8A3FFC',
+                            text: '#ffffff',
+                            accent: '#6200ee'
                         }
-                    },
-                    boxShadow: {
-                        'dc': '0 5px 15px -3px rgba(0, 120, 215, 0.1), 0 4px 6px -2px rgba(0, 120, 215, 0.05)',
-                        'dc-hover': '0 10px 25px -3px rgba(0, 120, 215, 0.25), 0 4px 6px -2px rgba(0, 120, 215, 0.1)',
                     }
                 }
             }
@@ -38,641 +32,360 @@
     <style>
         [v-cloak] { display: none; }
         
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+        body {
+            background-color: #0f1012;
+            background-image: linear-gradient(to bottom, #220c3c 0%, #0f1012 100%);
+            min-height: 100vh;
         }
         
-        .animate-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        
-        .fade-enter-active, .fade-leave-active {
-            transition: opacity .5s;
-        }
-        .fade-enter, .fade-leave-to {
-            opacity: 0;
-        }
-        
-        .slide-fade-enter-active {
-            transition: all 0.4s ease-out;
-        }
-        .slide-fade-leave-active {
-            transition: all 0.3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-        }
-        .slide-fade-enter, .slide-fade-leave-to {
-            transform: translateY(20px);
-            opacity: 0;
-        }
-        
-        .catalog-card {
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        
-        .catalog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        
-        .catalog-card.selected {
-            border-color: #0078d7;
-            background-color: rgba(0, 120, 215, 0.05);
-            box-shadow: 0 0 0 3px rgba(0, 120, 215, 0.2);
-        }
-        
-        .dark .catalog-card.selected {
-            border-color: #0096e5;
-            background-color: rgba(0, 150, 229, 0.1);
-            box-shadow: 0 0 0 3px rgba(0, 150, 229, 0.2);
-        }
-        
-        .category-badge {
-            font-size: 0.65rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-        
-        .dc-button {
-            position: relative;
+        .glassmorphic {
+            background: rgba(15, 17, 23, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border-radius: 36px;
             overflow: hidden;
-            transition: all 0.3s;
         }
         
-        .dc-button::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 5px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.5);
-            opacity: 0;
-            border-radius: 100%;
-            transform: scale(1, 1) translate(-50%);
-            transform-origin: 50% 50%;
-        }
-        
-        @keyframes ripple {
-            0% {
-                transform: scale(0, 0);
-                opacity: 0.5;
-            }
-            100% {
-                transform: scale(100, 100);
-                opacity: 0;
-            }
-        }
-        
-        .dc-button:focus:not(:active)::after {
-            animation: ripple 1s ease-out;
-        }
-        
-        .tooltip {
-            position: relative;
-        }
-        
-        .tooltip::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 125%;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 5px 10px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            border-radius: 4px;
-            font-size: 12px;
-            white-space: nowrap;
-            visibility: hidden;
-            opacity: 0;
-            transition: all 0.3s;
-        }
-        
-        .tooltip:hover::after {
-            visibility: visible;
-            opacity: 1;
-        }
-        
-        .copy-notification {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .dark .copy-notification {
-            background-color: #1e293b;
-        }
-        
-        .filter-chip {
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-        
-        .filter-chip:hover {
-            background-color: #e0e7ff;
-        }
-        
-        .dark .filter-chip:hover {
-            background-color: #1e3a8a;
-        }
-        
-        .filter-chip.active {
-            background-color: #3b82f6;
-            color: white;
+        /* Add some extra padding to the content due to increased border radius */
+        .container-padding {
+            padding: 28px 24px;
         }
         
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 1rem;
         }
         
-        @media (max-width: 640px) {
-            .catalog-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .dc-header-content {
-                padding-top: 1.5rem !important;
-                padding-bottom: 1.5rem !important;
-            }
-            
-            .dc-header-content h1 {
-                font-size: 2rem !important;
-            }
-            
-            .dc-header-content p {
-                font-size: 1rem !important;
-            }
-            
-            .dc-header-content img {
-                width: 5rem !important;
-                height: 5rem !important;
-            }
-            
-            .navbar .container {
-                padding-left: 0.75rem !important;
-                padding-right: 0.75rem !important;
-            }
-            
-            .navbar .font-bold {
-                font-size: 0.875rem !important;
-            }
-            
-            .navbar img {
-                width: 1.75rem !important;
-                height: 1.75rem !important;
-            }
-            
-            .filter-chip {
-                margin-bottom: 0.5rem;
-            }
-        }
-        
-        /* For super small screens */
-        @media (max-width: 360px) {
-            .navbar .container {
-                flex-direction: column;
-                gap: 0.5rem;
-                padding-top: 0.5rem;
-                padding-bottom: 0.5rem;
-            }
-            
-            .navbar .flex.items-center.space-x-4 {
-                width: 100%;
-                justify-content: space-between;
-            }
-            
-            .dark-mode-toggle {
-                margin: 0 0.25rem;
-            }
-        }
-        
-        .dc-header {
+        .catalog-item {
             position: relative;
-            background: linear-gradient(135deg, #0078d7 0%, #004b9a 100%);
-            color: white;
-            overflow: hidden;
+            aspect-ratio: 1/1;
+            border-radius: 16px;
+            overflow: visible; /* Allow glow effects to be visible */
+            transition: all 0.2s ease;
+            cursor: pointer;
+            background-color: rgba(30, 30, 40, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border: 2px solid transparent;
+            padding: 12px 8px;
+            text-align: center;
+            height: 100%; /* Ensure consistent height */
+            transform-origin: center center;
         }
         
-        .dc-header::before {
+        .catalog-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+            background-color: rgba(40, 40, 60, 0.6);
+        }
+        
+        .catalog-item.selected {
+            background-color: rgba(138, 63, 252, 0.3);
+            border: 2px solid #8A3FFC;
+            box-shadow: 0 0 15px rgba(138, 63, 252, 0.5);
+            transform: translateY(-5px);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .catalog-item.selected::before {
             content: '';
             position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 18px;
+            background: linear-gradient(45deg, #8A3FFC, #6200ee, #8A3FFC);
+            background-size: 200% 200%;
+            animation: gradient-border 2s ease infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        @keyframes gradient-border {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .catalog-item .custom-icon,
+        .catalog-item .item-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            transition: all 0.2s ease;
+        }
+        
+        .catalog-item .item-icon {
+            font-size: 1.75rem;
+        }
+        
+        /* Styling specifically for the Batman and Superman icons */
+        .batman-icon {
+            filter: brightness(0) invert(1); /* Make the Batman logo white */
+            object-fit: contain;
+        }
+        
+        .superman-icon {
+            filter: brightness(0) invert(1); /* Make the Superman logo white */
+            object-fit: contain;
+        }
+        
+        /* Apply glow without changing size */
+        .catalog-item.selected .custom-icon {
+            filter: brightness(0) invert(1) drop-shadow(0 0 3px rgba(138, 63, 252, 0.7));
+            /* Remove the transform scale to keep consistent */
+        }
+        
+        .catalog-item .item-name {
+            font-size: 0.75rem;
+            line-height: 1.2;
+            text-align: center;
+            display: block;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .catalog-item .checkmark {
+            display: none;
+        }
+        
+        .catalog-item.selected .checkmark {
+            display: none;
+        }
+        
+        .pulse-effect {
+            animation: pulse-animation 2s infinite;
+        }
+        
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(138, 63, 252, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(138, 63, 252, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(138, 63, 252, 0); }
+        }
+        
+        .custom-input {
+            background-color: rgba(10, 10, 15, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 16px;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+        
+        .custom-input:focus {
+            border-color: #8A3FFC;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(138, 63, 252, 0.3);
+        }
+        
+        .install-button {
+            background-color: #8A3FFC;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 16px;
+            transition: all 0.2s ease;
+            width: 100%;
+            cursor: pointer;
+            font-weight: 600;
+            }
+            
+        .install-button:hover {
+            background-color: #7A3DB8;
+            }
+            
+        .install-button:disabled {
+            background-color: #4a4a4a;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
+        .modal {
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('https://github.com/tapframe/addon-dc/blob/main/assets/background.jpg?raw=true');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.4;
-            z-index: 0;
-        }
-        
-        .dc-header-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .navbar {
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .dark .navbar {
-            background-color: rgba(15, 23, 42, 0.8);
-        }
-
-        .dark-mode-toggle {
-            width: 48px;
-            height: 24px;
-            border-radius: 12px;
-            background-color: #e2e8f0;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .dark .dark-mode-toggle {
-            background-color: #334155;
-        }
-
-        .dark-mode-toggle::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: white;
-            top: 2px;
-            left: 2px;
-            transition: all 0.3s;
+            background-color: rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 50;
         }
 
-        .dark .dark-mode-toggle::after {
-            transform: translateX(24px);
-            background-color: #0096e5;
-        }
-
-        .catalog-card-inner {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-main-content {
-            flex-grow: 1;
+        .modal-content {
+            background-color: #13151a;
+            border-radius: 36px;
+            width: 90%;
+            max-width: 500px;
+            padding: 28px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
         
-        /* Mobile tap targets */
-        @media (max-width: 640px) {
-            .filter-chip, button, .catalog-card {
-                -webkit-tap-highlight-color: transparent;
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 0.3s;
             }
-            
-            .filter-chip {
-                padding: 0.5rem 0.75rem;
-            }
-            
-            button {
-                min-height: 44px;
-            }
-            
-            input[type="checkbox"] {
-                min-width: 24px;
-                min-height: 24px;
-            }
+        .fade-enter, .fade-leave-to {
+            opacity: 0;
         }
     </style>
 </head>
-<body class="bg-dcgray-light min-h-screen dark:bg-slate-900 dark:text-white transition-colors duration-300">
-    <div id="app" v-cloak>
-        <!-- Navigation bar -->
-        <nav class="navbar sticky top-0 z-50 shadow-md bg-white/80 dark:bg-slate-900/80 border-b dark:border-slate-800">
-            <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                    <img src="https://github.com/tapframe/addon-dc/blob/main/assets/icon.png?raw=true" alt="DC Universe Logo" class="w-8 h-8 object-contain">
-                    <span class="font-bold text-lg">DC Universe Addon</span>
-                </div>
-                
-                <div class="flex items-center space-x-4">
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-sun text-yellow-500 dark:text-yellow-400"></i>
-                        <div class="dark-mode-toggle" @click="toggleDarkMode"></div>
-                        <i class="fas fa-moon text-slate-700 dark:text-blue-300"></i>
-                    </div>
-                    
-                    <button 
-                        @click="generateLink" 
-                        class="dc-button bg-dcblue text-white px-4 py-2 rounded-md hover:bg-dcblue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dcblue transition-all"
-                        :disabled="selectedCatalogs.length === 0"
-                        :class="{'opacity-50 cursor-not-allowed': selectedCatalogs.length === 0}"
-                    >
-                        <i class="fas fa-magic mr-2"></i>Generate Link
-                    </button>
+<body>
+    <div id="app" v-cloak class="text-white py-8 px-4 md:py-16">
+        <div class="max-w-xl mx-auto">
+            <!-- Header -->
+            <div class="flex items-center justify-center mb-8">
+                <div class="text-center">
+                    <img src="https://github.com/tapframe/addon-dc/blob/main/assets/icon.png?raw=true" alt="DC Universe Logo" class="w-16 h-16 mx-auto mb-4">
+                    <h1 class="text-2xl font-bold mb-1">Configure addon</h1>
+                    <p class="text-sm text-gray-400">Select catalogs to include in your DC Universe addon</p>
                 </div>
             </div>
-            <!-- Prompt to regenerate -->
-            <transition name="fade">
-                <div v-if="promptToRegenerate" class="bg-yellow-100 dark:bg-yellow-900 border-l-4 border-yellow-500 dark:border-yellow-400 text-yellow-700 dark:text-yellow-200 p-3 text-center text-sm" role="alert">
-                    <p><i class="fas fa-exclamation-triangle mr-2"></i>Your catalog selection has changed. Please click "Generate Link" again to update your installation URL.</p>
-                </div>
-            </transition>
-        </nav>
-
-        <header class="dc-header shadow-lg relative mt-0">
-            <div class="dc-header-content container mx-auto px-4 py-16 md:py-20 flex flex-col items-center">
-                <img src="https://github.com/tapframe/addon-dc/blob/main/assets/icon.png?raw=true" alt="DC Universe Logo" class="w-24 h-24 object-contain mb-4 shadow-lg rounded-full bg-white dark:bg-slate-800 p-3">
-                <h1 class="text-3xl md:text-5xl font-bold mb-2 text-center">DC Universe Addon</h1>
-                <p class="text-lg md:text-xl opacity-90 max-w-xl text-center">Create your personalized DC collection by selecting exactly which catalogs you want to include</p>
-                
-                <div class="mt-8 bg-white/20 backdrop-blur-sm rounded-full py-2 px-4 md:py-3 md:px-6 flex items-center text-sm md:text-base">
-                    <i class="fas fa-info-circle mr-2"></i>
-                    <span>{{ catalogs.length }} catalogs available for customization</span>
-                </div>
-            </div>
-        </header>
-
-        <main class="container mx-auto px-4 py-6 md:py-8">
-            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-dc p-4 md:p-8 mb-6 md:mb-8">
-                <!-- Content header with selection tools -->
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 pb-6 border-b border-dcgray dark:border-slate-700">
-                    <div>
-                        <h2 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white mb-2">Customize Your Collection</h2>
-                        <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">Select the catalogs you want in your addon</p>
-                    </div>
-                    
-                    <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
+            
+            <!-- Main content -->
+            <div class="glassmorphic shadow-lg">
+                <div class="container-padding">
+                    <!-- Select all / Deselect all buttons -->
+                    <div class="flex justify-between items-center mb-6">
                         <button 
                             @click="selectAll" 
-                            class="dc-button bg-dcblue text-white px-4 py-2 rounded-md hover:bg-dcblue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dcblue transition-all"
+                            class="text-sm text-white bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-full transition"
                         >
-                            <i class="fas fa-check-double mr-2"></i>Select All
+                            Select all
                         </button>
                         <button 
                             @click="deselectAll" 
-                            class="dc-button bg-gray-200 dark:bg-slate-700 text-gray-800 dark:text-white px-4 py-2 rounded-md hover:bg-gray-300 dark:hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-all"
+                            class="text-sm text-white bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-full transition"
                         >
-                            <i class="fas fa-times mr-2"></i>Deselect All
+                            Deselect all
                         </button>
-                    </div>
                 </div>
                 
-                <!-- Category filters -->
-                <div class="mb-6 md:mb-8 overflow-x-auto pb-2">
-                    <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Browse by Category</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <div 
-                            @click="toggleCategoryFilter('')"
-                            class="filter-chip px-3 py-1 rounded-full text-sm"
-                            :class="[currentCategory === '' ? 'active' : 'bg-gray-100 dark:bg-slate-700']"
-                        >
-                            <i class="fas fa-th-large mr-1"></i>All
-                        </div>
-                        <div 
-                            v-for="category in categories" 
-                            :key="category"
-                            @click="toggleCategoryFilter(category)"
-                            class="filter-chip px-3 py-1 rounded-full text-sm"
-                            :class="[currentCategory === category ? 'active' : 'bg-gray-100 dark:bg-slate-700']"
-                        >
-                            <i :class="getCategoryIcon(category)" class="mr-1"></i>{{ category }}
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Selected count -->
-                <div class="mb-6 bg-dcgray-light dark:bg-slate-700 rounded-lg p-3 md:p-4 flex items-center justify-between">
-                    <div class="flex items-center">
-                        <span class="h-8 w-8 rounded-full bg-dcblue text-white flex items-center justify-center mr-3">
-                            {{ selectedCatalogs.length }}
-                        </span>
-                        <span class="text-sm md:text-base text-gray-700 dark:text-gray-200">
-                            {{ selectedCatalogs.length === 1 ? 'Catalog' : 'Catalogs' }} selected
-                        </span>
+                    <!-- Catalogs grid -->
+                    <div v-if="loading" class="text-center py-10">
+                        <i class="fas fa-spinner fa-spin text-3xl mb-3"></i>
+                        <p>Loading catalogs...</p>
                     </div>
                     
-                    <div class="text-xs md:text-sm text-gray-500 dark:text-gray-400">
-                        <i class="fas fa-info-circle mr-1"></i>
-                        <span class="hidden sm:inline">Click on cards to select/deselect</span>
-                        <span class="sm:hidden">Tap to select</span>
+                    <div v-else-if="error" class="text-center bg-red-900/50 p-4 rounded-lg">
+                        <i class="fas fa-exclamation-triangle text-2xl mb-2"></i>
+                        <p class="font-semibold">Failed to load catalogs</p>
                     </div>
-                </div>
-
-                <!-- Catalog cards -->
-                <div v-for="category in displayedCategories" :key="category" class="mb-8 md:mb-10">
-                    <h3 class="text-lg md:text-xl font-bold text-gray-700 dark:text-gray-200 mb-3 md:mb-4 flex items-center">
-                        <i :class="getCategoryIcon(category)" class="mr-2"></i>
-                        {{ category }}
-                    </h3>
                     
-                    <div class="catalog-grid">
+                    <div v-else class="catalog-grid mb-8">
                         <div 
-                            v-for="catalog in getCatalogsByCategory(category)" 
-                            :key="catalog.id" 
+                            v-for="catalog in catalogs" 
+                            :key="catalog.id"
                             @click="toggleCatalog(catalog)"
-                            class="catalog-card cursor-pointer bg-white dark:bg-slate-700 rounded-xl overflow-hidden transition-all"
-                            :class="{'selected': selectedCatalogs.includes(catalog.id)}"
+                            :class="['catalog-item', {'selected pulse-effect': selectedCatalogs.includes(catalog.id)}]"
                         >
-                            <div class="catalog-card-inner">
-                                <!-- Card header with icon -->
-                                <div class="bg-gradient-to-r from-dcblue to-dcblue-dark p-3 md:p-4 text-white flex justify-between items-center">
-                                    <div class="text-xl md:text-2xl">
-                                        <i :class="'fas fa-' + getIconForCatalog(catalog)"></i>
-                                    </div>
-                                    <span class="category-badge bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full text-white">
-                                        {{ catalog.category }}
-                                    </span>
-                                </div>
-                                
-                                <!-- Card content -->
-                                <div class="p-4 md:p-5 card-main-content">
-                                    <div class="flex items-center mb-2 md:mb-3">
-                                        <div class="w-6 h-6 mr-3 relative flex items-center justify-center">
-                                            <input 
-                                                type="checkbox" 
-                                                :id="catalog.id" 
-                                                :value="catalog.id" 
-                                                v-model="selectedCatalogs"
-                                                class="w-5 h-5 md:w-5 md:h-5 accent-dcblue"
-                                                @click.stop
-                                            >
-                                        </div>
-                                        <h4 class="font-bold text-gray-800 dark:text-white text-base md:text-base">{{ catalog.name }}</h4>
-                                    </div>
-                                    
-                                    <p class="text-gray-600 dark:text-gray-300 text-xs md:text-sm">{{ catalog.description }}</p>
-                                </div>
-                                
-                                <!-- Card footer -->
-                                <div class="p-3 md:p-4 border-t border-dcgray dark:border-slate-600 flex justify-end bg-gray-50 dark:bg-slate-800">
-                                    <button 
-                                        class="text-xs text-dcblue dark:text-dcblue-light hover:text-dcblue-dark dark:hover:text-white focus:outline-none py-1 px-2"
-                                        @click.stop="toggleCatalog(catalog)"
-                                    >
-                                        {{ selectedCatalogs.includes(catalog.id) ? 'Remove' : 'Add' }}
-                                    </button>
-                                </div>
-                            </div>
+                            <!-- Display custom icon for Batman or Superman, otherwise use Font Awesome -->
+                            <template v-if="catalog.id === 'dc-batman' || catalog.id === 'dc-batman-animations'">
+                                <img src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo-500x281.png" 
+                                    alt="Batman Logo" 
+                                    class="custom-icon batman-icon">
+                            </template>
+                            <template v-else-if="catalog.id === 'dc-superman' || catalog.id === 'dc-superman-animations'">
+                                <img src="https://static.vecteezy.com/system/resources/previews/036/661/959/non_2x/superman-logo-outline-free-vector.png" 
+                                    alt="Superman Logo" 
+                                    class="custom-icon superman-icon">
+                            </template>
+                            <template v-else>
+                                <i :class="['fas fa-' + catalog.icon, 'item-icon']"></i>
+                            </template>
+                            
+                            <span class="item-name">{{ catalog.name }}</span>
                         </div>
                     </div>
-                </div>
-
-                <!-- RPDB Key Input Section -->
-                <div class="max-w-2xl mx-auto mb-6 bg-white dark:bg-slate-700 p-4 rounded-lg">
-                    <div class="flex items-center justify-between mb-3">
-                        <h4 class="font-bold text-gray-800 dark:text-white text-sm md:text-base">
-                            <i class="fas fa-star-half-alt mr-2"></i>Poster Ratings (Optional)
-                        </h4>
-                        <a href="https://ratingposterdb.com" target="_blank" class="text-dcblue dark:text-dcblue-light text-xs hover:underline">
-                            <i class="fas fa-info-circle mr-1"></i>About RPDB
-                        </a>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-300 text-xs md:text-sm mb-3">
-                        Show IMDb ratings directly on movie/series posters by adding your RatingPosterDB key.
-                    </p>
-                    <div class="flex">
+                    
+                    <!-- Selected count -->
+                    <div v-if="!loading && !error" class="mb-6 bg-black/30 rounded-lg p-3 text-center text-sm">
+                        <span>{{ selectedCatalogs.length }} {{ selectedCatalogs.length === 1 ? 'catalog' : 'catalogs' }} selected</span>
+                                </div>
+                                
+                    <!-- RPDB Key Input -->
+                    <div class="mb-6">
+                        <label for="rpdb-key" class="block text-sm font-medium text-gray-400 mb-2">RatingPosterDB Key (optional)</label>
                         <input 
                             type="text" 
+                            id="rpdb-key"
                             v-model="rpdbKey" 
-                            class="flex-grow px-3 py-2 bg-gray-50 dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-l-lg text-sm focus:outline-none focus:ring-2 focus:ring-dcblue" 
-                            placeholder="Enter RPDB key (format: t0-xxxxxxxx)" 
-                            pattern="t[0-3]-[a-zA-Z0-9\-]+"
+                            class="custom-input" 
+                            placeholder="Enter RPDB key (format: t0-xxxxxxxx)"
                         >
-                        <a 
-                            href="https://ratingposterdb.com" 
-                            target="_blank" 
-                            class="px-3 py-2 bg-gray-200 dark:bg-slate-600 text-gray-800 dark:text-white rounded-r-lg hover:bg-gray-300 dark:hover:bg-slate-500 transition-colors"
-                            title="Visit RatingPosterDB to get your key"
-                        >
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
+                        <div class="text-xs text-gray-500 mt-2">
+                            <a href="https://ratingposterdb.com" target="_blank" class="text-blue-400 hover:underline">
+                                <i class="fas fa-info-circle mr-1"></i>About RPDB
+                            </a>
+                        </div>
                     </div>
+                    
+                    <!-- Install button -->
+                    <button 
+                        @click="generateLink" 
+                        class="install-button"
+                        :disabled="selectedCatalogs.length === 0"
+                    >
+                        Install addon
+                    </button>
                 </div>
             </div>
 
-            <!-- Installation panel -->
-            <transition name="slide-fade">
-                <div v-if="showInstallPanel" id="install-panel" class="bg-white dark:bg-slate-800 rounded-xl shadow-dc p-4 md:p-8 mb-6 md:mb-8">
-                    <div class="flex items-center justify-between mb-4 md:mb-6 pb-4 border-b border-dcgray dark:border-slate-700">
-                        <h3 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white">Installation Link Ready</h3>
-                        <div class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full px-3 py-1 text-sm">
-                            <i class="fas fa-check mr-1"></i>Generated
+            <!-- Footer -->
+            <div class="text-center mt-6 text-sm text-gray-400">
+                <p>DC Universe Addon for Stremio &copy; 2024</p>
+            </div>
                         </div>
+        
+        <!-- Installation modal -->
+        <transition name="fade">
+            <div v-if="showInstallPanel" class="modal" @click.self="showInstallPanel = false">
+                <div class="modal-content">
+                    <div class="flex justify-between items-center mb-5 pb-4 border-b border-gray-700">
+                        <h3 class="text-lg font-bold">Installation Link Ready</h3>
+                        <button @click="showInstallPanel = false" class="text-gray-400 hover:text-white rounded-full h-8 w-8 flex items-center justify-center bg-gray-800 hover:bg-gray-700 transition">
+                            <i class="fas fa-times"></i>
+                        </button>
                     </div>
                     
-                    <div class="mb-6">
-                        <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm md:text-base">Your personalized DC Universe addon is ready to install! Click the button below to add it to Stremio:</p>
+                    <p class="mb-5 text-sm">Your personalized DC Universe addon is ready to install!</p>
                         
-                        <div class="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-8">
+                    <div class="flex flex-col gap-4 mb-6">
                             <a 
                                 :href="stremioUrl" 
-                                class="dc-button flex-grow bg-dcblue text-white px-4 md:px-6 py-3 rounded-lg hover:bg-dcblue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dcblue transition-all text-center"
+                            class="install-button text-center"
                             >
                                 <i class="fas fa-plus-circle mr-2"></i>Install in Stremio
                             </a>
                             
                             <button 
                                 @click="copyToClipboard" 
-                                class="dc-button flex-grow bg-gray-200 dark:bg-slate-700 text-gray-800 dark:text-white px-4 md:px-6 py-3 rounded-lg hover:bg-gray-300 dark:hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-all"
-                                :data-tooltip="copied ? 'Copied!' : 'Copy to clipboard'"
-                                :class="{'tooltip': !copied}"
+                            class="bg-gray-700 hover:bg-gray-600 text-white py-3 px-4 rounded-xl transition text-center"
                             >
                                 <i class="fas" :class="copied ? 'fa-check' : 'fa-copy'"></i>
                                 <span class="ml-2">{{ copied ? 'Copied!' : 'Copy URL' }}</span>
                             </button>
                         </div>
                         
-                        <div class="bg-gray-100 dark:bg-slate-700 p-3 md:p-4 rounded-lg font-mono text-xs md:text-sm break-all text-left relative">
+                    <div class="bg-black/30 p-4 rounded-2xl text-xs break-all font-mono">
                             {{ installUrl }}
-                        </div>
-                    </div>
-                    
-                    <div class="bg-dcgray-light dark:bg-slate-700 rounded-lg p-3 md:p-4">
-                        <h4 class="font-bold text-gray-700 dark:text-gray-200 mb-2 flex items-center text-sm md:text-base">
-                            <i class="fas fa-list-check mr-2"></i>
-                            Your Selected Catalogs ({{ selectedCatalogs.length }})
-                        </h4>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-3">
-                            <div 
-                                v-for="id in selectedCatalogs" 
-                                :key="id"
-                                class="flex items-center p-2 bg-white dark:bg-slate-800 rounded-lg text-xs md:text-sm"
-                            >
-                                <i class="fas mr-2 text-dcblue dark:text-dcblue-light" :class="'fa-' + getIconForCatalogById(id)"></i>
-                                <span class="text-gray-800 dark:text-gray-200">{{ getCatalogName(id) }}</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </transition>
-        </main>
-        
-        <!-- Bottom Generate Link Button Section -->
-        <section v-if="catalogs.length > 0" class="container mx-auto px-4 py-6 md:py-8 text-center">
-            <transition name="fade">
-                <div v-if="promptToRegenerate" class="bg-yellow-100 dark:bg-yellow-900 border-yellow-500 dark:border-yellow-400 text-yellow-700 dark:text-yellow-200 p-3 mb-4 rounded-md text-sm" role="alert">
-                    <p><i class="fas fa-exclamation-triangle mr-2"></i>Your catalog selection has changed. Please click "Generate Link" again to update your installation URL.</p>
-                </div>
-            </transition>
-            <button 
-                @click="generateLink" 
-                class="dc-button bg-dcblue text-white px-6 py-3 rounded-lg hover:bg-dcblue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dcblue transition-all text-lg"
-                :disabled="selectedCatalogs.length === 0"
-                :class="{'opacity-50 cursor-not-allowed': selectedCatalogs.length === 0}"
-            >
-                <i class="fas fa-magic mr-2"></i>Generate Installation Link
-            </button>
-        </section>
-
-        <footer class="bg-gray-100 dark:bg-slate-800 py-6 md:py-8 border-t border-dcgray dark:border-slate-700">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="flex items-center mb-4 md:mb-0">
-                        <img src="https://github.com/tapframe/addon-dc/blob/main/assets/icon.png?raw=true" alt="DC Universe Logo" class="w-8 md:w-10 h-8 md:h-10 object-contain mr-2 md:mr-3">
-                        <div>
-                            <h3 class="font-bold text-gray-800 dark:text-white text-sm md:text-base">DC Universe Addon</h3>
-                            <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400">Personalized DC content for Stremio</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-col md:flex-row gap-3 md:gap-4 md:items-center">
-                        <a href="https://github.com/tapframe/addon-dc" target="_blank" class="text-dcblue dark:text-dcblue-light hover:underline flex items-center text-sm">
-                            <i class="fab fa-github mr-2"></i>GitHub Repository
-                        </a>
-                        
-                        <span class="hidden md:inline text-gray-400">|</span>
-                        
-                        <a href="https://github.com/tapframe/addon-dc/issues" target="_blank" class="text-dcblue dark:text-dcblue-light hover:underline flex items-center text-sm">
-                            <i class="fas fa-bug mr-2"></i>Report Issues
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-dcgray dark:border-slate-700 text-center">
-                    <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400">
-                        DC Universe Addon for Stremio &copy; 2024
-                    </p>
-                </div>
-            </div>
-        </footer>
-        
-        <transition name="fade">
-            <div v-if="showCopiedToast" class="copy-notification">
-                <i class="fas fa-check mr-2"></i>URL copied to clipboard!
             </div>
         </transition>
     </div>
@@ -681,132 +394,63 @@
         new Vue({
             el: '#app',
             data: {
-                catalogs: [
-                    { 
-                        id: 'dc-chronological', 
-                        name: 'Chronological Order', 
-                        category: 'Timeline',
-                        description: 'Browse the DC Universe in chronological story order',
-                        icon: 'calendar-alt'
-                    },
-                    { 
-                        id: 'dc-release', 
-                        name: 'Release Order', 
-                        category: 'Timeline',
-                        description: 'Browse content in original release date order',
-                        icon: 'clock'
-                    },
-                    { 
-                        id: 'dc-movies', 
-                        name: 'Movies', 
-                        category: 'Content Type',
-                        description: 'All DC movies across different eras',
-                        icon: 'film'
-                    },
-                    { 
-                        id: 'dceu_movies', 
-                        name: 'DCEU Movies', 
-                        category: 'Curated',
-                        description: 'Official DC Extended Universe film collection',
-                        icon: 'film'
-                    },
-                    { 
-                        id: 'dc-series', 
-                        name: 'Series', 
-                        category: 'Content Type',
-                        description: 'All DC television series',
-                        icon: 'tv'
-                    },
-                    { 
-                        id: 'dc_modern_series', 
-                        name: 'DC Modern Series', 
-                        category: 'Curated',
-                        description: 'Recent DC live-action series (2010s-Present)',
-                        icon: 'tv'
-                    },
-                    { 
-                        id: 'dc-animations', 
-                        name: 'Animations', 
-                        category: 'Content Type',
-                        description: 'All DC animated features and series',
-                        icon: 'play-circle'
-                    },
-                    { 
-                        id: 'dc-batman-animations', 
-                        name: 'Batman Animations', 
-                        category: 'Character',
-                        description: 'Batman animated movies and series',
-                        icon: 'mask'
-                    },
-                    { 
-                        id: 'dc-superman-animations', 
-                        name: 'Superman Animations', 
-                        category: 'Character',
-                        description: 'Superman animated movies and series',
-                        icon: 'shield-alt'
-                    },
-                    { 
-                        id: 'dc-batman', 
-                        name: 'Batman Collection', 
-                        category: 'Character',
-                        description: 'All Batman live-action movies',
-                        icon: 'mask'
-                    },
-                    { 
-                        id: 'dc-superman', 
-                        name: 'Superman Collection', 
-                        category: 'Character',
-                        description: 'All Superman live-action movies',
-                        icon: 'shield-alt'
-                    }
-                ],
+                catalogs: [],
                 selectedCatalogs: [],
                 showInstallPanel: false,
                 installUrl: '',
                 stremioUrl: '',
-                currentCategory: '',
                 copied: false,
-                showCopiedToast: false,
-                darkMode: false,
-                promptToRegenerate: false,
+                loading: true,
+                error: false,
                 rpdbKey: ''
             },
-            computed: {
-                categories() {
-                    return [...new Set(this.catalogs.map(c => c.category))];
-                },
-                displayedCategories() {
-                    if (this.currentCategory) {
-                        return [this.currentCategory];
-                    }
-                    return this.categories;
-                }
-            },
-            watch: {
-                selectedCatalogs: function(newSelection, oldSelection) {
-                    if (this.showInstallPanel) {
-                        console.log('[DC Addon Configure] Catalog selection changed while install panel was visible.');
-                        this.showInstallPanel = false;
-                        this.promptToRegenerate = true;
-                    }
-                }
+            mounted() {
+                this.fetchCatalogs();
             },
             methods: {
-                toggleDarkMode() {
-                    this.darkMode = !this.darkMode;
-                    if (this.darkMode) {
-                        document.documentElement.classList.add('dark');
-                        localStorage.setItem('darkMode', 'enabled');
+                fetchCatalogs() {
+                    this.loading = true;
+                    this.error = false;
+                    fetch('/api/catalogs')
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`HTTP error! status: ${response.status}`);
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            this.catalogs = data;
+                            this.applyPredefinedSelectionsOrSelectAll();
+                            this.loading = false;
+                        })
+                        .catch(error => {
+                            console.error("Error fetching catalogs:", error);
+                            this.error = true;
+                            this.loading = false;
+                        });
+                },
+                applyPredefinedSelectionsOrSelectAll() {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const predefinedIdsParam = urlParams.get('predefined');
+
+                    if (predefinedIdsParam) {
+                        const predefinedIds = predefinedIdsParam.split(',');
+                        this.selectedCatalogs = predefinedIds.filter(id => this.catalogs.some(catalog => catalog.id === id));
+                        if (this.selectedCatalogs.length === 0) {
+                            this.selectAll();
+                        }
                     } else {
-                        document.documentElement.classList.remove('dark');
-                        localStorage.setItem('darkMode', 'disabled');
+                        this.selectAll();
                     }
                 },
                 selectAll() {
+                    if (this.catalogs && this.catalogs.length > 0) {
                     this.selectedCatalogs = this.catalogs.map(c => c.id);
+                    }
                 },
                 deselectAll() {
                     this.selectedCatalogs = [];
+                    this.showInstallPanel = false;
                 },
                 toggleCatalog(catalog) {
                     const index = this.selectedCatalogs.indexOf(catalog.id);
@@ -815,9 +459,9 @@
                     } else {
                         this.selectedCatalogs.splice(index, 1);
                     }
+                    this.showInstallPanel = false;
                 },
                 generateLink() {
-                    this.promptToRegenerate = false;
                     if (this.selectedCatalogs.length === 0) {
                         alert('Please select at least one catalog');
                         return;
@@ -838,8 +482,8 @@
                             this.installUrl = `${protocol}//${host}/rpdb/${encodeURIComponent(this.rpdbKey)}/manifest.json`;
                             this.stremioUrl = `stremio://${host}/rpdb/${encodeURIComponent(this.rpdbKey)}/manifest.json`;
                         } else {
-                            this.installUrl = `${protocol}//${host}/manifest.json`;
-                            this.stremioUrl = `stremio://${host}/manifest.json`;
+                        this.installUrl = `${protocol}//${host}/manifest.json`;
+                        this.stremioUrl = `stremio://${host}/manifest.json`;
                         }
                     } else {
                         const catalogParam = this.selectedCatalogs.join(',');
@@ -849,125 +493,24 @@
                             this.installUrl = `${protocol}//${host}/catalog/${encodeURIComponent(configParts)}/manifest.json`;
                             this.stremioUrl = `stremio://${host}/catalog/${encodeURIComponent(configParts)}/manifest.json`;
                         } else {
-                            this.installUrl = `${protocol}//${host}/catalog/${encodeURIComponent(catalogParam)}/manifest.json`;
-                            this.stremioUrl = `stremio://${host}/catalog/${encodeURIComponent(catalogParam)}/manifest.json`;
+                        this.installUrl = `${protocol}//${host}/catalog/${encodeURIComponent(catalogParam)}/manifest.json`;
+                        this.stremioUrl = `stremio://${host}/catalog/${encodeURIComponent(catalogParam)}/manifest.json`;
                         }
                     }
                     
-                    // First set the panel visibility
-                    const wasAlreadyVisible = this.showInstallPanel;
                     this.showInstallPanel = true;
-                    
-                    // Smooth scroll to installation panel with a small delay to ensure DOM updates
-                    setTimeout(() => {
-                        const installPanel = document.querySelector('#install-panel');
-                        if (installPanel) {
-                            installPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        }
-                    }, wasAlreadyVisible ? 10 : 100); // Use shorter delay if panel was already visible
-                },
-                getCatalogName(id) {
-                    const catalog = this.catalogs.find(c => c.id === id);
-                    return catalog ? catalog.name : id;
-                },
-                getCatalogsByCategory(category) {
-                    return this.catalogs.filter(c => c.category === category);
-                },
-                toggleCategoryFilter(category) {
-                    this.currentCategory = this.currentCategory === category ? '' : category;
-                },
-                getCategoryIcon(category) {
-                    const iconMap = {
-                        'Timeline': 'fas fa-clock',
-                        'Content Type': 'fas fa-film',
-                        'Character': 'fas fa-mask',
-                        'Curated': 'fas fa-star'
-                    };
-                    
-                    return iconMap[category] || 'fas fa-folder';
-                },
-                getIconForCatalog(catalog) {
-                    return catalog.icon || 'folder';
-                },
-                getIconForCatalogById(id) {
-                    const catalog = this.catalogs.find(c => c.id === id);
-                    return catalog ? (catalog.icon || 'folder') : 'folder';
                 },
                 copyToClipboard() {
                     navigator.clipboard.writeText(this.installUrl).then(() => {
                         this.copied = true;
-                        this.showCopiedToast = true;
-                        
-                        setTimeout(() => {
-                            this.showCopiedToast = false;
-                        }, 2000);
-                        
                         setTimeout(() => {
                             this.copied = false;
-                        }, 3000);
+                        }, 2000);
                     }).catch(err => {
-                        console.error('Failed to copy text: ', err);
+                        console.error('Failed to copy URL: ', err);
+                        alert('Failed to copy URL. Please copy it manually.');
                     });
-                },
-                checkDarkModePreference() {
-                    const savedMode = localStorage.getItem('darkMode');
-                    if (savedMode === 'enabled' || (!savedMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                        this.darkMode = true;
-                        document.documentElement.classList.add('dark');
-                    }
                 }
-            },
-            created() {
-                console.log('[DC Addon Configure] created() hook started.');
-                let initialSelectedIds = [];
-                const path = window.location.pathname;
-                console.log('[DC Addon Configure] pathname:', path);
-                const parts = path.split('/');
-                console.log('[DC Addon Configure] path parts:', parts);
-
-                // Ensure this.catalogs is available and has content
-                const allAvailableCatalogIds = this.catalogs && this.catalogs.length > 0 ? this.catalogs.map(c => c.id) : [];
-                console.log('[DC Addon Configure] All available catalog IDs from this.catalogs:', allAvailableCatalogIds);
-
-                if (parts.length === 4 && parts[1].toLowerCase() === 'catalog' && parts[3].toLowerCase() === 'configure') {
-                    console.log('[DC Addon Configure] Path matches /catalog/:ids/configure pattern.');
-                    const encodedIdsString = parts[2];
-                    console.log('[DC Addon Configure] Extracted encodedIdsString from URL parts[2]:', encodedIdsString);
-                    if (encodedIdsString) {
-                        const idsString = decodeURIComponent(encodedIdsString);
-                        console.log('[DC Addon Configure] Decoded idsString:', idsString);
-                        const potentialIds = idsString.split(',').map(id => id.trim()).filter(id => id); // trim and remove empty strings
-                        console.log('[DC Addon Configure] Potential IDs from decoded idsString:', potentialIds);
-                        
-                        if (allAvailableCatalogIds.length > 0) {
-                            initialSelectedIds = potentialIds.filter(id => allAvailableCatalogIds.includes(id));
-                            console.log('[DC Addon Configure] Filtered initialSelectedIds (valid & found): ', initialSelectedIds);
-                        } else {
-                            console.warn('[DC Addon Configure] this.catalogs seems empty or not yet populated for filtering.');
-                        }
-                    } else {
-                        console.log('[DC Addon Configure] idsString from URL is empty.');
-                    }
-                } else {
-                    console.log('[DC Addon Configure] Path does NOT match /catalog/:ids/configure pattern.');
-                }
-
-                if (initialSelectedIds.length > 0) {
-                    console.log('[DC Addon Configure] Setting selectedCatalogs from URL IDs:', initialSelectedIds);
-                    this.selectedCatalogs = initialSelectedIds;
-                } else {
-                    console.log('[DC Addon Configure] No valid IDs from URL or pattern mismatch. Defaulting to select all.');
-                    if (allAvailableCatalogIds.length > 0) {
-                        this.selectedCatalogs = [...allAvailableCatalogIds]; // Select all
-                    } else {
-                        console.warn('[DC Addon Configure] Cannot select all because allAvailableCatalogIds is empty. selectedCatalogs will be empty.');
-                        this.selectedCatalogs = [];
-                    }
-                }
-                console.log('[DC Addon Configure] Final selectedCatalogs:', JSON.parse(JSON.stringify(this.selectedCatalogs)));
-            },
-            mounted() {
-                this.checkDarkModePreference();
             }
         });
     </script>
