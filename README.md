@@ -41,8 +41,7 @@ Explore the DC Universe within Stremio! Browse movies and series by **chronologi
 
 Install directly from Stremio addon catalog or use this URL:
 ```
-https://addon-dc.vercel.app/manifest.json
-```
+https://addon-dc-cq85.onrender.com```
 
 ### Custom Catalog Configuration
 
