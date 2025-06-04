@@ -56,12 +56,15 @@ let cachedCatalog = {};
 
 // Helper function for TMDb details fetching
 async function getTmdbDetails(id, type) {
-    const url = `https://api.themoviedb.org/3/${type}/${id}?api_key=${tmdbKey}&language=en-US&append_to_response=external_ids`;
+    // Map between Stremio and TMDb types
+    const tmdbType = type === 'series' ? 'tv' : type;
+    
+    const url = `https://api.themoviedb.org/3/${tmdbType}/${id}?api_key=${tmdbKey}&language=en-US&append_to_response=external_ids`;
     try {
         const res = await axios.get(url);
         return res;
     } catch (err) {
-        console.error(`TMDb details error for ${type}/${id}: ${err.message}`);
+        console.error(`TMDb details error for ${tmdbType}/${id}: ${err.message}`);
         return {};
     }
 }
@@ -107,8 +110,8 @@ async function fetchAdditionalData(item) {
       // Return minimal data if keys are missing
       return {
           id: lookupId,
-          type: item.type,
-          name: item.type === 'series' ? item.title.replace(/ Season \d+/, '') : item.title,
+          type: item.type === 'tv' ? 'series' : item.type, // Map 'tv' to 'series' for Stremio
+          name: (item.type === 'series' || item.type === 'tv') ? item.title.replace(/ Season \d+/, '') : item.title,
           poster: item.poster || null, // Use poster from data file if available
           description: item.overview || 'Metadata lookup unavailable (API key missing).', // Use local overview
           releaseInfo: item.releaseYear || 'N/A',
@@ -136,16 +139,20 @@ async function fetchAdditionalData(item) {
     let tmdbDetailsPromise;
     if (effectiveTmdbId) {
         // If we have tmdbId, fetch details directly
-        const tmdbDetailsUrl = `https://api.themoviedb.org/3/${item.type}/${effectiveTmdbId}?api_key=${tmdbKey}&language=en-US`;
+        // Map type for TMDb API (Stremio uses 'series', but TMDb uses 'tv')
+        const tmdbType = item.type === 'series' ? 'tv' : item.type;
+        const tmdbDetailsUrl = `https://api.themoviedb.org/3/${tmdbType}/${effectiveTmdbId}?api_key=${tmdbKey}&language=en-US`;
         tmdbDetailsPromise = axios.get(tmdbDetailsUrl).catch((err) => {
-            console.error(`TMDB Details error for ${item.type}/${effectiveTmdbId}: ${err.message}`);
+            console.error(`TMDB Details error for ${tmdbType}/${effectiveTmdbId}: ${err.message}`);
             return {};
         });
     } else {
         // If no tmdbId, search TMDb by title/year
-        const tmdbSearchUrl = `https://api.themoviedb.org/3/search/${item.type}?api_key=${tmdbKey}&query=${encodeURIComponent(item.title)}&year=${item.releaseYear}`;
+        // Map type for TMDb API (Stremio uses 'series', but TMDb uses 'tv')
+        const tmdbType = item.type === 'series' ? 'tv' : item.type;
+        const tmdbSearchUrl = `https://api.themoviedb.org/3/search/${tmdbType}?api_key=${tmdbKey}&query=${encodeURIComponent(item.title)}&year=${item.releaseYear}`;
         tmdbDetailsPromise = axios.get(tmdbSearchUrl).then(res => 
-            res.data?.results?.[0] ? getTmdbDetails(res.data.results[0].id, item.type) : {})
+            res.data?.results?.[0] ? getTmdbDetails(res.data.results[0].id, tmdbType) : {})
         .catch((err) => {
             console.error(`TMDB Search error for ${item.title}: ${err.message}`);
             return {};
@@ -156,7 +163,9 @@ async function fetchAdditionalData(item) {
     const tmdbImagesPromise = tmdbDetailsPromise.then(detailsRes => {
         const foundTmdbId = detailsRes?.data?.id || effectiveTmdbId; // Get ID from details if available
         if (foundTmdbId) {
-            const tmdbImagesUrl = `https://api.themoviedb.org/3/${item.type}/${foundTmdbId}/images?api_key=${tmdbKey}`;
+            // Map type for TMDb API (Stremio uses 'series', but TMDb uses 'tv')
+            const tmdbType = item.type === 'series' ? 'tv' : item.type;
+            const tmdbImagesUrl = `https://api.themoviedb.org/3/${tmdbType}/${foundTmdbId}/images?api_key=${tmdbKey}`;
             return axios.get(tmdbImagesUrl).catch((err) => {
                 if (!err.response || err.response.status !== 404) {
                     console.warn(`TMDb Images error for ${item.title}: ${err.message}`);
@@ -205,8 +214,8 @@ async function fetchAdditionalData(item) {
 
     const meta = {
       id: lookupId, // Use the ID we actually used for lookup
-      type: item.type,
-      name: item.type === 'series' ? item.title.replace(/ Season \d+/, '') : item.title,
+      type: item.type === 'tv' ? 'series' : item.type, // Map 'tv' to 'series' for Stremio
+      name: (item.type === 'series' || item.type === 'tv') ? item.title.replace(/ Season \d+/, '') : item.title,
       logo: logoUrl,
       poster: poster,
       description: description,
